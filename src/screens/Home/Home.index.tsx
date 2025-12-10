@@ -1,12 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
-import { MyText, MyView } from "./Home.styles";
+import { MyText } from "./Home.styles";
+import Header from "../../components/Header/Header.index";
+import { ScrollView } from "react-native";
 
 function Home() {
   return (
-    <MyView>
+    <ScrollView>
+      <Header />
       <MyText>Lorem Ipsumis</MyText>
       <Ionicons name="chevron-down" size={32} color="blue" />
-    </MyView>
+    </ScrollView>
   );
 }
 

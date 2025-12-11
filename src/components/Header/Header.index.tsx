@@ -10,20 +10,22 @@ import {
 } from "./Header.styles";
 import { View } from "react-native";
 import { COLORS } from "../../constants/colors/colors";
-import { TEXTS } from "../../constants/texts/texts";
+import { useSystemContext } from "../../contexts/system";
 
 export default function Header() {
+  const { language } = useSystemContext();
+
   return (
     <Background colors={[COLORS.DARK_BLUE, COLORS.BLUE]}>
       <Row>
-        <Title>{TEXTS.COMPONENTS.HEADER.MAIN.TITLE}</Title>
+        <Title>{language.COMPONENTS.HEADER.MAIN.TITLE}</Title>
         <AvatarContainer>
           <AvatarText>L</AvatarText>
         </AvatarContainer>
       </Row>
       <TextContainer>
-        <Subtitle>{TEXTS.COMPONENTS.HEADER.MAIN.SUBTITLE_1}</Subtitle>
-        <Subtitle>{TEXTS.COMPONENTS.HEADER.MAIN.SUBTITLE_2}</Subtitle>
+        <Subtitle>{language.COMPONENTS.HEADER.MAIN.SUBTITLE_1}</Subtitle>
+        <Subtitle>{language.COMPONENTS.HEADER.MAIN.SUBTITLE_2}</Subtitle>
       </TextContainer>
     </Background>
   );

@@ -1,5 +1,7 @@
+import { Platform } from "react-native";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+
 import { getFont } from "../../helpers/getFont";
 import { COLORS } from "../../constants/colors/colors";
 
@@ -9,7 +11,7 @@ export const Background = styled(LinearGradient).attrs({
 })`
   width: 100%;
   padding: 20px;
-  padding-top: 74px;
+  padding-top: ${Platform.select({ android: "54px", ios: "74px" })};
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `;

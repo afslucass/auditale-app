@@ -1,5 +1,10 @@
 import styled from "styled-components/native";
 import { getFont } from "../../helpers/getFont";
+import { COLORS } from "../../constants/colors/colors";
+
+export const Screen = styled.ScrollView`
+  background-color: ${COLORS.BACKGROUND};
+`;
 
 export const MyView = styled.View`
   flex: 1;

@@ -7,6 +7,11 @@ export const TEXTS = {
         SUBTITLE_2: "Ready for another adventure?",
       },
     },
+    PLAN_BANNER: {
+      TITLE: "Free Plan",
+      SUBTITLE: "Upgrade for unlimited stories",
+      BUTTON: "Upgrade",
+    },
   },
   SCREENS: {},
 };

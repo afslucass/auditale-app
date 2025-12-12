@@ -13,5 +13,12 @@ export const TEXTS = {
       BUTTON: "Upgrade",
     },
   },
-  SCREENS: {},
+  SCREENS: {
+    HOME: {
+      GENRES_SECTION: {
+        TITLE: "Recommended for you",
+        STORIES_LABEL: "stories",
+      },
+    },
+  },
 };

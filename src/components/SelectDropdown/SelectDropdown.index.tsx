@@ -11,6 +11,7 @@ import {
   OptionText,
   ModalTitle,
 } from "./SelectDropdown.styles";
+import { COLORS } from "../../constants/colors/colors";
 
 type Props = {
   label: string;
@@ -33,7 +34,7 @@ const SelectDropdown = ({ label, options, value, onChange }: Props) => {
       <SelectButton onPress={() => setOpen(true)}>
         <SelectButtonText>{value || label}</SelectButtonText>
         <ArrowIcon>
-          <Ionicons name="chevron-down" size={18} color="#FFFFFF" />
+          <Ionicons name="chevron-down" size={18} color={COLORS.WHITE} />
         </ArrowIcon>
       </SelectButton>
 

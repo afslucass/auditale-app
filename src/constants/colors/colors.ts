@@ -13,4 +13,8 @@ export const COLORS = {
   CYAN_2: "#144F5F",
   ORANGE: "#F87118",
   RED: "#F04442",
+  PURPLE: "#8E30E4",
+  PURPLE_2: "#6C20A8",
+  PINK_2: "#A11951",
+  RED_2: "#9D1B1A",
 };

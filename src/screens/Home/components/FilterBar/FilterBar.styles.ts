@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
-import { COLORS } from "../../constants/colors/colors";
-import { getFont } from "../../helpers/getFont";
+import { getFont } from "../../../../helpers/getFont";
+import { COLORS } from "../../../../constants/colors/colors";
 
 export const Container = styled.View`
   width: 100%;
@@ -13,4 +13,15 @@ export const SelectRow = styled.View`
   justify-content: space-between;
   margin-top: 12px;
   gap: 10px;
+`;
+
+export const RecommendedText = styled.Text`
+  font-family: ${getFont("Nunito-Bold")};
+  color: ${COLORS.WHITE};
+  font-size: 18px;
+  margin: 24px 0px;
+`;
+
+export const ListContainer = styled.View`
+  gap: 18px;
 `;

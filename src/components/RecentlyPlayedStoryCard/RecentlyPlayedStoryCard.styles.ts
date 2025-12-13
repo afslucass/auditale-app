@@ -31,17 +31,30 @@ export const StoryTitle = styled.Text`
   margin-bottom: 8px;
 `;
 
-export const Description = styled.Text`
-  font-family: ${getFont("Nunito-Regular")};
-  color: ${COLORS.WHITE};
-  font-size: 14px;
-  margin-bottom: 12px;
+export const ProgressRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
 `;
 
-export const Row = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+export const ProgressBarBackground = styled.View`
+  flex: 1;
+  height: 6px;
+  background-color: ${COLORS.DARK_BLUE_3};
+  border-radius: 6px;
+  margin-right: 8px;
+`;
+
+export const ProgressBarFill = styled.View`
+  height: 100%;
+  background-color: ${COLORS.CYAN};
+  border-radius: 6px;
+`;
+
+export const ProgressText = styled.Text`
+  font-family: ${getFont("Nunito-Bold")};
+  color: ${COLORS.CYAN};
+  font-size: 12px;
 `;
 
 export const Tag = styled.View`
@@ -54,11 +67,5 @@ export const Tag = styled.View`
 export const TagText = styled.Text`
   font-family: ${getFont("Nunito-Bold")};
   color: ${COLORS.WHITE};
-  font-size: 14px;
-`;
-
-export const DurationText = styled.Text`
-  font-family: ${getFont("Nunito-Bold")};
-  color: ${COLORS.CYAN};
   font-size: 14px;
 `;

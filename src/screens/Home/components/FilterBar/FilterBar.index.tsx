@@ -9,10 +9,10 @@ import {
 import SearchInput from "../../../../components/SearchInput/SearchInput.index";
 import FiltersRow from "../../../../components/FiltersRow/FiltersRow.index";
 import SelectDropdown from "../../../../components/SelectDropdown/SelectDropdown.index";
+import { useSystemContext } from "../../../../contexts/system";
 import StoryCard, {
   StoryCardType,
 } from "../../../../components/StoryCard/StoryCard.index";
-import { useSystemContext } from "../../../../contexts/system";
 
 export type FilterBarParams = {
   data: StoryCardType[];

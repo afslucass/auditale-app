@@ -4,20 +4,21 @@ import {
   StoryImage,
   InfoContainer,
   StoryTitle,
-  ProgressBarBackground,
-  ProgressBarFill,
-  ProgressRow,
-  ProgressText,
+  Description,
+  Row,
   Tag,
   TagText,
+  DurationText,
 } from "./StoryCard.styles";
+import { useSystemContext } from "../../contexts/system";
 
 export type StoryCardType = {
   id: number;
   image: string;
   title: string;
-  progress: number;
+  description: string;
   category: string;
+  duration: number;
 };
 
 export type StoryCardParams = {
@@ -25,23 +26,21 @@ export type StoryCardParams = {
 };
 
 export default function StoryCard({ item }: StoryCardParams) {
+  const { texts } = useSystemContext();
   return (
     <CardContainer>
       <StoryImage source={{ uri: item.image }} />
-
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
-
-        <ProgressRow>
-          <ProgressBarBackground>
-            <ProgressBarFill style={{ width: `${item.progress}%` }} />
-          </ProgressBarBackground>
-          <ProgressText>{item.progress}%</ProgressText>
-        </ProgressRow>
-
-        <Tag>
-          <TagText>{item.category}</TagText>
-        </Tag>
+        <Description>{item.description}</Description>
+        <Row>
+          <Tag>
+            <TagText>{item.category}</TagText>
+          </Tag>
+          <DurationText>
+            {item.duration} {texts.CONSTANTS.TIME.LABEL.MIN}
+          </DurationText>
+        </Row>
       </InfoContainer>
     </CardContainer>
   );

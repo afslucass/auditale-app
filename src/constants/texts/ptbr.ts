@@ -47,5 +47,10 @@ export const TEXTS = {
       ROMANCE: "Romance",
       MYSTERIUM: "Mistério",
     },
+    TIME: {
+      LABEL: {
+        MIN: "min",
+      },
+    },
   },
 };

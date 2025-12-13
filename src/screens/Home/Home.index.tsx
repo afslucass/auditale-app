@@ -6,7 +6,7 @@ import FilterBar from "./components/FilterBar/FilterBar.index";
 import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
 
-const DATA = [
+const RECENTLY_STORIES_DATA = [
   {
     id: 0,
     image: "https://picsum.photos/200",
@@ -23,13 +23,34 @@ const DATA = [
   },
 ];
 
+const STORIES_DATA = [
+  {
+    id: 0,
+    image: "https://picsum.photos/200",
+    title: "Story title",
+    description:
+      "A thrilling cyberpunk adventure through the digital underground",
+    category: "Cyberpunk",
+    duration: 12,
+  },
+  {
+    id: 1,
+    image: "https://picsum.photos/200",
+    title: "Story title",
+    description:
+      "A thrilling cyberpunk adventure through the digital underground",
+    category: "Cyberpunk",
+    duration: 32,
+  },
+];
+
 function Home() {
   return (
     <Screen>
       <Header />
-      <RecentlyPlayedSection data={DATA} />
+      <RecentlyPlayedSection data={RECENTLY_STORIES_DATA} />
       <PlanBanner />
-      <FilterBar data={DATA} />
+      <FilterBar data={STORIES_DATA} />
       <GenresSection
         data={[
           {

@@ -4,13 +4,13 @@ import {
   SectionTitle,
   ListContainer,
 } from "./RecentlyPlayedSection.styles";
-import StoryCard, {
-  StoryCardType,
-} from "../../../../components/StoryCard/StoryCard.index";
+import RecentlyPlayedStoryCard, {
+  RecentlyPlayedStoryCardType,
+} from "../../../../components/RecentlyPlayedStoryCard/RecentlyPlayedStoryCard.index";
 import { useSystemContext } from "../../../../contexts/system";
 
 export type RecentlyPlayedSectionParams = {
-  data: StoryCardType[];
+  data: RecentlyPlayedStoryCardType[];
 };
 
 export default function RecentlyPlayedSection({
@@ -25,7 +25,7 @@ export default function RecentlyPlayedSection({
       </SectionTitle>
       <ListContainer>
         {data.map((item) => (
-          <StoryCard key={item.id} item={item} />
+          <RecentlyPlayedStoryCard key={item.id} item={item} />
         ))}
       </ListContainer>
     </SectionContainer>

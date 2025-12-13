@@ -7,10 +7,11 @@ import { SelectDropdown } from "../SelectDropdown/SelectDropdown.index";
 import { FiltersRow } from "../FiltersRow/FiltersRow.index";
 
 export type SearchInputParams = {
+  placeholder?: string;
   onChangeText?: (text: string) => void;
 };
 
-const SearchInput = ({ onChangeText }: SearchInputParams) => {
+const SearchInput = ({ onChangeText, placeholder }: SearchInputParams) => {
   return (
     <SearchContainer>
       <SearchIcon>
@@ -18,7 +19,7 @@ const SearchInput = ({ onChangeText }: SearchInputParams) => {
       </SearchIcon>
       <Input
         onChangeText={onChangeText}
-        placeholder="Procurar história"
+        placeholder={placeholder}
         placeholderTextColor={COLORS.LIGHT_GRAY}
       />
     </SearchContainer>

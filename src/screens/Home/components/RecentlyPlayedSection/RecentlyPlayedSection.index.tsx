@@ -7,6 +7,7 @@ import {
 import StoryCard, {
   StoryCardType,
 } from "../../../../components/StoryCard/StoryCard.index";
+import { useSystemContext } from "../../../../contexts/system";
 
 export type RecentlyPlayedSectionParams = {
   data: StoryCardType[];
@@ -15,9 +16,13 @@ export type RecentlyPlayedSectionParams = {
 export default function RecentlyPlayedSection({
   data = [],
 }: RecentlyPlayedSectionParams) {
+  const { texts } = useSystemContext();
+
   return (
     <SectionContainer>
-      <SectionTitle>Recently Played</SectionTitle>
+      <SectionTitle>
+        {texts.SCREENS.HOME.RECENTLY_PLAYED_SECTION.TITLE}
+      </SectionTitle>
       <ListContainer>
         {data.map((item) => (
           <StoryCard key={item.id} item={item} />

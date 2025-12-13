@@ -3,22 +3,49 @@ export const TEXTS = {
     HEADER: {
       MAIN: {
         TITLE: "Auditale",
-        SUBTITLE_1: "Wellcome back!",
-        SUBTITLE_2: "Ready for another adventure?",
+        SUBTITLE_1: "Bem-vindo de volta!",
+        SUBTITLE_2: "Pronto para outra aventura?",
       },
     },
     PLAN_BANNER: {
-      TITLE: "Free Plan",
-      SUBTITLE: "Upgrade for unlimited stories",
+      TITLE: "Plano gratuito",
+      SUBTITLE: "Faça o upgrade para histórias ilimitadas",
       BUTTON: "Upgrade",
     },
   },
   SCREENS: {
     HOME: {
-      GENRES_SECTION: {
-        TITLE: "Recommended for you",
-        STORIES_LABEL: "stories",
+      RECENTLY_PLAYED_SECTION: {
+        TITLE: "Tocados recentemente",
       },
+      FILTER_BAR: {
+        TITLE: "Recomendados",
+        INPUT: "Procurar história",
+        DURATION: "Duração",
+        DIFFICULTY: "Dificuldade",
+      },
+      GENRES_SECTION: {
+        TITLE: "Para você",
+        STORIES_LABEL: "histórias",
+      },
+    },
+  },
+  CONSTANTS: {
+    DURATION: {
+      SHORT: "Curta",
+      MEDIUM: "Media",
+      LONG: "Longa",
+    },
+    DIFFICULTY: {
+      BEGINNER: "Iniciante",
+      INTERMEDIATE: "Intermediario",
+      ADVANCED: "Avançado",
+    },
+    GENRES: {
+      ALL: "Todos",
+      SCI_FI: "Sci-Fi",
+      ROMANCE: "Romance",
+      MYSTERIUM: "Mistério",
     },
   },
 };

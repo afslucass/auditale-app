@@ -12,21 +12,31 @@ import SelectDropdown from "../../../../components/SelectDropdown/SelectDropdown
 import StoryCard, {
   StoryCardType,
 } from "../../../../components/StoryCard/StoryCard.index";
+import { useSystemContext } from "../../../../contexts/system";
 
 export type FilterBarParams = {
   data: StoryCardType[];
 };
 
 const FilterBar = ({ data = [] }: FilterBarParams) => {
-  const [selectedGenre, setSelectedGenre] = useState("All");
+  const { texts } = useSystemContext();
+
+  const [selectedGenre, setSelectedGenre] = useState(
+    texts.CONSTANTS.GENRES.ALL
+  );
   const [difficulty, setDifficulty] = useState("");
   const [duration, setDuration] = useState("");
 
-  const genres = ["All Genres", "Sci-Fi", "Romance", "Mysterium"];
+  const genres = [
+    texts.CONSTANTS.GENRES.ALL,
+    texts.CONSTANTS.GENRES.SCI_FI,
+    texts.CONSTANTS.GENRES.ROMANCE,
+    texts.CONSTANTS.GENRES.MYSTERIUM,
+  ];
 
   return (
     <Container>
-      <SearchInput />
+      <SearchInput placeholder={texts.SCREENS.HOME.FILTER_BAR.INPUT} />
       <FiltersRow
         list={genres}
         onChangeSelected={setSelectedGenre}
@@ -34,19 +44,19 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
       />
       <SelectRow>
         <SelectDropdown
-          label="Duration"
+          label={texts.SCREENS.HOME.FILTER_BAR.DURATION}
           value={duration}
           onChange={setDuration}
           options={["Short", "Medium", "Long"]}
         />
         <SelectDropdown
-          label="Difficulty"
+          label={texts.SCREENS.HOME.FILTER_BAR.DIFFICULTY}
           value={difficulty}
           onChange={setDifficulty}
           options={["Beginner", "Intermediate", "Advanced"]}
         />
       </SelectRow>
-      <RecommendedText>Recomended for you</RecommendedText>
+      <RecommendedText>{texts.SCREENS.HOME.FILTER_BAR.TITLE}</RecommendedText>
       <ListContainer>
         {data.map((item) => (
           <StoryCard key={item.id} item={item} />

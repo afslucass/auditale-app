@@ -44,14 +44,14 @@ function Home() {
             title: "Action",
             storiesCount: 24,
             gradient: [COLORS.PINK, COLORS.PINK_2],
-            icon: "rocket",
+            icon: "car-sport",
           },
           {
             id: "3",
             title: "Romance",
             storiesCount: 24,
             gradient: [COLORS.RED, COLORS.RED_2],
-            icon: "rocket",
+            icon: "heart-outline",
           },
         ]}
       />

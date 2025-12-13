@@ -2,8 +2,8 @@ import { Platform } from "react-native";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { getFont } from "../../helpers/getFont";
-import { COLORS } from "../../constants/colors/colors";
+import { getFont } from "../../../../helpers/getFont";
+import { COLORS } from "../../../../constants/colors/colors";
 
 export const Background = styled(LinearGradient).attrs({
   start: { x: 0, y: 0 },

@@ -29,6 +29,9 @@ export const TEXTS = {
         STORIES_LABEL: "histórias",
       },
     },
+    SEARCH: {
+      SCREEN_TITLE: "Busca Avançada",
+    },
   },
   CONSTANTS: {
     DURATION: {

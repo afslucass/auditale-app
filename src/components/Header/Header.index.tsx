@@ -1,31 +1,17 @@
 import React from "react";
-import {
-  Title,
-  Subtitle,
-  AvatarContainer,
-  AvatarText,
-  Background,
-  Row,
-  TextContainer,
-} from "./Header.styles";
-import { COLORS } from "../../constants/colors/colors";
-import { useSystemContext } from "../../contexts/system";
 
-export default function Header() {
-  const { texts } = useSystemContext();
+import MainHeader from "./components/MainHeader/MainHeader.index";
+import SimpleHeaderWithBackButton from "./components/SimpleHeaderWithBackButton/SimpleHeaderWithBackButton.index";
 
-  return (
-    <Background colors={[COLORS.DARK_BLUE, COLORS.BLUE]}>
-      <Row>
-        <Title>{texts.COMPONENTS.HEADER.MAIN.TITLE}</Title>
-        <AvatarContainer>
-          <AvatarText>L</AvatarText>
-        </AvatarContainer>
-      </Row>
-      <TextContainer>
-        <Subtitle>{texts.COMPONENTS.HEADER.MAIN.SUBTITLE_1}</Subtitle>
-        <Subtitle>{texts.COMPONENTS.HEADER.MAIN.SUBTITLE_2}</Subtitle>
-      </TextContainer>
-    </Background>
-  );
+export type HeaderParams = {
+  variant?: "main" | "simple-back-button";
+  onBack?: () => void;
+  title?: string;
+};
+
+export default function Header({ variant, onBack, title }: HeaderParams) {
+  if (variant === "simple-back-button") {
+    return <SimpleHeaderWithBackButton onBack={onBack} title={title} />;
+  }
+  return <MainHeader />;
 }

@@ -1,6 +1,8 @@
+import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header/Header.index";
 import FilterBar from "./components/FilterBar/FilterBar.index";
 import { Screen } from "./Search.styles";
+import { useSystemContext } from "../../contexts/system";
 
 const STORIES_DATA = [
   {
@@ -24,9 +26,20 @@ const STORIES_DATA = [
 ];
 
 function Search() {
+  const navigation = useNavigation();
+  const { texts } = useSystemContext();
+
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
+
   return (
     <Screen>
-      <Header />
+      <Header
+        variant="simple-back-button"
+        onBack={handleGoBack}
+        title={texts.SCREENS.SEARCH.SCREEN_TITLE}
+      />
       <FilterBar data={STORIES_DATA} />
     </Screen>
   );

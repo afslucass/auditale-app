@@ -13,7 +13,6 @@ import { useSystemContext } from "../../../../contexts/system";
 import StoryCard, {
   StoryCardType,
 } from "../../../../components/StoryCard/StoryCard.index";
-import { useNavigation } from "@react-navigation/native";
 
 export type FilterBarParams = {
   data: StoryCardType[];
@@ -21,7 +20,6 @@ export type FilterBarParams = {
 
 const FilterBar = ({ data = [] }: FilterBarParams) => {
   const { texts } = useSystemContext();
-  const navigation = useNavigation<any>();
 
   const [selectedGenre, setSelectedGenre] = useState(
     texts.CONSTANTS.GENRES.ALL
@@ -36,16 +34,9 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
     texts.CONSTANTS.GENRES.MYSTERIUM,
   ];
 
-  const handlePressInput = () => {
-    navigation.navigate("Search");
-  };
-
   return (
     <Container>
-      <SearchInput
-        placeholder={texts.SCREENS.HOME.FILTER_BAR.INPUT}
-        onPress={handlePressInput}
-      />
+      <SearchInput placeholder={texts.SCREENS.HOME.FILTER_BAR.INPUT} />
       <FiltersRow
         list={genres}
         onChangeSelected={setSelectedGenre}

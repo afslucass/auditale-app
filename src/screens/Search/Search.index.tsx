@@ -23,6 +23,24 @@ const STORIES_DATA = [
     category: "Cyberpunk",
     duration: 32,
   },
+  {
+    id: 2,
+    image: "https://picsum.photos/200",
+    title: "Story title",
+    description:
+      "A thrilling cyberpunk adventure through the digital underground",
+    category: "Cyberpunk",
+    duration: 32,
+  },
+  {
+    id: 3,
+    image: "https://picsum.photos/200",
+    title: "Story title",
+    description:
+      "A thrilling cyberpunk adventure through the digital underground",
+    category: "Cyberpunk",
+    duration: 32,
+  },
 ];
 
 function Search() {

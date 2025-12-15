@@ -14,19 +14,28 @@ export const Container = styled.View`
   padding: 0px 12px;
 `;
 
-export const CaptionItem = styled.View<{ highlighted?: boolean }>`
+export const CaptionItem = styled.View<{
+  highlighted?: boolean;
+  highlightedAsReview?: boolean;
+}>`
   padding: 6px 8px;
   border-radius: 12px;
-  margin-bottom: 8px;
-  background-color: ${({ highlighted }) =>
-    highlighted ? COLORS.CYAN : "transparent"};
+  margin-bottom: ${({ highlightedAsReview }) => {
+    if (highlightedAsReview) return 32;
+    return 8;
+  }};
+  background-color: ${({ highlighted, highlightedAsReview }) => {
+    if (highlightedAsReview) return COLORS.BLUE;
+    if (highlighted) return COLORS.CYAN;
+    return COLORS.TRANSPARENT;
+  }};
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
 `;
 
-export const CaptionText = styled.Text<{ highlighted?: boolean }>`
+export const CaptionText = styled.Text`
   flex: 1;
   font-family: ${getFont("Nunito-Bold")};
   color: ${COLORS.WHITE};

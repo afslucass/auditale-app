@@ -11,8 +11,12 @@ import { LayoutChangeEvent, ScrollView } from "react-native";
 
 export type Caption = {
   id: string;
-  text: string;
-  highlighted?: boolean;
+  text?: string;
+  translate: string;
+  time: string;
+  type: "CAPTION" | "REVIEW";
+  translatedDescription: string;
+  learned: Array<{ word: "something"; translation: "algo" }>;
 };
 
 type Props = {
@@ -52,6 +56,40 @@ export default function StoryCaptions({ captions }: Props) {
     layoutsRef.current[index] = { y, height };
   };
 
+  const renderCaption = (caption: Caption, index: number) => {
+    const isHighlighted = index === activeIndex;
+    if (caption.type === "CAPTION") {
+      return (
+        <CaptionItem
+          collapsable={false}
+          key={caption.id}
+          highlighted={isHighlighted}
+          onLayout={handleLayout(index)}
+        >
+          <CaptionText>{caption.text}</CaptionText>
+          <Ionicons
+            name="swap-horizontal-outline"
+            size={24}
+            color={COLORS.WHITE}
+          />
+        </CaptionItem>
+      );
+    }
+    if (caption.type === "REVIEW") {
+      return (
+        <CaptionItem
+          collapsable={false}
+          key={caption.id}
+          highlightedAsReview
+          onLayout={handleLayout(index)}
+        >
+          <CaptionText>Reviewing...</CaptionText>
+          <Ionicons name="chevron-forward" size={24} color={COLORS.WHITE} />
+        </CaptionItem>
+      );
+    }
+  };
+
   return (
     <Container>
       <Scroll
@@ -59,26 +97,7 @@ export default function StoryCaptions({ captions }: Props) {
         nestedScrollEnabled
         keyboardShouldPersistTaps="handled"
       >
-        {captions.map((caption, index) => {
-          const isHighlighted = index === activeIndex;
-          return (
-            <CaptionItem
-              collapsable={false}
-              key={caption.id}
-              highlighted={isHighlighted}
-              onLayout={handleLayout(index)}
-            >
-              <CaptionText highlighted={isHighlighted}>
-                {caption.text}
-              </CaptionText>
-              <Ionicons
-                name="swap-horizontal-outline"
-                size={24}
-                color={COLORS.WHITE}
-              />
-            </CaptionItem>
-          );
-        })}
+        {captions.map((caption, index) => renderCaption(caption, index))}
       </Scroll>
     </Container>
   );

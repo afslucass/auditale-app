@@ -30,32 +30,26 @@ const SelectDropdown = ({ label, options, value, onChange }: Props) => {
 
   return (
     <>
-      {/* Botão que abre o dropdown */}
       <SelectButton onPress={() => setOpen(true)}>
         <SelectButtonText>{value || label}</SelectButtonText>
         <ArrowIcon>
           <Ionicons name="chevron-down" size={18} color={COLORS.WHITE} />
         </ArrowIcon>
       </SelectButton>
-
-      {/* Modal com opções */}
       <Modal transparent visible={open} animationType="fade">
         <ModalContainer>
           <TouchableOpacity
             style={{ flex: 1 }}
             onPress={() => setOpen(false)}
           />
-
           <ModalContent>
             <ModalTitle>{label}</ModalTitle>
-
             {options.map((option) => (
               <OptionButton key={option} onPress={() => handleSelect(option)}>
                 <OptionText>{option}</OptionText>
               </OptionButton>
             ))}
           </ModalContent>
-
           <TouchableOpacity
             style={{ flex: 1 }}
             onPress={() => setOpen(false)}

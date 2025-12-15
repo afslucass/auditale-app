@@ -19,3 +19,8 @@ export const MyText = styled.Text`
   font-family: ${getFont("Nunito-Regular")};
   font-size: 24px;
 `;
+
+export const SectionsContainer = styled.View`
+  padding: 0px 20px;
+  padding-top: 20px;
+`;

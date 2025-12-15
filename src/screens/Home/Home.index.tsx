@@ -1,7 +1,7 @@
 import { MyText, Screen } from "./Home.styles";
 import Header from "../../components/Header/Header.index";
 import RecentlyPlayedSection from "./components/RecentlyPlayedSection/RecentlyPlayedSection.index";
-import PlanBanner from "../../components/ PlanBanner/PlanBanner.index";
+import PlanBanner from "../../components/PlanBanner/PlanBanner.index";
 import FilterBar from "./components/FilterBar/FilterBar.index";
 import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
@@ -25,7 +25,7 @@ const RECENTLY_STORIES_DATA = [
 
 const STORIES_DATA = [
   {
-    id: 0,
+    id: "0",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:
@@ -34,7 +34,7 @@ const STORIES_DATA = [
     duration: 12,
   },
   {
-    id: 1,
+    id: "1",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:

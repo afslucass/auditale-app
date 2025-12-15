@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { getFont } from "../../helpers/getFont";
 import { COLORS } from "../../constants/colors/colors";
 
-export const CardContainer = styled.View`
+export const CardContainer = styled.TouchableOpacity`
   width: 100%;
   flex-direction: row;
   background-color: ${COLORS.DARK_BLUE_2};

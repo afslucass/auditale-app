@@ -13,7 +13,7 @@ import {
 import { useSystemContext } from "../../contexts/system";
 
 export type StoryCardType = {
-  id: number;
+  id: string;
   image: string;
   title: string;
   description: string;
@@ -23,12 +23,13 @@ export type StoryCardType = {
 
 export type StoryCardParams = {
   item: StoryCardType;
+  onPress?: () => void;
 };
 
-export default function StoryCard({ item }: StoryCardParams) {
+export default function StoryCard({ item, onPress }: StoryCardParams) {
   const { texts } = useSystemContext();
   return (
-    <CardContainer>
+    <CardContainer onPress={onPress}>
       <StoryImage source={{ uri: item.image }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>

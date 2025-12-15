@@ -40,6 +40,10 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
     navigation.navigate("Search");
   };
 
+  const handleStoryPress = (id: string) => {
+    navigation.navigate("Story", { id });
+  };
+
   return (
     <Container>
       <SearchInput
@@ -68,7 +72,11 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
       <RecommendedText>{texts.SCREENS.HOME.FILTER_BAR.TITLE}</RecommendedText>
       <ListContainer>
         {data.map((item) => (
-          <StoryCard key={item.id} item={item} />
+          <StoryCard
+            key={item.id}
+            item={item}
+            onPress={() => handleStoryPress(item.id)}
+          />
         ))}
       </ListContainer>
     </Container>

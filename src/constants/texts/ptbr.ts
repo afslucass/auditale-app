@@ -37,6 +37,13 @@ export const TEXTS = {
     SEARCH: {
       SCREEN_TITLE: "Busca Avançada",
     },
+    WELCOME: {
+      TITLE: "Auditale",
+      SUBTITLE: "Listen, learn, evolve.",
+      GREETING: "Hello,",
+      CONTINUE_WITH: "Continue with",
+      CONTINUE_WITHOUT_LOGIN: "Continue without sign in",
+    },
   },
   CONSTANTS: {
     DURATION: {

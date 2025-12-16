@@ -2,7 +2,6 @@ import { useNavigation } from "@react-navigation/native";
 
 import Header from "../../components/Header/Header.index";
 import { Screen, SectionsContainer } from "./Review.styles";
-import { useSystemContext } from "../../contexts/system";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox.index";
 import VocabularyCheck from "../../components/VocabularyCheck/VocabularyCheck.index";
 
@@ -16,16 +15,14 @@ export type Caption = {
   learned: Array<{ word: string; translation: string }>;
 };
 
-type Props = { route: { params: Caption } };
+export type ReviewParams = { route: { params: Caption } };
 
 function Review({
   route: {
     params: { translatedDescription, learned },
   },
-}: Props) {
+}: ReviewParams) {
   const navigation = useNavigation();
-  console.log(translatedDescription);
-  const { texts } = useSystemContext();
 
   const handleGoBack = () => {
     navigation.goBack();

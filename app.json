@@ -37,6 +37,18 @@
             "./node_modules/@expo-google-fonts/nunito/700Bold/Nunito_700Bold.ttf"
           ]
         }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#111926",
+          "image": "./assets/logos/auditale.png",
+          "dark": {
+            "backgroundColor": "#111926",
+            "image": "./assets/logos/auditale.png"
+          },
+          "imageWidth": 128
+        }
       ]
     ]
   }

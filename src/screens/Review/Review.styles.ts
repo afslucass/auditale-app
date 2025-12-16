@@ -6,3 +6,8 @@ export const Screen = styled.ScrollView.attrs({
 })`
   background-color: ${COLORS.BACKGROUND};
 `;
+
+export const SectionsContainer = styled.View`
+  padding: 20px;
+  gap: 32px;
+`;

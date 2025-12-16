@@ -18,7 +18,7 @@ export type Caption = {
   time: string;
   type: "CAPTION" | "REVIEW";
   translatedDescription: string;
-  learned: Array<{ word: "something"; translation: "algo" }>;
+  learned: Array<{ word: string; translation: string }>;
 };
 
 type Props = {

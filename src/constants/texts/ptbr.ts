@@ -15,6 +15,8 @@ export const TEXTS = {
     STORY_CAPTIONS: {
       REVIEWING_LABEL: "Reviewing...",
     },
+    DESCRIPTION_BOX: { TITLE: "Descrição" },
+    VOCABULARY_CHECK: { TITLE: "Vocabulário" },
   },
   SCREENS: {
     HOME: {

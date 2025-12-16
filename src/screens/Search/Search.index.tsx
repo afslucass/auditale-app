@@ -6,7 +6,7 @@ import { useSystemContext } from "../../contexts/system";
 
 const STORIES_DATA = [
   {
-    id: 0,
+    id: "0",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:
@@ -15,7 +15,7 @@ const STORIES_DATA = [
     duration: 12,
   },
   {
-    id: 1,
+    id: "1",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:
@@ -24,7 +24,7 @@ const STORIES_DATA = [
     duration: 32,
   },
   {
-    id: 2,
+    id: "2",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:
@@ -33,7 +33,7 @@ const STORIES_DATA = [
     duration: 32,
   },
   {
-    id: 3,
+    id: "3",
     image: "https://picsum.photos/200",
     title: "Story title",
     description:

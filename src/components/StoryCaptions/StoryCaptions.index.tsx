@@ -4,15 +4,17 @@ import {
   CaptionItem,
   CaptionText,
   Scroll,
+  CaptionItemTouchable,
 } from "./StoryCaptions.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors/colors";
 import { LayoutChangeEvent, ScrollView } from "react-native";
+import { useSystemContext } from "../../contexts/system";
 
 export type Caption = {
   id: string;
   text?: string;
-  translate: string;
+  translate?: string;
   time: string;
   type: "CAPTION" | "REVIEW";
   translatedDescription: string;
@@ -21,9 +23,11 @@ export type Caption = {
 
 type Props = {
   captions: Caption[];
+  onPressReview: (data: Caption) => void;
 };
 
-export default function StoryCaptions({ captions }: Props) {
+export default function StoryCaptions({ captions, onPressReview }: Props) {
+  const { texts } = useSystemContext();
   const scrollRef = useRef<ScrollView>(null);
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
   const [activeIndex, setActiveIndex] = useState(0);
@@ -77,15 +81,16 @@ export default function StoryCaptions({ captions }: Props) {
     }
     if (caption.type === "REVIEW") {
       return (
-        <CaptionItem
-          collapsable={false}
+        <CaptionItemTouchable
+          onPress={() => onPressReview(caption)}
           key={caption.id}
-          highlightedAsReview
           onLayout={handleLayout(index)}
         >
-          <CaptionText>Reviewing...</CaptionText>
+          <CaptionText>
+            {texts.COMPONENTS.STORY_CAPTIONS.REVIEWING_LABEL}
+          </CaptionText>
           <Ionicons name="chevron-forward" size={24} color={COLORS.WHITE} />
-        </CaptionItem>
+        </CaptionItemTouchable>
       );
     }
   };

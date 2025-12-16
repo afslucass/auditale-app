@@ -12,6 +12,9 @@ export const TEXTS = {
       SUBTITLE: "Faça o upgrade para histórias ilimitadas",
       BUTTON: "Upgrade",
     },
+    STORY_CAPTIONS: {
+      REVIEWING_LABEL: "Reviewing...",
+    },
   },
   SCREENS: {
     HOME: {

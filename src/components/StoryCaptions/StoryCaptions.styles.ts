@@ -16,19 +16,25 @@ export const Container = styled.View`
 
 export const CaptionItem = styled.View<{
   highlighted?: boolean;
-  highlightedAsReview?: boolean;
 }>`
   padding: 6px 8px;
   border-radius: 12px;
-  margin-bottom: ${({ highlightedAsReview }) => {
-    if (highlightedAsReview) return 32;
-    return 8;
-  }};
-  background-color: ${({ highlighted, highlightedAsReview }) => {
-    if (highlightedAsReview) return COLORS.BLUE;
+  margin-bottom: 8px;
+  background-color: ${({ highlighted }) => {
     if (highlighted) return COLORS.CYAN;
     return COLORS.TRANSPARENT;
   }};
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const CaptionItemTouchable = styled.TouchableOpacity`
+  padding: 6px 8px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  background-color: ${COLORS.BLUE};
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

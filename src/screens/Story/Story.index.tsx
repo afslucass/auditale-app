@@ -2,17 +2,21 @@ import { useNavigation } from "@react-navigation/native";
 
 import Header from "../../components/Header/Header.index";
 import { Screen, SectionsContainer } from "./Story.styles";
-import { useSystemContext } from "../../contexts/system";
-import StoryCaptions from "../../components/StoryCaptions/StoryCaptions.index";
+import StoryCaptions, {
+  Caption,
+} from "../../components/StoryCaptions/StoryCaptions.index";
 import { story } from "./MOCK";
 import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
 
 function Story() {
-  const navigation = useNavigation();
-  const { texts } = useSystemContext();
+  const navigation = useNavigation<any>();
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const handleReviewPress = (params: Caption) => {
+    navigation.navigate("Review", params);
   };
 
   return (
@@ -24,7 +28,10 @@ function Story() {
         image="https://picsum.photos/200"
       />
       <SectionsContainer>
-        <StoryCaptions captions={story} />
+        <StoryCaptions
+          captions={story as Array<Caption>}
+          onPressReview={handleReviewPress}
+        />
       </SectionsContainer>
       <SectionsContainer>
         <AudioPlayerControls

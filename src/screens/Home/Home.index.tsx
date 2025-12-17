@@ -1,10 +1,12 @@
-import { MyText, Screen } from "./Home.styles";
+import { Text, Screen } from "./Home.styles";
 import Header from "../../components/Header/Header.index";
 import RecentlyPlayedSection from "./components/RecentlyPlayedSection/RecentlyPlayedSection.index";
 import PlanBanner from "../../components/PlanBanner/PlanBanner.index";
 import FilterBar from "./components/FilterBar/FilterBar.index";
 import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
+import useGetStories from "../../hooks/useGetStories";
+import { useEffect } from "react";
 
 const RECENTLY_STORIES_DATA = [
   {
@@ -23,34 +25,27 @@ const RECENTLY_STORIES_DATA = [
   },
 ];
 
-const STORIES_DATA = [
-  {
-    id: "0",
-    image: "https://picsum.photos/200",
-    title: "Story title",
-    description:
-      "A thrilling cyberpunk adventure through the digital underground",
-    category: "Cyberpunk",
-    duration: 12,
-  },
-  {
-    id: "1",
-    image: "https://picsum.photos/200",
-    title: "Story title",
-    description:
-      "A thrilling cyberpunk adventure through the digital underground",
-    category: "Cyberpunk",
-    duration: 32,
-  },
-];
-
 function Home() {
+  const [getStories, { data, loading, error }] = useGetStories();
+
+  useEffect(() => {
+    getStories();
+  }, []);
+
+  if (loading) {
+    return <Text>loading</Text>;
+  }
+
+  if (error) {
+    return <Text>error</Text>;
+  }
+
   return (
     <Screen>
       <Header />
-      <RecentlyPlayedSection data={RECENTLY_STORIES_DATA} />
+      <RecentlyPlayedSection data={data} />
       <PlanBanner />
-      <FilterBar data={STORIES_DATA} />
+      <FilterBar data={data} />
       <GenresSection
         data={[
           {

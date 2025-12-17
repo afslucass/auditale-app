@@ -40,8 +40,8 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
     navigation.navigate("Search");
   };
 
-  const handleStoryPress = (id: string) => {
-    navigation.navigate("Story", { id });
+  const handleStoryPress = (id: string, title: string, thumbnail: string) => {
+    navigation.navigate("Story", { id, title, thumbnail });
   };
 
   return (
@@ -75,7 +75,9 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
           <StoryCard
             key={item.id}
             item={item}
-            onPress={() => handleStoryPress(item.id)}
+            onPress={() =>
+              handleStoryPress(item.id, item.title, item.thumbnail)
+            }
           />
         ))}
       </ListContainer>

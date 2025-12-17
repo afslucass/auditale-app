@@ -14,7 +14,7 @@ import { useSystemContext } from "../../contexts/system";
 
 export type StoryCardType = {
   id: string;
-  image: string;
+  thumbnail: string;
   title: string;
   description: string;
   category: string;
@@ -30,7 +30,7 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
   const { texts } = useSystemContext();
   return (
     <CardContainer onPress={onPress}>
-      <StoryImage source={{ uri: item.image }} />
+      <StoryImage source={{ uri: item.thumbnail }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
         <Description>{item.description}</Description>

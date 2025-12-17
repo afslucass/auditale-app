@@ -2,14 +2,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./Home/Home.index";
 import Search from "./Search/Search.index";
-import Story from "./Story/Story.index";
+import Story, { StoryParams } from "./Story/Story.index";
 import Review, { ReviewParams } from "./Review/Review.index";
 import Welcome from "./Welcome/Welcome.index";
 
 export type RootStackParamList = {
   Home: undefined;
   Search: undefined;
-  Story: undefined;
+  Story: StoryParams["route"]["params"];
   Review: ReviewParams["route"]["params"];
   Welcome: undefined;
 };

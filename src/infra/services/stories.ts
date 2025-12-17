@@ -5,7 +5,7 @@ const StoriesService = {
     const { data, error } = await supabase
       .from("Story")
       .select(
-        `id, title, description, gender, duration, free, audio, difficulty, created_at, language`
+        `id, title, description, gender, duration, free, audio, difficulty, created_at, language, thumbnail`
       );
     if (error) {
       throw new Error(error.message);

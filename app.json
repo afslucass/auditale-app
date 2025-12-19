@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "auditale-app",
+    "scheme": "auditale",
     "slug": "auditale-app",
     "version": "1.0.0",
     "orientation": "portrait",

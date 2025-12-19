@@ -5,6 +5,8 @@ import Search from "./Search/Search.index";
 import Story, { StoryParams } from "./Story/Story.index";
 import Review, { ReviewParams } from "./Review/Review.index";
 import Welcome from "./Welcome/Welcome.index";
+import { useAuthContext } from "../contexts/auth";
+import { Text } from "react-native";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -17,6 +19,12 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStack = () => {
+  const { isLoading } = useAuthContext();
+
+  if (isLoading) {
+    <Text>Carregando Auth</Text>;
+  }
+
   return (
     <Stack.Navigator screenOptions={{ header: () => null }}>
       <Stack.Screen name="Home" component={Home} />

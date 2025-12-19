@@ -48,6 +48,12 @@ export const AvatarContainer = styled.View`
   background-color: ${COLORS.BACKGROUND};
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+`;
+
+export const AvatarImage = styled.Image`
+  width: 100%;
+  height: 100%;
 `;
 
 export const AvatarText = styled.Text`

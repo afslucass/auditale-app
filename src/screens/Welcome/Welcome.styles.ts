@@ -47,6 +47,15 @@ export const GoogleButton = styled.TouchableOpacity`
   padding: 0px 16px;
 `;
 
+export const GoogleImage = styled.Image.attrs({
+  source: {
+    uri: "https://developers.google.com/identity/images/g-logo.png",
+  },
+})`
+  width: 24px;
+  height: 24px;
+`;
+
 export const GoogleButtonText = styled.Text`
   color: #000;
   font-weight: 500;

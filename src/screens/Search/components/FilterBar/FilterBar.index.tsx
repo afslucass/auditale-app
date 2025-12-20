@@ -10,12 +10,11 @@ import SearchInput from "../../../../components/SearchInput/SearchInput.index";
 import FiltersRow from "../../../../components/FiltersRow/FiltersRow.index";
 import SelectDropdown from "../../../../components/SelectDropdown/SelectDropdown.index";
 import { useSystemContext } from "../../../../contexts/system";
-import StoryCard, {
-  StoryCardType,
-} from "../../../../components/StoryCard/StoryCard.index";
+import StoryCard from "../../../../components/StoryCard/StoryCard.index";
+import { Story } from "../../../../types/story";
 
 export type FilterBarParams = {
-  data: StoryCardType[];
+  data: Story[];
 };
 
 const FilterBar = ({ data = [] }: FilterBarParams) => {

@@ -1,15 +1,12 @@
 import React, { PropsWithChildren, useContext, useMemo, useState } from "react";
 
 import { TEXTS as ptbr } from "../constants/texts/ptbr";
-
-export enum Languages {
-  PT_BR = "ptbr",
-}
+import { Language } from "../types/global";
 
 export type SystemContextTypes = {
   texts: typeof ptbr;
-  language: Languages;
-  setLanguage: (language: Languages) => void;
+  language: Language;
+  setLanguage: (language: Language) => void;
 };
 
 const SystemContext = React.createContext<SystemContextTypes>(
@@ -17,10 +14,10 @@ const SystemContext = React.createContext<SystemContextTypes>(
 );
 
 export const SystemProvider = ({ children }: PropsWithChildren) => {
-  const [language, setLanguage] = useState<Languages>(Languages.PT_BR);
+  const [language, setLanguage] = useState<Language>(Language.PT_BR);
 
   const texts = useMemo(() => {
-    if (language === Languages.PT_BR) {
+    if (language === Language.PT_BR) {
       return ptbr;
     }
     return ptbr;

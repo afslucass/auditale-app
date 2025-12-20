@@ -7,10 +7,11 @@ import {
   useState,
 } from "react";
 import { supabase } from "../infra/setup/supabase";
+import { Profile } from "../types/profile";
 
 export type AuthData = {
   session?: Session | null;
-  profile?: any | null;
+  profile?: Profile | null;
   isLoading: boolean;
   isLoggedIn: boolean;
 };
@@ -24,7 +25,7 @@ export const AuthContext = createContext<AuthData>({
 
 export function AuthProvider({ children }: PropsWithChildren) {
   const [session, setSession] = useState<Session | undefined | null>();
-  const [profile, setProfile] = useState<any>();
+  const [profile, setProfile] = useState<Profile | undefined | null>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {

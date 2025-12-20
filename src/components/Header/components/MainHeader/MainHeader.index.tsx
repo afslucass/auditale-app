@@ -17,15 +17,15 @@ export default function MainHeader() {
   const { texts } = useSystemContext();
   const { profile } = useAuthContext();
 
-  console.log(profile?.avatar_url);
+  const hasProfileImage = profile?.avatar_url;
 
   return (
     <Background colors={[COLORS.DARK_BLUE, COLORS.BLUE]}>
       <Row>
         <Title>{texts.COMPONENTS.HEADER.MAIN.TITLE}</Title>
         <AvatarContainer>
-          {profile?.avatar_url ? (
-            <AvatarImage source={{ uri: profile?.avatar_url }} />
+          {hasProfileImage ? (
+            <AvatarImage source={{ uri: profile.avatar_url }} />
           ) : (
             <AvatarText>L</AvatarText>
           )}

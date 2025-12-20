@@ -11,18 +11,10 @@ import {
   DurationText,
 } from "./StoryCard.styles";
 import { useSystemContext } from "../../contexts/system";
-
-export type StoryCardType = {
-  id: string;
-  thumbnail: string;
-  title: string;
-  description: string;
-  category: string;
-  duration: number;
-};
+import { Story } from "../../types/story";
 
 export type StoryCardParams = {
-  item: StoryCardType;
+  item: Story;
   onPress?: () => void;
 };
 

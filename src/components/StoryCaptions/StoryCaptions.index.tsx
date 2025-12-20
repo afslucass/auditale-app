@@ -10,16 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors/colors";
 import { LayoutChangeEvent, ScrollView } from "react-native";
 import { useSystemContext } from "../../contexts/system";
-
-export type Caption = {
-  id: string;
-  text?: string;
-  translate?: string;
-  time: string;
-  type: "CAPTION" | "REVIEW";
-  translatedDescription: string;
-  learned: Array<{ word: string; translation: string }>;
-};
+import { Caption } from "../../types/story";
 
 type Props = {
   captions: Caption[];

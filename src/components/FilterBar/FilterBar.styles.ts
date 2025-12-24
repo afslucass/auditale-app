@@ -1,6 +1,4 @@
 import styled from "styled-components/native";
-import { getFont } from "../../../../helpers/getFont";
-import { COLORS } from "../../../../constants/colors/colors";
 
 export const Container = styled.View`
   width: 100%;

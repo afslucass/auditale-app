@@ -14,14 +14,3 @@ export const SelectRow = styled.View`
   margin-top: 12px;
   gap: 10px;
 `;
-
-export const RecommendedText = styled.Text`
-  font-family: ${getFont("Nunito-Bold")};
-  color: ${COLORS.WHITE};
-  font-size: 18px;
-  margin: 24px 0px;
-`;
-
-export const ListContainer = styled.View`
-  gap: 18px;
-`;

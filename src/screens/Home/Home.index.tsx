@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { Text, Screen } from "./Home.styles";
 import Header from "../../components/Header/Header.index";
 import RecentlyPlayedSection from "./components/RecentlyPlayedSection/RecentlyPlayedSection.index";
@@ -6,30 +8,14 @@ import FilterBar from "./components/FilterBar/FilterBar.index";
 import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
 import useGetStories from "../../hooks/useGetStories";
-import { useEffect } from "react";
 
-const RECENTLY_STORIES_DATA = [
-  {
-    id: 0,
-    image: "https://picsum.photos/200",
-    title: "Story title",
-    progress: 25,
-    category: "Cyberpunk",
-  },
-  {
-    id: 1,
-    image: "https://picsum.photos/200",
-    title: "Story title",
-    progress: 50,
-    category: "Cyberpunk",
-  },
-];
+const STORY_LIMIT = 3;
 
 function Home() {
   const [getStories, { data, loading, error }] = useGetStories();
 
   useEffect(() => {
-    getStories();
+    getStories(STORY_LIMIT);
   }, []);
 
   if (loading) {

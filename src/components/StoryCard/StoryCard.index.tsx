@@ -11,10 +11,10 @@ import {
   DurationText,
 } from "./StoryCard.styles";
 import { useSystemContext } from "../../contexts/system";
-import { Story } from "../../types/story";
+import { StoryWithoutContent } from "../../types/story";
 
 export type StoryCardParams = {
-  item: Story;
+  item: StoryWithoutContent;
   onPress?: () => void;
 };
 
@@ -28,7 +28,7 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
         <Description>{item.description}</Description>
         <Row>
           <Tag>
-            <TagText>{item.category}</TagText>
+            <TagText>{item.gender}</TagText>
           </Tag>
           <DurationText>
             {item.duration} {texts.CONSTANTS.TIME.LABEL.MIN}

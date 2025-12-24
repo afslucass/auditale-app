@@ -1,66 +1,57 @@
 import React, { useState } from "react";
 
-import {
-  Container,
-  ListContainer,
-  RecommendedText,
-  SelectRow,
-} from "./FilterBar.styles";
+import { Container, SelectRow } from "./FilterBar.styles";
 import SearchInput from "../../../../components/SearchInput/SearchInput.index";
 import FiltersRow from "../../../../components/FiltersRow/FiltersRow.index";
 import SelectDropdown from "../../../../components/SelectDropdown/SelectDropdown.index";
 import { useSystemContext } from "../../../../contexts/system";
-import StoryCard from "../../../../components/StoryCard/StoryCard.index";
-import { Story } from "../../../../types/story";
 
 export type FilterBarParams = {
-  data: Story[];
+  onEndEditing: () => void;
+  onChangeText: (value: string) => void;
+  genres: string[];
+  selectedGenre: string;
+  selectedDifficulty: string;
+  onChangeGenre: (value: string) => void;
+  onChangeDifficulty: (value: string) => void;
 };
 
-const FilterBar = ({ data = [] }: FilterBarParams) => {
+const FilterBar = ({
+  onEndEditing,
+  onChangeText,
+  genres,
+  selectedGenre,
+  selectedDifficulty,
+  onChangeGenre,
+  onChangeDifficulty,
+}: FilterBarParams) => {
   const { texts } = useSystemContext();
-
-  const [selectedGenre, setSelectedGenre] = useState(
-    texts.CONSTANTS.GENRES.ALL
-  );
-  const [difficulty, setDifficulty] = useState("");
-  const [duration, setDuration] = useState("");
-
-  const genres = [
-    texts.CONSTANTS.GENRES.ALL,
-    texts.CONSTANTS.GENRES.SCI_FI,
-    texts.CONSTANTS.GENRES.ROMANCE,
-    texts.CONSTANTS.GENRES.MYSTERIUM,
-  ];
 
   return (
     <Container>
-      <SearchInput placeholder={texts.SCREENS.HOME.FILTER_BAR.INPUT} />
+      <SearchInput
+        autoFocus
+        onChangeText={onChangeText}
+        onEndEditing={onEndEditing}
+        placeholder={texts.SCREENS.HOME.FILTER_BAR.INPUT}
+      />
       <FiltersRow
         list={genres}
-        onChangeSelected={setSelectedGenre}
+        onChangeSelected={onChangeGenre}
         selected={selectedGenre}
       />
       <SelectRow>
         <SelectDropdown
-          label={texts.SCREENS.HOME.FILTER_BAR.DURATION}
-          value={duration}
-          onChange={setDuration}
-          options={["Short", "Medium", "Long"]}
-        />
-        <SelectDropdown
           label={texts.SCREENS.HOME.FILTER_BAR.DIFFICULTY}
-          value={difficulty}
-          onChange={setDifficulty}
-          options={["Beginner", "Intermediate", "Advanced"]}
+          value={selectedDifficulty}
+          onChange={onChangeDifficulty}
+          options={[
+            texts.CONSTANTS.DIFFICULTY.BEGINNER,
+            texts.CONSTANTS.DIFFICULTY.INTERMEDIATE,
+            texts.CONSTANTS.DIFFICULTY.ADVANCED,
+          ]}
         />
       </SelectRow>
-      <RecommendedText>{texts.SCREENS.HOME.FILTER_BAR.TITLE}</RecommendedText>
-      <ListContainer>
-        {data.map((item) => (
-          <StoryCard key={item.id} item={item} />
-        ))}
-      </ListContainer>
     </Container>
   );
 };

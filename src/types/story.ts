@@ -7,7 +7,7 @@ export enum Gender {
 }
 
 export enum Difficulty {
-  BEGGINER = "BEGGINER",
+  BEGINNER = "BEGINNER",
   INTERMEDIATE = "INTERMEDIATE",
   ADVANCED = "ADVANCED",
 }
@@ -31,6 +31,8 @@ export type Story = {
   audio: string;
   content: Caption[];
 };
+
+export type StoryWithoutContent = Omit<Story, "content">;
 
 export type TranslatedText = {
   language: Language;

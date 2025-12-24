@@ -10,13 +10,12 @@ import SearchInput from "../../../../components/SearchInput/SearchInput.index";
 import FiltersRow from "../../../../components/FiltersRow/FiltersRow.index";
 import SelectDropdown from "../../../../components/SelectDropdown/SelectDropdown.index";
 import { useSystemContext } from "../../../../contexts/system";
-import StoryCard, {
-  StoryCardType,
-} from "../../../../components/StoryCard/StoryCard.index";
+import StoryCard from "../../../../components/StoryCard/StoryCard.index";
 import { useNavigation } from "@react-navigation/native";
+import { StoryWithoutContent } from "../../../../types/story";
 
 export type FilterBarParams = {
-  data: StoryCardType[];
+  data: StoryWithoutContent[];
 };
 
 const FilterBar = ({ data = [] }: FilterBarParams) => {
@@ -56,12 +55,6 @@ const FilterBar = ({ data = [] }: FilterBarParams) => {
         selected={selectedGenre}
       />
       <SelectRow>
-        <SelectDropdown
-          label={texts.SCREENS.HOME.FILTER_BAR.DURATION}
-          value={duration}
-          onChange={setDuration}
-          options={["Short", "Medium", "Long"]}
-        />
         <SelectDropdown
           label={texts.SCREENS.HOME.FILTER_BAR.DIFFICULTY}
           value={difficulty}

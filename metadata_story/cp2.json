@@ -1,0 +1,41 @@
+{
+  "id": "7b9e3f1a-4c6d-4f2b-9a1e-8d2c5f7a3b21",
+  "type": "REVIEW",
+  "time": "00:05:00",
+  "newWords": [
+    {
+      "word": "distant",
+      "translate": [
+        {
+          "text": "distante",
+          "language": "PT_BR"
+        }
+      ]
+    },
+    {
+      "word": "confused",
+      "translate": [
+        {
+          "text": "confusa",
+          "language": "PT_BR"
+        }
+      ]
+    },
+    {
+      "word": "worried",
+      "translate": [
+        {
+          "text": "preocupado",
+          "language": "PT_BR"
+        }
+      ]
+    }
+  ],
+  "translate": [
+    {
+      "text": "Emma percebe que Lucas está diferente e distante. Ela se sente confusa ao vê-lo com outra mulher e começa a duvidar de seus sentimentos. Conversas no café revelam que Lucas tem um passado difícil, aumentando a sensação de mistério e insegurança.",
+      "language": "PT_BR"
+    }
+  ],
+  "description": "Emma returns to the bookstore and notices that Lucas is cold and distant. She feels confused when she sees him with another woman and later learns that he has a difficult past. The day ends with Emma feeling unsure and sensing that the town hides secrets."
+}

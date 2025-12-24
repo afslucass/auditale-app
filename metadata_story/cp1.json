@@ -1,0 +1,41 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "type": "REVIEW",
+  "time": "00:05:00",
+  "newWords": [
+    {
+      "word": "peaceful",
+      "translate": [
+        {
+          "text": "tranquilo",
+          "language": "PT_BR"
+        }
+      ]
+    },
+    {
+      "word": "bookstore",
+      "translate": [
+        {
+          "text": "livraria",
+          "language": "PT_BR"
+        }
+      ]
+    },
+    {
+      "word": "gentle",
+      "translate": [
+        {
+          "text": "gentil",
+          "language": "PT_BR"
+        }
+      ]
+    }
+  ],
+  "translate": [
+    {
+      "text": "Emma se muda para uma pequena cidade tranquila perto do mar em busca de um novo começo. Ela conhece Lucas em uma livraria e sente uma conexão leve e especial. A cidade, as pessoas e o encontro fazem Emma se sentir segura e cheia de esperança.",
+      "language": "PT_BR"
+    }
+  ],
+  "description": "Emma moves to a small and peaceful town near the sea to start a new life. She visits a bookstore, where she meets Lucas, a kind young man. Their simple and warm interaction makes Emma feel hopeful and comfortable in her new beginning."
+}

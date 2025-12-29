@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StoriesService from "../infra/services/stories";
+import { Story } from "../types/story";
 
 type useGetStoriesReturnType = [
   (id: string) => Promise<void>,
@@ -7,7 +8,7 @@ type useGetStoriesReturnType = [
 ];
 
 const useGetStoryDetails = (): useGetStoriesReturnType => {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<Story>();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 

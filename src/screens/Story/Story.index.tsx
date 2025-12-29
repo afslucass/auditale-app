@@ -57,11 +57,7 @@ function Story({
         />
       </SectionsContainer>
       <SectionsContainer>
-        <AudioPlayerControls
-          progress={0.6}
-          currentTime="12:00"
-          totalTime="24:00"
-        />
+        <AudioPlayerControls story={data} />
       </SectionsContainer>
     </Screen>
   );

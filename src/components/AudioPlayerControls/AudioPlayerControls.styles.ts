@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { COLORS } from "../../constants/colors/colors";
 import { getFont } from "../../helpers/getFont";
+import Slider from "@react-native-community/slider";
 
 export const Container = styled.View`
   background-color: ${COLORS.DARK_BLUE_2};
@@ -75,21 +76,15 @@ export const TimeText = styled.Text`
   color: ${COLORS.WHITESMOKE};
 `;
 
-export const ProgressContainer = styled.View`
+export const SliderBar = styled(Slider).attrs({
+  minimumValue: 0,
+  maximumValue: 1,
+  thumbTintColor: COLORS.CYAN,
+  minimumTrackTintColor: COLORS.CYAN,
+  maximumTrackTintColor: COLORS.DARK_BLUE_3,
+})`
   width: 100%;
-`;
-
-export const ProgressBackground = styled.View`
-  height: 8px;
-  background-color: ${COLORS.DARK_BLUE_3};
-  border-radius: 8px;
-  overflow: hidden;
-`;
-
-export const ProgressFill = styled.View<{ progress: number }>`
-  height: 100%;
-  width: ${({ progress }) => `${progress * 100}%`};
-  background-color: ${COLORS.CYAN};
+  height: 40px;
 `;
 
 export const DropdownOverlay = styled.TouchableOpacity`

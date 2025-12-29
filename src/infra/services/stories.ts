@@ -50,15 +50,22 @@ const getPaginatedAndFilteredStoriesOrderingByCreation = async (
 };
 
 const getStoryDetails = async (id: string) => {
-  const { data, error } = await supabase
+  const { data: details, error: detailsError } = await supabase
     .from("Story")
     .select()
     .eq("id", id)
     .single();
-  if (error) {
-    throw new Error(error.message);
+
+  if (detailsError) {
+    throw new Error(detailsError.message);
   }
-  return data;
+
+  const { data: audio } = await supabase.storage
+    .from("story audios")
+    .getPublicUrl(`${id}.mp3`);
+
+  const output = { ...details, audio: audio.publicUrl };
+  return output;
 };
 
 const StoriesService = {

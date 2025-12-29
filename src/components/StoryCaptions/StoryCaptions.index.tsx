@@ -19,37 +19,7 @@ type Props = {
 
 export default function StoryCaptions({ captions, onPressReview }: Props) {
   const { texts } = useSystemContext();
-  const scrollRef = useRef<ScrollView>(null);
-  const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (captions.length === 0) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev < captions.length - 1 ? prev + 1 : prev));
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [captions.length]);
-
-  useEffect(() => {
-    const layout = layoutsRef.current[activeIndex];
-
-    if (layout && scrollRef.current) {
-      const centerOffset = 175; // metade de 350px
-
-      scrollRef.current.scrollTo({
-        y: Math.max(layout.y - centerOffset + layout.height / 2, 0),
-        animated: true,
-      });
-    }
-  }, [activeIndex]);
-
-  const handleLayout = (index: number) => (event: LayoutChangeEvent) => {
-    const { y, height } = event.nativeEvent.layout;
-    layoutsRef.current[index] = { y, height };
-  };
 
   const renderCaption = (caption: Caption, index: number) => {
     const isHighlighted = index === activeIndex;
@@ -59,7 +29,6 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
           collapsable={false}
           key={caption.id}
           highlighted={isHighlighted}
-          onLayout={handleLayout(index)}
         >
           <CaptionText>{caption.text}</CaptionText>
           <Ionicons
@@ -75,7 +44,6 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
         <CaptionItemTouchable
           onPress={() => onPressReview(caption)}
           key={caption.id}
-          onLayout={handleLayout(index)}
         >
           <CaptionText>
             {texts.COMPONENTS.STORY_CAPTIONS.REVIEWING_LABEL}
@@ -88,11 +56,7 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
 
   return (
     <Container>
-      <Scroll
-        ref={scrollRef}
-        nestedScrollEnabled
-        keyboardShouldPersistTaps="handled"
-      >
+      <Scroll nestedScrollEnabled keyboardShouldPersistTaps="handled">
         {captions.map((caption, index) => renderCaption(caption, index))}
       </Scroll>
     </Container>

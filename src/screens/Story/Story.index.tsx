@@ -2,13 +2,12 @@ import { useNavigation } from "@react-navigation/native";
 
 import Header from "../../components/Header/Header.index";
 import { Screen, SectionsContainer } from "./Story.styles";
-import StoryCaptions, {
-  Caption,
-} from "../../components/StoryCaptions/StoryCaptions.index";
+import StoryCaptions from "../../components/StoryCaptions/StoryCaptions.index";
 import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
 import useGetStoryDetails from "../../hooks/useGetStoryDetails";
 import { useEffect } from "react";
 import { Text } from "react-native";
+import { Caption } from "../../types/story";
 
 export type StoryParams = {
   route: { params: { id: string; title: string; thumbnail: string } };

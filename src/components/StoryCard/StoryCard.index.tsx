@@ -15,13 +15,13 @@ import { StoryWithoutContent } from "../../types/story";
 
 export type StoryCardParams = {
   item: StoryWithoutContent;
-  onPress?: () => void;
+  onPress: (id: string, title: string, thumbnail: string) => void;
 };
 
 export default function StoryCard({ item, onPress }: StoryCardParams) {
   const { texts } = useSystemContext();
   return (
-    <CardContainer onPress={onPress}>
+    <CardContainer onPress={() => onPress(item.id, item.title, item.thumbnail)}>
       <StoryImage source={{ uri: item.thumbnail }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>

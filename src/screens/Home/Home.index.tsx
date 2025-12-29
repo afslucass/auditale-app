@@ -38,6 +38,14 @@ function Home() {
     navigation.navigate("Search");
   };
 
+  const handlePressStory = (id: string, title: string, thumbnail: string) => {
+    navigation.navigate("Story", {
+      id,
+      title,
+      thumbnail,
+    });
+  };
+
   useEffect(() => {
     getStories(STORY_LIMIT, null, null, null, null);
   }, []);
@@ -60,7 +68,7 @@ function Home() {
       />
       <ListContainer>
         {(data ?? []).map((item: StoryWithoutContent) => (
-          <StoryCard key={item.id} item={item} />
+          <StoryCard onPress={handlePressStory} key={item.id} item={item} />
         ))}
       </ListContainer>
       <GenresSection

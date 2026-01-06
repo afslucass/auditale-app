@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Container,
   CaptionItem,
@@ -11,8 +11,9 @@ import { COLORS } from "../../constants/colors/colors";
 import { LayoutChangeEvent, ScrollView } from "react-native";
 import { useSystemContext } from "../../contexts/system";
 import { Caption, CaptionType } from "../../types/story";
-import { useProgress } from "react-native-track-player";
+import TrackPlayer, { Event, useProgress } from "react-native-track-player";
 import { parseDurationToSeconds } from "../../helpers/time";
+import useCaptionSync from "./hooks/useCaptionSync";
 
 type Props = {
   captions?: Caption[] | null;
@@ -24,44 +25,8 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
   const scrollRef = useRef<ScrollView>(null);
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { activeIndex } = useCaptionSync({ captions });
 
-  const progress = useProgress(200);
-
-  const getActiveCaptionIndex = (
-    captions: Caption[],
-    position: number
-  ): number => {
-    let activeIndex = 0;
-
-    for (let i = 0; i < captions.length; i++) {
-      const captionTime = parseDurationToSeconds(captions[i].time);
-
-      if (captionTime <= position) {
-        activeIndex = i;
-      } else {
-        break;
-      }
-    }
-
-    if (captions[activeIndex]?.type === CaptionType.REVIEW) {
-      return activeIndex - 1;
-    }
-
-    return activeIndex;
-  };
-
-  useEffect(() => {
-    if (captions) {
-      const index = getActiveCaptionIndex(captions, progress.position);
-
-      if (index !== activeIndex) {
-        setActiveIndex(index);
-      }
-    }
-  }, [progress, captions]);
-
-  // 🎯 Centraliza caption ativa
   useEffect(() => {
     const layout = layoutsRef.current[activeIndex];
 

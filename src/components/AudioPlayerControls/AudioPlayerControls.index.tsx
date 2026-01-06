@@ -35,7 +35,7 @@ export default function AudioPlayerControls({ story }: Props) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [openSpeedMenu, setOpenSpeedMenu] = useState(false);
 
-  const progress = useProgress(200);
+  const progress = useProgress(250);
 
   const handleSliderChange = (value: number) => {
     const time = (value * 100 * progress.duration) / 100;
@@ -63,6 +63,9 @@ export default function AudioPlayerControls({ story }: Props) {
   useEffect(() => {
     const configureTrack = async () => {
       await TrackPlayer.setupPlayer();
+      await TrackPlayer.updateOptions({
+        progressUpdateEventInterval: 0.25,
+      });
       const track = {
         url: story!.audio,
         title: story!.title,

@@ -17,21 +17,15 @@ export function formatDuration(seconds: number): string {
 export function parseDurationToSeconds(duration: string): number {
   const parts = duration.split(":").map(Number);
 
-  if (parts.some(isNaN)) {
-    throw new Error("Formato de duração inválido");
+  if (parts.length !== 3 || parts.some(isNaN)) {
+    throw new Error("Formato de duração inválido. Use mm:ss:ms");
   }
 
-  // mm:ss
-  if (parts.length === 2) {
-    const [minutes, seconds] = parts;
-    return minutes * 60 + seconds;
+  const [minutes, seconds, milliseconds] = parts;
+
+  if (seconds >= 60 || milliseconds >= 1000) {
+    throw new Error("Valores fora do intervalo válido");
   }
 
-  // h:mm:ss
-  if (parts.length === 3) {
-    const [hours, minutes, seconds] = parts;
-    return hours * 3600 + minutes * 60 + seconds;
-  }
-
-  throw new Error("Formato de duração inválido");
+  return minutes * 60 + seconds + milliseconds / 1000;
 }

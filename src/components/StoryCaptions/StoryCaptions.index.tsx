@@ -10,7 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors/colors";
 import { LayoutChangeEvent, ScrollView } from "react-native";
 import { useSystemContext } from "../../contexts/system";
-import { Caption } from "../../types/story";
+import { Caption, CaptionType } from "../../types/story";
 import { useProgress } from "react-native-track-player";
 import { parseDurationToSeconds } from "../../helpers/time";
 
@@ -42,6 +42,10 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
       } else {
         break;
       }
+    }
+
+    if (captions[activeIndex]?.type === CaptionType.REVIEW) {
+      return activeIndex - 1;
     }
 
     return activeIndex;

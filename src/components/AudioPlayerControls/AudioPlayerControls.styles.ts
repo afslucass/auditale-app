@@ -40,7 +40,7 @@ export const TimeRow = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-top: 14px;
 `;
 
 export const SpeedRow = styled.View`

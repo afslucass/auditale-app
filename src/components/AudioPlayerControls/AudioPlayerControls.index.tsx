@@ -125,6 +125,12 @@ export default function AudioPlayerControls({ story }: Props) {
         </ControlButton>
       </ControlsRow>
 
+      <SliderBar
+        value={sliderValue}
+        onValueChange={handleSliderChange}
+        tapToSeek
+      />
+
       <TimeRow>
         <SpeedRow>
           <SpeedLabel>Speed:</SpeedLabel>
@@ -137,12 +143,6 @@ export default function AudioPlayerControls({ story }: Props) {
           {formatDuration(progress.duration)}
         </TimeText>
       </TimeRow>
-
-      <SliderBar
-        value={sliderValue}
-        onValueChange={handleSliderChange}
-        tapToSeek
-      />
 
       <Modal transparent visible={openSpeedMenu} animationType="fade">
         <DropdownOverlay onPress={() => setOpenSpeedMenu(false)}>

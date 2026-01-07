@@ -1,6 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Modal } from "react-native";
-import TrackPlayer, { State, useProgress } from "react-native-track-player";
+import { ActivityIndicator, Modal } from "react-native";
+import TrackPlayer, {
+  State,
+  useIsPlaying,
+  useProgress,
+} from "react-native-track-player";
 
 import {
   Container,
@@ -32,21 +36,21 @@ const SPEED_OPTIONS = [0.5, 1, 1.25, 1.5, 2];
 
 export default function AudioPlayerControls({ story }: Props) {
   const [speed, setSpeed] = useState(1);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [openSpeedMenu, setOpenSpeedMenu] = useState(false);
 
   const progress = useProgress(250);
+  const { bufferingDuringPlay, playing } = useIsPlaying();
 
   async function safeSeekTo(time: number) {
     // 1️⃣ Garante decoder ativo
-    if (!isPlaying) {
+    if (!playing) {
       await TrackPlayer.play();
     }
 
     // 2️⃣ Seek seguro
     await TrackPlayer.seekTo(time);
 
-    if (!isPlaying) {
+    if (!playing) {
       await TrackPlayer.pause();
     }
   }
@@ -65,14 +69,14 @@ export default function AudioPlayerControls({ story }: Props) {
   };
 
   const handlePlayPauseButtonPress = async () => {
+    if (bufferingDuringPlay) return;
+
     const { state } = await TrackPlayer.getPlaybackState();
     if (state !== State.Playing) {
       await TrackPlayer.play();
-      setIsPlaying(true);
       return;
     }
     await TrackPlayer.pause();
-    setIsPlaying(false);
   };
 
   useEffect(() => {
@@ -106,11 +110,15 @@ export default function AudioPlayerControls({ story }: Props) {
           <Ionicons name="play-back" size={24} color={COLORS.WHITE} />
         </ControlButton>
         <PlayButton onPress={handlePlayPauseButtonPress}>
-          <Ionicons
-            name={isPlaying ? "pause" : "play"}
-            size={24}
-            color={COLORS.WHITE}
-          />
+          {bufferingDuringPlay ? (
+            <ActivityIndicator color={COLORS.WHITE} />
+          ) : (
+            <Ionicons
+              name={playing ? "pause" : "play"}
+              size={24}
+              color={COLORS.WHITE}
+            />
+          )}
         </PlayButton>
         <ControlButton onPress={handleForwardButtonPress}>
           <Ionicons name="play-forward" size={24} color={COLORS.WHITE} />

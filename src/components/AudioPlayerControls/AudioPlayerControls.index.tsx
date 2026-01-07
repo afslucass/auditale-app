@@ -37,46 +37,58 @@ export default function AudioPlayerControls({ story }: Props) {
 
   const progress = useProgress(250);
 
-  const handleSliderChange = (value: number) => {
+  async function safeSeekTo(time: number) {
+    // 1️⃣ Garante decoder ativo
+    if (!isPlaying) {
+      await TrackPlayer.play();
+    }
+
+    // 2️⃣ Seek seguro
+    await TrackPlayer.seekTo(time);
+
+    if (!isPlaying) {
+      await TrackPlayer.pause();
+    }
+  }
+
+  const handleSliderChange = async (value: number) => {
     const time = (value * 100 * progress.duration) / 100;
-    TrackPlayer.seekTo(time);
+    await safeSeekTo(time);
   };
 
-  const handleBackButtonPress = () => {
-    TrackPlayer.seekTo(progress.position - 10);
+  const handleBackButtonPress = async () => {
+    await safeSeekTo(progress.position - 10);
   };
 
-  const handleForwardButtonPress = () => {
-    TrackPlayer.seekTo(progress.position + 10);
+  const handleForwardButtonPress = async () => {
+    await safeSeekTo(progress.position + 10);
   };
 
   const handlePlayPauseButtonPress = async () => {
-    setIsPlaying((prev) => !prev);
     const { state } = await TrackPlayer.getPlaybackState();
-    if (state === State.Paused) {
+    if (state !== State.Playing) {
       await TrackPlayer.play();
+      setIsPlaying(true);
       return;
     }
     await TrackPlayer.pause();
+    setIsPlaying(false);
   };
 
   useEffect(() => {
-    const configureTrack = async () => {
-      await TrackPlayer.setupPlayer();
-      await TrackPlayer.updateOptions({
-        progressUpdateEventInterval: 0.25,
-      });
-      const track = {
-        url: story!.audio,
-        title: story!.title,
-        artist: "Auditale",
-        genre: story!.description,
-        artwork: "https://picsum.photos/200",
-      };
-      await TrackPlayer.add([track]);
-      TrackPlayer.play();
-    };
     if (story) {
+      const configureTrack = async () => {
+        const track = {
+          url: story!.audio,
+          title: story!.title,
+          artist: "Auditale",
+          genre: story!.description,
+          artwork: "https://picsum.photos/200",
+          duration: 530,
+        };
+        await TrackPlayer.add([track]);
+        TrackPlayer.play();
+      };
       configureTrack();
     }
   }, [story]);
@@ -95,7 +107,7 @@ export default function AudioPlayerControls({ story }: Props) {
         </ControlButton>
         <PlayButton onPress={handlePlayPauseButtonPress}>
           <Ionicons
-            name={isPlaying ? "play" : "pause"}
+            name={isPlaying ? "pause" : "play"}
             size={24}
             color={COLORS.WHITE}
           />

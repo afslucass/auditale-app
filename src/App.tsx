@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-import TrackPlayer, { Capability } from "react-native-track-player";
+import TrackPlayer, {
+  AppKilledPlaybackBehavior,
+  Capability,
+} from "react-native-track-player";
 import { NavigationContainer } from "@react-navigation/native";
 
 import RootStack from "./screens/RootStack.index";
@@ -13,7 +16,18 @@ export default function App() {
       await TrackPlayer.setupPlayer();
       await TrackPlayer.updateOptions({
         capabilities: [Capability.Play, Capability.Pause, Capability.SeekTo],
-        android: { audioOffload: true },
+        notificationCapabilities: [
+          Capability.Play,
+          Capability.Pause,
+          Capability.SeekTo,
+        ],
+        backwardJumpInterval: 10,
+        forwardJumpInterval: 10,
+        android: {
+          audioOffload: true,
+          appKilledPlaybackBehavior:
+            AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,
+        },
         progressUpdateEventInterval: 0.25,
       });
     };

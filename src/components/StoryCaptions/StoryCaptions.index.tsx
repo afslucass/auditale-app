@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   CaptionItem,
@@ -8,11 +8,9 @@ import {
 } from "./StoryCaptions.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors/colors";
-import { LayoutChangeEvent, ScrollView } from "react-native";
+import { LayoutChangeEvent, ScrollView, TouchableOpacity } from "react-native";
 import { useSystemContext } from "../../contexts/system";
 import { Caption, CaptionType } from "../../types/story";
-import TrackPlayer, { Event, useProgress } from "react-native-track-player";
-import { parseDurationToSeconds } from "../../helpers/time";
 import useCaptionSync from "./hooks/useCaptionSync";
 
 type Props = {
@@ -26,6 +24,8 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
 
   const { activeIndex } = useCaptionSync({ captions });
+
+  const [translatedCaptionId, setTranslatedCaptionId] = useState<string>();
 
   useEffect(() => {
     const layout = layoutsRef.current[activeIndex];
@@ -47,7 +47,16 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
 
   const renderCaption = (caption: Caption, index: number) => {
     const isHighlighted = index === activeIndex;
+
+    const handleTranslateCaption = (id: string) =>
+      setTranslatedCaptionId((prev) => (prev === id ? undefined : id));
+
     if (caption.type === "CAPTION") {
+      const text =
+        caption.id === translatedCaptionId
+          ? caption.translate?.[0].text
+          : caption.text;
+
       return (
         <CaptionItem
           onLayout={handleLayout(index)}
@@ -55,12 +64,14 @@ export default function StoryCaptions({ captions, onPressReview }: Props) {
           key={caption.id}
           highlighted={isHighlighted}
         >
-          <CaptionText>{caption.text}</CaptionText>
-          <Ionicons
-            name="swap-horizontal-outline"
-            size={24}
-            color={COLORS.WHITE}
-          />
+          <CaptionText>{text}</CaptionText>
+          <TouchableOpacity onPress={() => handleTranslateCaption(caption.id)}>
+            <Ionicons
+              name="swap-horizontal-outline"
+              size={24}
+              color={COLORS.WHITE}
+            />
+          </TouchableOpacity>
         </CaptionItem>
       );
     }

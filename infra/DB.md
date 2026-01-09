@@ -17,14 +17,14 @@ CAPTION type
 id: uuid,
 text: string
 translate: [{language: LANGUAGE, text: string}]
-time: 'HH:MM:SS'
+time: 'MM:SS:ML'
 type: CAPTION_TYPE
 
 REVIEW type
 
 id: uuid
 type: CAPTION_TYPE,
-time: 'HH:MM:SS'
+time: 'MM:SS:ML'
 description: string
 translate: [{language: LANGUAGE, text: string}]
 newWords: [{ word: string, translate: [{language: LANGUAGE, text: string}] }],

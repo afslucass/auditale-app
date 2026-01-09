@@ -40,7 +40,7 @@ export type TranslatedText = {
 };
 
 export type NewWords = {
-  translate: TranslatedText;
+  translate: TranslatedText[];
   word: string;
 };
 

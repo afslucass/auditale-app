@@ -9,14 +9,10 @@ import {
 } from "./VocabularyCheck.styles";
 import { COLORS } from "../../constants/colors/colors";
 import { useSystemContext } from "../../contexts/system";
-
-type VocabularyItem = {
-  word: string;
-  translation: string;
-};
+import { NewWords } from "../../types/story";
 
 type Props = {
-  items: VocabularyItem[];
+  items: NewWords[];
 };
 
 export default function VocabularyCheck({ items }: Props) {
@@ -26,10 +22,10 @@ export default function VocabularyCheck({ items }: Props) {
     <Container colors={[COLORS.BLUE, COLORS.DARK_BLUE]}>
       <Title>{texts.COMPONENTS.VOCABULARY_CHECK.TITLE}</Title>
       <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled>
-        {items.map((item) => (
+        {items?.map((item) => (
           <Card key={item.word}>
             <Word>{item.word}</Word>
-            <Meaning>{item.translation}</Meaning>
+            <Meaning>{item.translate[0].text}</Meaning>
           </Card>
         ))}
       </ScrollView>

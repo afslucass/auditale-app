@@ -4,22 +4,13 @@ import Header from "../../components/Header/Header.index";
 import { Screen, SectionsContainer } from "./Review.styles";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox.index";
 import VocabularyCheck from "../../components/VocabularyCheck/VocabularyCheck.index";
-
-export type Caption = {
-  id: string;
-  text?: string;
-  translate?: string;
-  time: string;
-  type: "CAPTION" | "REVIEW";
-  translatedDescription: string;
-  learned: Array<{ word: string; translation: string }>;
-};
+import { Caption } from "../../types/story";
 
 export type ReviewParams = { route: { params: Caption } };
 
 function Review({
   route: {
-    params: { translatedDescription, learned },
+    params: { translate, newWords },
   },
 }: ReviewParams) {
   const navigation = useNavigation();
@@ -27,6 +18,10 @@ function Review({
   const handleGoBack = () => {
     navigation.goBack();
   };
+
+  if (!translate || !newWords) {
+    return null;
+  }
 
   return (
     <Screen>
@@ -37,8 +32,8 @@ function Review({
         image="https://picsum.photos/200"
       />
       <SectionsContainer>
-        <DescriptionBox text={translatedDescription} />
-        <VocabularyCheck items={learned} />
+        <DescriptionBox text={translate[0].text} />
+        <VocabularyCheck items={newWords} />
       </SectionsContainer>
     </Screen>
   );

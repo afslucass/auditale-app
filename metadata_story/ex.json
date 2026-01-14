@@ -1,10 +1,10 @@
 [
   {
     "id": "1",
-    "text": "Chapter 1: A New Morning",
+    "text": "Chapter 1: A New Morning.",
     "translate": [
       {
-        "text": "Capítulo 1: Uma Nova Manhã",
+        "text": "Capítulo 1: Uma Nova Manhã.",
         "language": "PT_BR"
       }
     ],
@@ -20,7 +20,7 @@
         "language": "PT_BR"
       }
     ],
-    "time": "00:03:000",
+    "time": "00:04:000",
     "type": "CAPTION"
   },
   {
@@ -32,7 +32,7 @@
         "language": "PT_BR"
       }
     ],
-    "time": "00:05:000",
+    "time": "00:06:000",
     "type": "CAPTION"
   },
   {
@@ -40,11 +40,11 @@
     "text": "She stayed in bed for a moment, listening to the quiet sounds of the city.",
     "translate": [
       {
-        "text": "Ela ficou na cama por um momento, ouvindo os sons silenciosos da cidade.",
+        "text": "Ela ficou na cama por um momento, ouvindo os sons tranquilos da cidade.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:09:000",
+    "time": "00:11:000",
     "type": "CAPTION"
   },
   {
@@ -52,11 +52,11 @@
     "text": "Cars were moving slowly and birds were singing on the trees outside.",
     "translate": [
       {
-        "text": "Os carros se moviam lentamente e os pássaros cantavam nas árvores lá fora.",
+        "text": "Carros se moviam lentamente e pássaros cantavam nas árvores lá fora.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:14:000",
+    "time": "00:15:000",
     "type": "CAPTION"
   },
   {
@@ -64,11 +64,11 @@
     "text": "Today was different. Emma was starting a new chapter in her life.",
     "translate": [
       {
-        "text": "Hoje foi diferente. Emma estava começando um novo capítulo em sua vida.",
+        "text": "Hoje era diferente. Emma estava começando um novo capítulo em sua vida.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:19:000",
+    "time": "00:20:000",
     "type": "CAPTION"
   },
   {
@@ -80,83 +80,71 @@
         "language": "PT_BR"
       }
     ],
-    "time": "00:24:000",
+    "time": "00:25:000",
     "type": "CAPTION"
   },
   {
     "id": "8",
-    "text": "She smiled a little, trying to feel calm.",
+    "text": "She smiled a little, trying to feel calm. 'It's just a normal day,' she said to herself.",
     "translate": [
       {
-        "text": "Ela sorriu um pouco, tentando se sentir calma.",
+        "text": "Ela sorriu um pouco, tentando se sentir calma. 'É apenas um dia normal', disse para si mesma.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:28:000",
+    "time": "00:29:000",
     "type": "CAPTION"
   },
   {
     "id": "9",
-    "text": "'It's just a normal day,' she said to herself,",
+    "text": "But in her heart, she knew it was not.",
     "translate": [
       {
-        "text": "'É apenas um dia normal', disse ela para si mesma,",
+        "text": "Mas em seu coração, ela sabia que não era.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:32:000",
+    "time": "00:37:000",
     "type": "CAPTION"
   },
   {
     "id": "10",
-    "text": "but in her heart, she knew it was not.",
+    "text": "Emma had just moved to a small town near the sea.",
     "translate": [
       {
-        "text": "mas em seu coração, ela sabia que não era.",
+        "text": "Emma tinha acabado de se mudar para uma pequena cidade perto do mar.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:35:000",
+    "time": "00:40:000",
     "type": "CAPTION"
   },
   {
     "id": "11",
-    "text": "Emma had just moved to a small town near the sea.",
-    "translate": [
-      {
-        "text": "Emma acabara de se mudar para uma pequena cidade perto do mar.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "00:39:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "12",
-    "text": "The town was peaceful, with narrow streets, colorful houses, and friendly people.",
+    "text": "The town was peaceful, with narrow streets, colorful houses and friendly people.",
     "translate": [
       {
         "text": "A cidade era pacífica, com ruas estreitas, casas coloridas e pessoas amigáveis.",
         "language": "PT_BR"
       }
     ],
-    "time": "00:42:000",
+    "time": "00:43:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "12",
+    "text": "She came here to start over, to find new dreams and new reasons to smile.",
+    "translate": [
+      {
+        "text": "Ela veio para cá para recomeçar, para encontrar novos sonhos e novos motivos para sorrir.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:49:000",
     "type": "CAPTION"
   },
   {
     "id": "13",
-    "text": "She came here to start over, to find new dreams and new reasons to smile.",
-    "translate": [
-      {
-        "text": "Ela veio aqui para recomeçar, para encontrar novos sonhos e novos motivos para sorrir.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "00:48:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "14",
     "text": "After breakfast, Emma put on a light blue dress and comfortable shoes.",
     "translate": [
       {
@@ -164,11 +152,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "00:53:000",
+    "time": "00:54:000",
     "type": "CAPTION"
   },
   {
-    "id": "15",
+    "id": "14",
     "text": "She picked up her bag and left the house.",
     "translate": [
       {
@@ -176,19 +164,31 @@
         "language": "PT_BR"
       }
     ],
-    "time": "00:58:000",
+    "time": "00:59:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "15",
+    "text": "The air smelled like coffee and fresh bread. She liked that smell.",
+    "translate": [
+      {
+        "text": "O ar cheirava a café e pão fresco. Ela gostava desse cheiro.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:02:000",
     "type": "CAPTION"
   },
   {
     "id": "16",
-    "text": "The air smelled like coffee and fresh bread. She liked that smell. It made her feel safe.",
+    "text": "It made her feel safe.",
     "translate": [
       {
-        "text": "O ar cheirava a café e pão fresco. Ela gostava daquele cheiro. Isso a fazia se sentir segura.",
+        "text": "Fazia com que ela se sentisse segura.",
         "language": "PT_BR"
       }
     ],
-    "time": "01:01:000",
+    "time": "01:06:000",
     "type": "CAPTION"
   },
   {
@@ -200,35 +200,23 @@
         "language": "PT_BR"
       }
     ],
-    "time": "01:07:000",
+    "time": "01:08:000",
     "type": "CAPTION"
   },
   {
     "id": "18",
-    "text": "Emma loved books; they made her feel less alone.",
+    "text": "Emma loved books. They made her feel less alone. As she opened the door, a small bell rang.",
     "translate": [
       {
-        "text": "Emma adorava livros; eles a faziam se sentir menos sozinha.",
+        "text": "Emma amava livros. Eles a faziam se sentir menos sozinha. Enquanto ela abria a porta, um pequeno sino tocou.",
         "language": "PT_BR"
       }
     ],
-    "time": "01:11:000",
+    "time": "01:13:000",
     "type": "CAPTION"
   },
   {
     "id": "19",
-    "text": "As she opened the door, a small bell rang.",
-    "translate": [
-      {
-        "text": "Quando ela abriu a porta, um pequeno sino tocou.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "01:15:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "20",
     "text": "'Good morning,' a voice said.",
     "translate": [
       {
@@ -236,11 +224,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "01:19:000",
+    "time": "01:18:000",
     "type": "CAPTION"
   },
   {
-    "id": "21",
+    "id": "20",
     "text": "Emma looked up and saw a young man behind the counter.",
     "translate": [
       {
@@ -252,11 +240,11 @@
     "type": "CAPTION"
   },
   {
-    "id": "22",
+    "id": "21",
     "text": "He had kind eyes and a gentle smile.",
     "translate": [
       {
-        "text": "Ele tinha olhos bondosos e um sorriso gentil.",
+        "text": "Ele tinha olhos gentis e um sorriso suave.",
         "language": "PT_BR"
       }
     ],
@@ -264,7 +252,7 @@
     "type": "CAPTION"
   },
   {
-    "id": "23",
+    "id": "22",
     "text": "'Good morning,' Emma replied softly.",
     "translate": [
       {
@@ -276,7 +264,7 @@
     "type": "CAPTION"
   },
   {
-    "id": "24",
+    "id": "23",
     "text": "'My name is Lucas. If you need help, just ask.'",
     "translate": [
       {
@@ -284,15 +272,15 @@
         "language": "PT_BR"
       }
     ],
-    "time": "01:31:000",
+    "time": "01:30:000",
     "type": "CAPTION"
   },
   {
-    "id": "25",
+    "id": "24",
     "text": "'Thank you,' Emma said. 'I'm Emma. I'm new in town.'",
     "translate": [
       {
-        "text": "'Obrigada', disse Emma. 'Eu sou a Emma. Sou nova na cidade.'",
+        "text": "'Obrigada', disse Emma. 'Sou a Emma. Sou nova na cidade.'",
         "language": "PT_BR"
       }
     ],
@@ -300,15 +288,27 @@
     "type": "CAPTION"
   },
   {
-    "id": "26",
-    "text": "Lucas smiled wider. 'Welcome. This town is small, but it has a big heart.'",
+    "id": "25",
+    "text": "Lucas smiled wider. 'Welcome.'",
     "translate": [
       {
-        "text": "Lucas sorriu mais abertamente. 'Bem-vinda. Esta cidade é pequena, mas tem um coração grande.'",
+        "text": "Lucas sorriu mais abertamente. 'Bem-vinda'.",
         "language": "PT_BR"
       }
     ],
     "time": "01:38:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "26",
+    "text": "'This town is small, but it has a big heart.'",
+    "translate": [
+      {
+        "text": "'Esta cidade é pequena, mas tem um grande coração'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:41:000",
     "type": "CAPTION"
   },
   {
@@ -320,15 +320,15 @@
         "language": "PT_BR"
       }
     ],
-    "time": "01:44:000",
+    "time": "01:45:000",
     "type": "CAPTION"
   },
   {
     "id": "28",
-    "text": "Romance, travel stories, simple novels.",
+    "text": "Romance, travel stories, simple novels. She felt happy there.",
     "translate": [
       {
-        "text": "Romance, histórias de viagem, romances simples.",
+        "text": "Romance, histórias de viagem, romances simples. Ela se sentia feliz ali.",
         "language": "PT_BR"
       }
     ],
@@ -337,30 +337,42 @@
   },
   {
     "id": "29",
-    "text": "She felt happy there. After a few minutes, she picked a book and went to the counter.",
+    "text": "After a few minutes, she picked a book and went to the counter.",
     "translate": [
       {
-        "text": "Ela se sentiu feliz ali. Depois de alguns minutos, ela pegou um livro e foi até o balcão.",
+        "text": "Depois de alguns minutos, ela escolheu um livro e foi ao balcão.",
         "language": "PT_BR"
       }
     ],
-    "time": "01:50:000",
+    "time": "01:52:000",
     "type": "CAPTION"
   },
   {
     "id": "30",
-    "text": "'That's a good choice,' Lucas said. 'Many people love that story.'",
+    "text": "'That's a good choice,' Lucas said.",
     "translate": [
       {
-        "text": "'Essa é uma boa escolha', disse Lucas. 'Muitas pessoas amam essa história.'",
+        "text": "'Essa é uma boa escolha', disse Lucas.",
         "language": "PT_BR"
       }
     ],
-    "time": "01:56:000",
+    "time": "01:57:000",
     "type": "CAPTION"
   },
   {
     "id": "31",
+    "text": "'Many people love that story.'",
+    "translate": [
+      {
+        "text": "'Muitas pessoas amam essa história'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:59:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "32",
     "text": "'I hope I will too,' Emma replied.",
     "translate": [
       {
@@ -372,7 +384,7 @@
     "type": "CAPTION"
   },
   {
-    "id": "32",
+    "id": "33",
     "text": "As Lucas put the book in a bag, their hands touched for a second.",
     "translate": [
       {
@@ -384,11 +396,11 @@
     "type": "CAPTION"
   },
   {
-    "id": "33",
-    "text": "Emma felt her heart beat a little faster. She looked down, feeling shy.",
+    "id": "34",
+    "text": "Emma felt her heart beat a little faster.",
     "translate": [
       {
-        "text": "Emma sentiu seu coração bater um pouco mais rápido. Ela olhou para baixo, sentindo-se tímida.",
+        "text": "Emma sentiu seu coração bater um pouco mais rápido.",
         "language": "PT_BR"
       }
     ],
@@ -396,11 +408,23 @@
     "type": "CAPTION"
   },
   {
-    "id": "34",
+    "id": "35",
+    "text": "She looked down, feeling shy.",
+    "translate": [
+      {
+        "text": "Ela olhou para baixo, sentindo-se tímida.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:11:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "36",
     "text": "'So, what brings you here?' Lucas asked kindly.",
     "translate": [
       {
-        "text": "'Então, o que te traz aqui?', perguntou Lucas gentilmente.",
+        "text": "'Então, o que te traz aqui?', Lucas perguntou gentilmente.",
         "language": "PT_BR"
       }
     ],
@@ -408,55 +432,55 @@
     "type": "CAPTION"
   },
   {
-    "id": "35",
+    "id": "37",
     "text": "'I wanted a fresh start, a quiet place.'",
     "translate": [
       {
-        "text": "'Eu queria um novo começo, um lugar tranquilo.'",
+        "text": "'Eu queria um recomeço, um lugar tranquilo'.",
         "language": "PT_BR"
       }
     ],
-    "time": "02:18:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "36",
-    "text": "'You found the right town. And if you like coffee, there's a nice cafe near the beach.'",
-    "translate": [
-      {
-        "text": "'Você encontrou a cidade certa. E se você gosta de café, há um café legal perto da praia.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "02:21:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "37",
-    "text": "Emma smiled. 'I love coffee.'",
-    "translate": [
-      {
-        "text": "Emma sorriu. 'Eu amo café.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "02:27:000",
+    "time": "02:17:000",
     "type": "CAPTION"
   },
   {
     "id": "38",
-    "text": "'Maybe I'll see you there someday,' Lucas said, his voice calm but warm.",
+    "text": "'You found the right town. And if you like coffee, there's a nice cafe near the beach.'",
     "translate": [
       {
-        "text": "'Talvez eu te veja lá algum dia', disse Lucas, sua voz calma, mas calorosa.",
+        "text": "'Você encontrou a cidade certa. E se você gosta de café, há um café legal perto da praia'.",
         "language": "PT_BR"
       }
     ],
-    "time": "02:31:000",
+    "time": "02:20:000",
     "type": "CAPTION"
   },
   {
     "id": "39",
+    "text": "Emma smiled. 'I love coffee.'",
+    "translate": [
+      {
+        "text": "Emma sorriu. 'Eu amo café'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:25:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "40",
+    "text": "'Maybe I'll see you there someday,' Lucas said, his voice calm but warm.",
+    "translate": [
+      {
+        "text": "'Talvez eu te veja por lá algum dia', disse Lucas, sua voz calma, mas calorosa.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:28:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "41",
     "text": "'Maybe,' Emma answered.",
     "translate": [
       {
@@ -464,11 +488,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "02:36:000",
+    "time": "02:31:000",
     "type": "CAPTION"
   },
   {
-    "id": "40",
+    "id": "42",
     "text": "She left the bookstore feeling light, like something new had just begun.",
     "translate": [
       {
@@ -476,23 +500,23 @@
         "language": "PT_BR"
       }
     ],
-    "time": "02:38:000",
+    "time": "02:33:000",
     "type": "CAPTION"
   },
   {
-    "id": "41",
+    "id": "43",
     "text": "She walked toward the sea, holding her book close to her chest.",
     "translate": [
       {
-        "text": "Ela caminhou em direção ao mar, segurando o livro perto do peito.",
+        "text": "Ela caminhou em direção ao mar, segurando seu livro contra o peito.",
         "language": "PT_BR"
       }
     ],
-    "time": "02:43:000",
+    "time": "02:37:000",
     "type": "CAPTION"
   },
   {
-    "id": "42",
+    "id": "44",
     "text": "The sound of the waves was gentle and slow.",
     "translate": [
       {
@@ -500,15 +524,27 @@
         "language": "PT_BR"
       }
     ],
-    "time": "02:47:000",
+    "time": "02:41:000",
     "type": "CAPTION"
   },
   {
-    "id": "43",
+    "id": "45",
     "text": "Emma sat on a bench and opened her book, but she didn't read.",
     "translate": [
       {
-        "text": "Emma sentou-se num banco e abriu o seu livro, mas não leu.",
+        "text": "Emma sentou-se em um banco e abriu seu livro, mas não leu.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:44:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "46",
+    "text": "She was thinking about the smile, the voice, and the feeling she had inside.",
+    "translate": [
+      {
+        "text": "Ela estava pensando no sorriso, na voz e no sentimento que tinha por dentro.",
         "language": "PT_BR"
       }
     ],
@@ -516,11 +552,11 @@
     "type": "CAPTION"
   },
   {
-    "id": "44",
-    "text": "She was thinking about the smile, the voice, and the feeling she had inside.",
+    "id": "47",
+    "text": "'This town really does have a big heart,' she whispered.",
     "translate": [
       {
-        "text": "Ela estava pensando no sorriso, na voz e na sensação que tinha por dentro.",
+        "text": "'Esta cidade realmente tem um grande coração', sussurrou ela.",
         "language": "PT_BR"
       }
     ],
@@ -528,21 +564,9 @@
     "type": "CAPTION"
   },
   {
-    "id": "45",
-    "text": "'This town really does have a big heart,' she whispered.",
-    "translate": [
-      {
-        "text": "'Esta cidade realmente tem um coração grande', ela sussurrou.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:00:000",
-    "type": "CAPTION"
-  },
-  {
     "id": "550e8400-e29b-41d4-a716-446655440000",
     "type": "REVIEW",
-    "time": "00:00:000",
+    "time": "03:05:000",
     "newWords": [
       {
         "word": "peaceful",
@@ -581,83 +605,11 @@
     "description": "Emma moves to a small and peaceful town near the sea to start a new life. She visits a bookstore, where she meets Lucas, a kind young man. Their simple and warm interaction makes Emma feel hopeful and comfortable in her new beginning."
   },
   {
-    "id": "46",
-    "text": "Chapter 2: An Unexpected Distance",
-    "translate": [
-      {
-        "text": "Capítulo 2: Uma Distância Inesperada",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:05:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "47",
-    "text": "The next day, the sky was gray and quiet.",
-    "translate": [
-      {
-        "text": "No dia seguinte, o céu estava cinzento e silencioso.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:08:000",
-    "type": "CAPTION"
-  },
-  {
     "id": "48",
-    "text": "Emma woke up feeling calm but also curious.",
+    "text": "Chapter 2: An Unexpected Distance.",
     "translate": [
       {
-        "text": "Emma acordou sentindo-se calma, mas também curiosa.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:12:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "49",
-    "text": "She kept thinking about the bookstore and Lucas's smile.",
-    "translate": [
-      {
-        "text": "Ela continuou pensando na livraria e no sorriso de Lucas.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:16:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "50",
-    "text": "After breakfast, she decided to go back there.",
-    "translate": [
-      {
-        "text": "Depois do café da manhã, ela decidiu voltar lá.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:19:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "51",
-    "text": "When Emma opened the bookstore door, the bell rang again.",
-    "translate": [
-      {
-        "text": "Quando Emma abriu a porta da livraria, o sino tocou novamente.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:23:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "52",
-    "text": "But this time, Lucas was not smiling.",
-    "translate": [
-      {
-        "text": "Mas desta vez, Lucas não estava sorrindo.",
+        "text": "Capítulo 2: Uma Distância Inesperada.",
         "language": "PT_BR"
       }
     ],
@@ -665,7 +617,79 @@
     "type": "CAPTION"
   },
   {
+    "id": "49",
+    "text": "The next day, the sky was gray and quiet.",
+    "translate": [
+      {
+        "text": "No dia seguinte, o céu estava cinza e silencioso.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:29:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "50",
+    "text": "Emma woke up feeling calm, but also curious.",
+    "translate": [
+      {
+        "text": "Emma acordou sentindo-se calma, mas também curiosa.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:33:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "51",
+    "text": "She kept thinking about the bookstore and Lucas's smile.",
+    "translate": [
+      {
+        "text": "Ela continuava pensando na livraria e no sorriso de Lucas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:37:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "52",
+    "text": "After breakfast, she decided to go back there.",
+    "translate": [
+      {
+        "text": "Depois do café da manhã, ela decidiu voltar lá.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:40:000",
+    "type": "CAPTION"
+  },
+  {
     "id": "53",
+    "text": "When Emma opened the bookstore door, the bell rang again.",
+    "translate": [
+      {
+        "text": "Quando Emma abriu a porta da livraria, o sino tocou novamente.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:44:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "54",
+    "text": "But this time, Lucas was not smiling.",
+    "translate": [
+      {
+        "text": "Mas desta vez, Lucas não estava sorrindo.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "03:49:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "55",
     "text": "'Good morning,' Emma said, trying to sound cheerful.",
     "translate": [
       {
@@ -673,47 +697,47 @@
         "language": "PT_BR"
       }
     ],
-    "time": "03:30:000",
+    "time": "03:52:000",
     "type": "CAPTION"
   },
   {
-    "id": "54",
+    "id": "56",
     "text": "Lucas looked up. 'Oh, good morning,' he replied.",
     "translate": [
       {
-        "text": "Lucas olhou para cima. 'Ah, bom dia', ele respondeu.",
+        "text": "Lucas olhou para cima. 'Oh, bom dia', ele respondeu.",
         "language": "PT_BR"
       }
     ],
-    "time": "03:34:000",
+    "time": "03:55:000",
     "type": "CAPTION"
   },
   {
-    "id": "55",
-    "text": "His voice was polite but cold.",
+    "id": "57",
+    "text": "His voice was polite, but cold.",
     "translate": [
       {
         "text": "Sua voz era educada, mas fria.",
         "language": "PT_BR"
       }
     ],
-    "time": "03:38:000",
+    "time": "03:58:000",
     "type": "CAPTION"
   },
   {
-    "id": "56",
+    "id": "58",
     "text": "Emma felt confused. Yesterday he was warm and friendly.",
     "translate": [
       {
-        "text": "Emma sentiu-se confusa. Ontem ele era caloroso e amigável.",
+        "text": "Emma sentiu-se confusa. Ontem ele estava caloroso e amigável.",
         "language": "PT_BR"
       }
     ],
-    "time": "03:41:000",
+    "time": "04:01:000",
     "type": "CAPTION"
   },
   {
-    "id": "57",
+    "id": "59",
     "text": "Today he seemed distant.",
     "translate": [
       {
@@ -721,51 +745,15 @@
         "language": "PT_BR"
       }
     ],
-    "time": "03:45:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "58",
-    "text": "She walked between the shelves, pretending to look at books, but her eyes kept moving to the counter.",
-    "translate": [
-      {
-        "text": "Ela caminhou entre as prateleiras, fingindo olhar os livros, mas seus olhos continuavam se movendo para o balcão.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:48:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "59",
-    "text": "Lucas was busy organizing papers. He did not look at her again.",
-    "translate": [
-      {
-        "text": "Lucas estava ocupado organizando papéis. Ele não olhou para ela novamente.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:54:000",
+    "time": "04:04:000",
     "type": "CAPTION"
   },
   {
     "id": "60",
-    "text": "After a few minutes, Emma went to the counter with a book in her hands.",
+    "text": "She walked between the shelves, pretending to look at books, but her eyes kept moving to the counter.",
     "translate": [
       {
-        "text": "Depois de alguns minutos, Emma foi até o balcão com um livro nas mãos.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "03:59:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "61",
-    "text": "'I'd like this one,' she said.",
-    "translate": [
-      {
-        "text": "'Gostaria deste', disse ela.",
+        "text": "Ela caminhou entre as prateleiras, fingindo olhar os livros, mas seus olhos continuavam indo para o balcão.",
         "language": "PT_BR"
       }
     ],
@@ -773,83 +761,95 @@
     "type": "CAPTION"
   },
   {
-    "id": "62",
-    "text": "Lucas took the book and put it in a bag. Their hands did not touch this time.",
+    "id": "61",
+    "text": "Lucas was busy organizing papers. He did not look at her again.",
     "translate": [
       {
-        "text": "Lucas pegou o livro e colocou-o em uma sacola. Suas mãos não se tocaram desta vez.",
+        "text": "Lucas estava ocupado organizando papéis. Ele não olhou para ela novamente.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:09:000",
+    "time": "04:11:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "62",
+    "text": "After a few minutes, Emma went to the counter with a book in her hands.",
+    "translate": [
+      {
+        "text": "Depois de alguns minutos, Emma foi ao balcão com um livro nas mãos.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:15:000",
     "type": "CAPTION"
   },
   {
     "id": "63",
-    "text": "'Are you okay?' Emma asked softly. 'You seem... different today.'",
+    "text": "'I'd like this one,' she said.",
     "translate": [
       {
-        "text": "'Você está bem?', Emma perguntou suavemente. 'Você parece... diferente hoje.'",
+        "text": "'Eu gostaria deste', disse ela.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:14:000",
+    "time": "04:19:000",
     "type": "CAPTION"
   },
   {
     "id": "64",
-    "text": "Lucas stopped for a second. He looked at the book, then at Emma.",
+    "text": "Lucas took the book and put it in a bag. Their hands did not touch this time.",
     "translate": [
       {
-        "text": "Lucas parou por um segundo. Ele olhou para o livro e depois para Emma.",
+        "text": "Lucas pegou o livro e o colocou em uma sacola. Suas mãos não se tocaram desta vez.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:20:000",
+    "time": "04:22:000",
     "type": "CAPTION"
   },
   {
     "id": "65",
-    "text": "'I'm fine, just busy.'",
+    "text": "'Are you okay?' Emma asked softly.",
     "translate": [
       {
-        "text": "'Estou bem, apenas ocupado.'",
+        "text": "'Você está bem?', Emma perguntou suavemente.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:25:000",
+    "time": "04:26:000",
     "type": "CAPTION"
   },
   {
     "id": "66",
-    "text": "Emma nodded, but she did not believe him.",
+    "text": "'You seem different today.'",
     "translate": [
       {
-        "text": "Emma assentiu, mas não acreditou nele.",
+        "text": "'Você parece diferente hoje'.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:27:000",
+    "time": "04:29:000",
     "type": "CAPTION"
   },
   {
     "id": "67",
-    "text": "As she left the store, she saw something that made her heart feel heavy.",
+    "text": "Lucas stopped for a second. He looked at the book, then at Emma.",
     "translate": [
       {
-        "text": "Ao sair da loja, viu algo que pesou seu coração.",
+        "text": "Lucas parou por um segundo. Ele olhou para o livro, depois para Emma.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:31:000",
+    "time": "04:32:000",
     "type": "CAPTION"
   },
   {
     "id": "68",
-    "text": "Across the street, a young woman was standing near the bookstore window.",
+    "text": "'I'm fine, just busy.' Emma nodded, but she did not believe him.",
     "translate": [
       {
-        "text": "Do outro lado da rua, uma jovem estava parada perto da vitrine da livraria.",
+        "text": "'Estou bem, apenas ocupado'. Emma assentiu, mas não acreditou nele.",
         "language": "PT_BR"
       }
     ],
@@ -858,10 +858,10 @@
   },
   {
     "id": "69",
-    "text": "She was talking to Lucas. They looked serious.",
+    "text": "As she left the store, she saw something that made her heart feel heavy.",
     "translate": [
       {
-        "text": "Ela estava conversando com o Lucas. Eles pareciam sérios.",
+        "text": "Ao sair da loja, ela viu algo que fez seu coração se sentir pesado.",
         "language": "PT_BR"
       }
     ],
@@ -870,34 +870,34 @@
   },
   {
     "id": "70",
-    "text": "The woman touched Lucas's arm and he did not move away.",
+    "text": "Across the street, a young woman was standing near the bookstore window.",
     "translate": [
       {
-        "text": "A mulher tocou o braço de Lucas e ele não se afastou.",
+        "text": "Do outro lado da rua, uma jovem estava parada perto da vitrine da livraria.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:43:000",
+    "time": "04:44:000",
     "type": "CAPTION"
   },
   {
     "id": "71",
-    "text": "Emma turned her face and kept walking.",
+    "text": "She was talking to Lucas. They looked serious.",
     "translate": [
       {
-        "text": "Emma virou o rosto e continuou caminhando.",
+        "text": "Ela estava conversando com Lucas. Eles pareciam sérios.",
         "language": "PT_BR"
       }
     ],
-    "time": "04:47:000",
+    "time": "04:48:000",
     "type": "CAPTION"
   },
   {
     "id": "72",
-    "text": "Later that afternoon, Emma went to the cafe near the beach.",
+    "text": "The woman touched Lucas's arm and he did not move away.",
     "translate": [
       {
-        "text": "Mais tarde naquela tarde, Emma foi ao café perto da praia.",
+        "text": "A mulher tocou no braço de Lucas e ele não se afastou.",
         "language": "PT_BR"
       }
     ],
@@ -906,6 +906,30 @@
   },
   {
     "id": "73",
+    "text": "Emma turned her face and kept walking.",
+    "translate": [
+      {
+        "text": "Emma virou o rosto e continuou andando.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:56:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "74",
+    "text": "Later that afternoon, Emma went to the cafe near the beach.",
+    "translate": [
+      {
+        "text": "Mais tarde naquela tarde, Emma foi ao café perto da praia.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:59:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "75",
     "text": "The sea was calm, but her thoughts were not.",
     "translate": [
       {
@@ -913,11 +937,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "04:54:000",
+    "time": "05:04:000",
     "type": "CAPTION"
   },
   {
-    "id": "74",
+    "id": "76",
     "text": "She ordered a coffee and sat by the window.",
     "translate": [
       {
@@ -925,75 +949,27 @@
         "language": "PT_BR"
       }
     ],
-    "time": "04:57:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "75",
-    "text": "'That's his cafe too,' a voice said behind her.",
-    "translate": [
-      {
-        "text": "'Esse também é o café dele', disse uma voz atrás dela.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:01:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "76",
-    "text": "'Excuse me?' Emma asked.",
-    "translate": [
-      {
-        "text": "'Perdão?', Emma perguntou.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:04:000",
+    "time": "05:08:000",
     "type": "CAPTION"
   },
   {
     "id": "77",
-    "text": "'Lucas,' the woman continued. 'He helps here sometimes.'",
+    "text": "'That's his cafe too,' a voice said behind her.",
     "translate": [
       {
-        "text": "'Lucas', continuou a mulher. 'Ele ajuda aqui às vezes.'",
+        "text": "'Aquele também é o café dele', disse uma voz atrás dela.",
         "language": "PT_BR"
       }
     ],
-    "time": "05:07:000",
+    "time": "05:12:000",
     "type": "CAPTION"
   },
   {
     "id": "78",
-    "text": "'The bookstore belongs to his family.'",
+    "text": "'Excuse me?' Emma asked.",
     "translate": [
       {
-        "text": "'A livraria pertence à família dele.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:11:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "79",
-    "text": "'Oh,' Emma said quietly.",
-    "translate": [
-      {
-        "text": "'Ah', disse Emma baixinho.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:13:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "80",
-    "text": "The woman smiled kindly. 'You must be new. I'm Sophia.'",
-    "translate": [
-      {
-        "text": "A mulher sorriu gentilmente. 'Você deve ser nova. Eu sou a Sophia.'",
+        "text": "'Com licença?', Emma perguntou.",
         "language": "PT_BR"
       }
     ],
@@ -1001,23 +977,23 @@
     "type": "CAPTION"
   },
   {
-    "id": "81",
-    "text": "'I'm Emma.'",
+    "id": "79",
+    "text": "'Lucas,' the woman continued. 'He helps here sometimes.'",
     "translate": [
       {
-        "text": "'Eu sou a Emma.'",
+        "text": "'Lucas', continuou a mulher. 'Ele ajuda aqui às vezes'.",
         "language": "PT_BR"
       }
     ],
-    "time": "05:21:000",
+    "time": "05:19:000",
     "type": "CAPTION"
   },
   {
-    "id": "82",
-    "text": "Sophia looked at her for a moment. 'You met Lucas, didn't you?'",
+    "id": "80",
+    "text": "'The bookstore belongs to his family.'",
     "translate": [
       {
-        "text": "Sophia olhou para ela por um momento. 'Você conheceu o Lucas, não conheceu?'",
+        "text": "'A livraria pertence à família dele'.",
         "language": "PT_BR"
       }
     ],
@@ -1025,47 +1001,71 @@
     "type": "CAPTION"
   },
   {
-    "id": "83",
-    "text": "Emma hesitated. 'Yes, I think so.'",
+    "id": "81",
+    "text": "'Oh,' Emma said quietly.",
     "translate": [
       {
-        "text": "Emma hesitou. 'Sim, eu acho que sim.'",
+        "text": "'Oh', disse Emma baixinho.",
         "language": "PT_BR"
       }
     ],
-    "time": "05:27:000",
+    "time": "05:26:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "82",
+    "text": "The woman smiled kindly. 'You must be new. I'm Sophia.'",
+    "translate": [
+      {
+        "text": "A mulher sorriu gentilmente. 'Você deve ser nova. Sou Sophia'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:29:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "83",
+    "text": "'I'm Emma.'",
+    "translate": [
+      {
+        "text": "'Sou a Emma'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:33:000",
     "type": "CAPTION"
   },
   {
     "id": "84",
-    "text": "Sophia sat down for a second. 'People say he is kind, but he keeps his heart closed.'",
+    "text": "Sophia looked at her for a moment. 'You met Lucas, didn't you?'",
     "translate": [
       {
-        "text": "Sophia sentou-se por um segundo. 'As pessoas dizem que ele é gentil, mas ele mantém o coração fechado.'",
+        "text": "Sophia olhou para ela por um momento. 'Você conheceu o Lucas, não conheceu?'",
         "language": "PT_BR"
       }
     ],
-    "time": "05:30:000",
+    "time": "05:35:000",
     "type": "CAPTION"
   },
   {
     "id": "85",
-    "text": "'He had a difficult past.'",
+    "text": "Emma hesitated. 'Yes, I think so.'",
     "translate": [
       {
-        "text": "'Ele teve um passado difícil.'",
+        "text": "Emma hesitou. 'Sim, acho que sim'.",
         "language": "PT_BR"
       }
     ],
-    "time": "05:37:000",
+    "time": "05:39:000",
     "type": "CAPTION"
   },
   {
     "id": "86",
-    "text": "'But,' Sophia added gently, 'sometimes the past comes back when we don't expect it.'",
+    "text": "Sophia sat down for a second. 'People say he is kind, but he keeps his heart closed.'",
     "translate": [
       {
-        "text": "'Mas', acrescentou Sophia gentilmente, 'às vezes o passado volta quando não esperamos.'",
+        "text": "Sophia sentou-se por um segundo. 'As pessoas dizem que ele é gentil, mas ele mantém o coração fechado'.",
         "language": "PT_BR"
       }
     ],
@@ -1074,10 +1074,10 @@
   },
   {
     "id": "87",
-    "text": "Emma felt a small chill.",
+    "text": "'He had a difficult past.' Emma felt a small chill.",
     "translate": [
       {
-        "text": "Emma sentiu um pequeno calafrio.",
+        "text": "'Ele teve um passado difícil'. Emma sentiu um leve calafrio.",
         "language": "PT_BR"
       }
     ],
@@ -1086,6 +1086,30 @@
   },
   {
     "id": "88",
+    "text": "'But,' Sophia added gently, 'sometimes the past comes back when we don't expect it.'",
+    "translate": [
+      {
+        "text": "'Mas', Sophia acrescentou gentilmente, 'às vezes o passado volta quando não esperamos'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:51:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "89",
+    "text": "Emma felt a small chill.",
+    "translate": [
+      {
+        "text": "Emma sentiu um leve calafrio.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:57:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "90",
     "text": "When she left the cafe, the sky was darker.",
     "translate": [
       {
@@ -1093,51 +1117,15 @@
         "language": "PT_BR"
       }
     ],
-    "time": "05:50:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "89",
-    "text": "On her way home, she saw Lucas again, walking with the same young woman from earlier.",
-    "translate": [
-      {
-        "text": "No caminho para casa, viu Lucas novamente, caminhando com a mesma jovem de antes.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:53:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "90",
-    "text": "They were talking seriously. Lucas looked worried.",
-    "translate": [
-      {
-        "text": "Eles estavam conversando sério. Lucas parecia preocupado.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "05:58:000",
+    "time": "06:00:000",
     "type": "CAPTION"
   },
   {
     "id": "91",
-    "text": "Emma stopped and watched from a distance.",
+    "text": "On her way home, she saw Lucas again, walking with the same young woman from earlier.",
     "translate": [
       {
-        "text": "Emma parou e observou à distância.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "06:02:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "92",
-    "text": "Her heart felt confused and unsure.",
-    "translate": [
-      {
-        "text": "Seu coração estava confuso e inseguro.",
+        "text": "No caminho para casa, ela viu Lucas novamente, caminhando com a mesma jovem de antes.",
         "language": "PT_BR"
       }
     ],
@@ -1145,7 +1133,43 @@
     "type": "CAPTION"
   },
   {
+    "id": "92",
+    "text": "They were talking seriously. Lucas looked worried.",
+    "translate": [
+      {
+        "text": "Eles estavam conversando seriamente. Lucas parecia preocupado.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:11:000",
+    "type": "CAPTION"
+  },
+  {
     "id": "93",
+    "text": "Emma stopped and watched from a distance.",
+    "translate": [
+      {
+        "text": "Emma parou e observou de longe.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:14:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "94",
+    "text": "Her heart felt confused and unsure.",
+    "translate": [
+      {
+        "text": "Seu coração sentia-se confuso e inseguro.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:18:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "95",
     "text": "'Maybe this town has secrets,' Emma thought.",
     "translate": [
       {
@@ -1153,37 +1177,37 @@
         "language": "PT_BR"
       }
     ],
-    "time": "06:08:000",
+    "time": "06:22:000",
     "type": "CAPTION"
   },
   {
-    "id": "94",
-    "text": "That night, Emma sat on her bed holding her book but not reading.",
+    "id": "96",
+    "text": "That night, Emma sat on her bed, holding her book, but not reading.",
     "translate": [
       {
-        "text": "Naquela noite, Emma sentou-se na cama segurando o livro, mas sem ler.",
+        "text": "Naquela noite, Emma sentou-se em sua cama, segurando seu livro, mas não lendo.",
         "language": "PT_BR"
       }
     ],
-    "time": "06:12:000",
+    "time": "06:26:000",
     "type": "CAPTION"
   },
   {
-    "id": "95",
+    "id": "97",
     "text": "She was thinking about distance, silence, and the things people don't say.",
     "translate": [
       {
-        "text": "Ela estava pensando na distância, no silêncio e nas coisas que as pessoas não dizem.",
+        "text": "Ela estava pensando sobre distância, silêncio e as coisas que as pessoas não dizem.",
         "language": "PT_BR"
       }
     ],
-    "time": "06:16:000",
+    "time": "06:31:000",
     "type": "CAPTION"
   },
   {
     "id": "7b9e3f1a-4c6d-4f2b-9a1e-8d2c5f7a3b21",
     "type": "REVIEW",
-    "time": "00:00:000",
+    "time": "06:38:500",
     "newWords": [
       {
         "word": "distant",
@@ -1222,19 +1246,19 @@
     "description": "Emma returns to the bookstore and notices that Lucas is cold and distant. She feels confused when she sees him with another woman and later learns that he has a difficult past. The day ends with Emma feeling unsure and sensing that the town hides secrets."
   },
   {
-    "id": "96",
-    "text": "Chapter 3: A Quiet Truth",
+    "id": "98",
+    "text": "Chapter 3: A Quiet Truth.",
     "translate": [
       {
-        "text": "Capítulo 3: Uma Verdade Silenciosa",
+        "text": "Capítulo 3: Uma Verdade Silenciosa.",
         "language": "PT_BR"
       }
     ],
-    "time": "06:22:000",
+    "time": "06:57:000",
     "type": "CAPTION"
   },
   {
-    "id": "97",
+    "id": "99",
     "text": "The next morning, the sun returned.",
     "translate": [
       {
@@ -1242,23 +1266,23 @@
         "language": "PT_BR"
       }
     ],
-    "time": "06:25:000",
+    "time": "06:59:000",
     "type": "CAPTION"
   },
   {
-    "id": "98",
+    "id": "100",
     "text": "Light filled Emma's room, but her heart still felt heavy.",
     "translate": [
       {
-        "text": "A luz encheu o quarto de Emma, mas seu coração ainda parecia pesado.",
+        "text": "A luz inundou o quarto de Emma, mas seu coração ainda parecia pesado.",
         "language": "PT_BR"
       }
     ],
-    "time": "06:28:000",
+    "time": "07:03:000",
     "type": "CAPTION"
   },
   {
-    "id": "99",
+    "id": "101",
     "text": "She decided she did not want doubts anymore. She wanted the truth.",
     "translate": [
       {
@@ -1266,11 +1290,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "06:32:000",
+    "time": "07:07:000",
     "type": "CAPTION"
   },
   {
-    "id": "100",
+    "id": "102",
     "text": "Emma walked to the bookstore with slow steps.",
     "translate": [
       {
@@ -1278,11 +1302,11 @@
         "language": "PT_BR"
       }
     ],
-    "time": "06:37:000",
+    "time": "07:13:000",
     "type": "CAPTION"
   },
   {
-    "id": "101",
+    "id": "103",
     "text": "When she opened the door, the bell rang softly.",
     "translate": [
       {
@@ -1290,123 +1314,27 @@
         "language": "PT_BR"
       }
     ],
-    "time": "06:40:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "102",
-    "text": "Lucas was there, alone, looking at an old photograph in his hands.",
-    "translate": [
-      {
-        "text": "Lucas estava lá, sozinho, olhando uma fotografia antiga nas mãos.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "06:44:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "103",
-    "text": "'Good morning,' Emma said. Lucas looked up, surprised.",
-    "translate": [
-      {
-        "text": "'Bom dia', disse Emma. Lucas olhou para cima, surpreso.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "06:49:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "104",
-    "text": "He quickly put the photo away. 'Good morning, Emma,' he replied.",
-    "translate": [
-      {
-        "text": "Ele rapidamente guardou a foto. 'Bom dia, Emma', ele respondeu.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "06:53:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "105",
-    "text": "There was a silence between them. Then Emma spoke.",
-    "translate": [
-      {
-        "text": "Houve um silêncio entre eles. Então Emma falou.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "06:58:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "106",
-    "text": "'I think I should say this,' she said calmly.",
-    "translate": [
-      {
-        "text": "'Acho que deveria dizer isto', disse ela calmamente.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "07:02:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "107",
-    "text": "'I felt confused yesterday. You were distant and I saw you with someone else.'",
-    "translate": [
-      {
-        "text": "'Fiquei confusa ontem. Você estava distante e eu te vi com outra pessoa.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "07:06:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "108",
-    "text": "'I don't want to imagine things. I just want to understand.'",
-    "translate": [
-      {
-        "text": "'Não quero imaginar coisas. Só quero entender.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "07:11:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "109",
-    "text": "Lucas took a deep breath. He nodded. 'You deserve the truth,' he said.",
-    "translate": [
-      {
-        "text": "Lucas respirou fundo. Ele assentiu. 'Você merece a verdade', disse ele.",
-        "language": "PT_BR"
-      }
-    ],
     "time": "07:16:000",
     "type": "CAPTION"
   },
   {
-    "id": "110",
-    "text": "'The woman you saw is my sister, Anna.'",
+    "id": "104",
+    "text": "Lucas was there, alone, looking at an old photograph in his hands.",
     "translate": [
       {
-        "text": "'A mulher que você viu é minha irmã, Anna.'",
+        "text": "Lucas estava lá, sozinho, olhando uma fotografia antiga em suas mãos.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:21:000",
+    "time": "07:20:000",
     "type": "CAPTION"
   },
   {
-    "id": "111",
-    "text": "Emma's eyes opened wider. 'Your sister?'",
+    "id": "105",
+    "text": "'Good morning,' Emma said.",
     "translate": [
       {
-        "text": "Os olhos de Emma se abriram mais. 'Sua irmã?'",
+        "text": "'Bom dia', disse Emma.",
         "language": "PT_BR"
       }
     ],
@@ -1414,35 +1342,59 @@
     "type": "CAPTION"
   },
   {
-    "id": "112",
-    "text": "'Yes,' Lucas continued. 'She came back to town suddenly.'",
+    "id": "106",
+    "text": "Lucas looked up, surprised. He quickly put the photo away.",
     "translate": [
       {
-        "text": "'Sim', continuou Lucas. 'Ela voltou para a cidade de repente.'",
+        "text": "Lucas olhou para cima, surpreso. Ele rapidamente guardou a foto.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:27:000",
+    "time": "07:26:000",
     "type": "CAPTION"
   },
   {
-    "id": "113",
-    "text": "'Our family had problems in the past and her return brought old pain with it.'",
+    "id": "107",
+    "text": "'Good morning, Emma,' he replied.",
     "translate": [
       {
-        "text": "'Nossa família teve problemas no passado e o retorno dela trouxe de volta a dor antiga.'",
+        "text": "'Bom dia, Emma', ele respondeu.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:31:000",
+    "time": "07:29:000",
     "type": "CAPTION"
   },
   {
-    "id": "114",
-    "text": "'I was not cold because of you. I was afraid of my own memories.'",
+    "id": "108",
+    "text": "There was a silence between them.",
     "translate": [
       {
-        "text": "'Eu não fui frio por sua causa. Eu estava com medo das minhas próprias memórias.'",
+        "text": "Houve um silêncio entre eles.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:32:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "109",
+    "text": "Then Emma spoke.",
+    "translate": [
+      {
+        "text": "Então Emma falou.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:34:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "110",
+    "text": "'I think I should say this,' she said calmly.",
+    "translate": [
+      {
+        "text": "'Acho que devo dizer isso', disse ela calmamente.",
         "language": "PT_BR"
       }
     ],
@@ -1450,107 +1402,119 @@
     "type": "CAPTION"
   },
   {
-    "id": "115",
-    "text": "Emma felt her chest relax. 'I'm sorry,' she said softly.",
+    "id": "111",
+    "text": "'I felt confused yesterday. You were distant, and I saw you with someone else.'",
     "translate": [
       {
-        "text": "Emma sentiu o peito relaxar. 'Sinto muito', disse ela suavemente.",
+        "text": "'Eu me senti confusa ontem. Você estava distante e eu te vi com outra pessoa'.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:42:000",
+    "time": "07:40:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "112",
+    "text": "'I don't want to imagine things. I just want to understand.'",
+    "translate": [
+      {
+        "text": "'Não quero imaginar coisas. Só quero entender'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:44:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "113",
+    "text": "Lucas took a deep breath. He nodded.",
+    "translate": [
+      {
+        "text": "Lucas respirou fundo. Ele assentiu.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:48:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "114",
+    "text": "'You deserve the truth,' he said.",
+    "translate": [
+      {
+        "text": "'Você merece a verdade', disse ele.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:52:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "115",
+    "text": "'The woman you saw is my sister, Anna.'",
+    "translate": [
+      {
+        "text": "'A mulher que você viu é minha irmã, Anna'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:56:000",
     "type": "CAPTION"
   },
   {
     "id": "116",
-    "text": "Lucas smiled, but this time it was a gentle, honest smile.",
+    "text": "Emma's eyes opened wide. 'Your sister?'",
     "translate": [
       {
-        "text": "Lucas sorriu, mas desta vez foi um sorriso gentil e honesto.",
+        "text": "Os olhos de Emma se arregalaram. 'Sua irmã?'",
         "language": "PT_BR"
       }
     ],
-    "time": "07:46:000",
+    "time": "08:00:000",
     "type": "CAPTION"
   },
   {
     "id": "117",
-    "text": "'I should have explained. I was scared to open my heart again.'",
+    "text": "'Yes,' Lucas continued.",
     "translate": [
       {
-        "text": "'Eu deveria ter explicado. Eu estava com medo de abrir meu coração novamente.'",
+        "text": "'Sim', continuou Lucas.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:51:000",
+    "time": "08:03:000",
     "type": "CAPTION"
   },
   {
     "id": "118",
-    "text": "They stood there, quiet but comfortable.",
+    "text": "'She came back to town suddenly. Our family had problems in the past...'",
     "translate": [
       {
-        "text": "Eles ficaram ali, quietos, mas confortáveis.",
+        "text": "'Ela voltou para a cidade de repente. Nossa família teve problemas no passado...'",
         "language": "PT_BR"
       }
     ],
-    "time": "07:55:000",
+    "time": "08:06:000",
     "type": "CAPTION"
   },
   {
     "id": "119",
-    "text": "Later that day, Lucas closed the bookstore early.",
+    "text": "'...and her return brought old pain with it. I was not cold because of you.'",
     "translate": [
       {
-        "text": "Mais tarde naquele dia, Lucas fechou a livraria cedo.",
+        "text": "'...e o retorno dela trouxe de volta uma dor antiga. Eu não estava frio por sua causa'.",
         "language": "PT_BR"
       }
     ],
-    "time": "07:58:000",
+    "time": "08:10:000",
     "type": "CAPTION"
   },
   {
     "id": "120",
-    "text": "He walked with Emma to the beach.",
+    "text": "'I was afraid of my own memories.'",
     "translate": [
       {
-        "text": "Ele caminhou com Emma até a praia.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "08:02:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "121",
-    "text": "The sea was calm, and the sky was painted in soft colors.",
-    "translate": [
-      {
-        "text": "O mar estava calmo e o céu pintado em cores suaves.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "08:04:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "122",
-    "text": "'I like this town,' Emma said. 'But more than that, I like how it makes me feel.'",
-    "translate": [
-      {
-        "text": "'Eu gosto desta cidade', disse Emma. 'Mas mais do que isso, gosto de como ela me faz sentir.'",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "08:08:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "123",
-    "text": "Lucas nodded. 'This town gave me roots. Maybe you gave me courage.'",
-    "translate": [
-      {
-        "text": "Lucas assentiu. 'Esta cidade me deu raízes. Talvez você tenha me dado coragem.'",
+        "text": "'Eu estava com medo das minhas próprias memórias'.",
         "language": "PT_BR"
       }
     ],
@@ -1558,11 +1522,23 @@
     "type": "CAPTION"
   },
   {
-    "id": "124",
-    "text": "Emma looked at him and smiled. They sat on the sand, listening to the waves.",
+    "id": "121",
+    "text": "Emma felt her chest relax.",
     "translate": [
       {
-        "text": "Emma olhou para ele e sorriu. Eles sentaram-se na areia, ouvindo as ondas.",
+        "text": "Emma sentiu seu peito relaxar.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:18:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "122",
+    "text": "'I'm sorry,' she said softly.",
+    "translate": [
+      {
+        "text": "'Sinto muito', disse ela suavemente.",
         "language": "PT_BR"
       }
     ],
@@ -1570,35 +1546,47 @@
     "type": "CAPTION"
   },
   {
-    "id": "125",
-    "text": "No rush, no fear, just a quiet connection.",
+    "id": "123",
+    "text": "Lucas smiled, but this time it was a gentle, honest smile.",
     "translate": [
       {
-        "text": "Sem pressa, sem medo, apenas uma conexão tranquila.",
+        "text": "Lucas sorriu, mas desta vez foi um sorriso gentil e honesto.",
         "language": "PT_BR"
       }
     ],
-    "time": "08:27:000",
+    "time": "08:23:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "124",
+    "text": "'I should have explained. I was scared to open my heart again.'",
+    "translate": [
+      {
+        "text": "'Eu deveria ter explicado. Fiquei com medo de abrir meu coração novamente'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:28:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "125",
+    "text": "They stood there, quiet but comfortable.",
+    "translate": [
+      {
+        "text": "Eles ficaram ali, em silêncio, mas confortáveis.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:32:000",
     "type": "CAPTION"
   },
   {
     "id": "126",
-    "text": "As the sun slowly disappeared, Emma felt something warm inside her.",
+    "text": "Later that day, Lucas closed the bookstore early.",
     "translate": [
       {
-        "text": "Enquanto o sol desaparecia lentamente, Emma sentiu algo quente dentro dela.",
-        "language": "PT_BR"
-      }
-    ],
-    "time": "08:31:000",
-    "type": "CAPTION"
-  },
-  {
-    "id": "127",
-    "text": "She didn't know what the future would bring, but she knew this:",
-    "translate": [
-      {
-        "text": "Ela não sabia o que o futuro traria, mas sabia disto:",
+        "text": "Mais tarde naquele dia, Lucas fechou a livraria mais cedo.",
         "language": "PT_BR"
       }
     ],
@@ -1606,11 +1594,11 @@
     "type": "CAPTION"
   },
   {
-    "id": "128",
-    "text": "sometimes love does not arrive loudly.",
+    "id": "127",
+    "text": "He walked with Emma to the beach.",
     "translate": [
       {
-        "text": "às vezes o amor não chega ruidosamente.",
+        "text": "Ele caminhou com Emma até a praia.",
         "language": "PT_BR"
       }
     ],
@@ -1618,11 +1606,11 @@
     "type": "CAPTION"
   },
   {
-    "id": "129",
-    "text": "Sometimes it arrives gently, like the sea at sunset.",
+    "id": "128",
+    "text": "The sea was calm, and the sky was painted in soft colors.",
     "translate": [
       {
-        "text": "Às vezes chega suavemente, como o mar ao pôr do sol.",
+        "text": "O mar estava calmo e o céu estava pintado com cores suaves.",
         "language": "PT_BR"
       }
     ],
@@ -1630,21 +1618,153 @@
     "type": "CAPTION"
   },
   {
-    "id": "130",
-    "text": "And in that small town, two hearts found peace and the beginning of something real.",
+    "id": "129",
+    "text": "'I like this town,' Emma said. 'But more than that, I like how it makes me feel.'",
     "translate": [
       {
-        "text": "E naquela pequena cidade, dois corações encontraram a paz e o começo de algo real.",
+        "text": "'Gosto desta cidade', disse Emma. 'Mas mais do que isso, gosto de como ela me faz sentir'.",
         "language": "PT_BR"
       }
     ],
-    "time": "08:48:000",
+    "time": "08:47:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "130",
+    "text": "Lucas nodded. 'This town gave me roots.'",
+    "translate": [
+      {
+        "text": "Lucas assentiu. 'Esta cidade me deu raízes'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:51:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "131",
+    "text": "'Maybe you gave me courage.'",
+    "translate": [
+      {
+        "text": "'Talvez você tenha me dado coragem'.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:54:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "132",
+    "text": "Emma looked at him and smiled.",
+    "translate": [
+      {
+        "text": "Emma olhou para ele e sorriu.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:57:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "133",
+    "text": "They sat on the sand, listening to the waves.",
+    "translate": [
+      {
+        "text": "Sentaram-se na areia, ouvindo as ondas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:00:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "134",
+    "text": "No rush, no fear. Just a quiet connection.",
+    "translate": [
+      {
+        "text": "Sem pressa, sem medo. Apenas uma conexão tranquila.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:04:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "135",
+    "text": "As the sun slowly disappeared, Emma felt something warm inside her.",
+    "translate": [
+      {
+        "text": "Enquanto o sol desaparecia lentamente, Emma sentiu algo caloroso dentro de si.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:07:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "136",
+    "text": "She didn't know what the future would bring, but she knew this:",
+    "translate": [
+      {
+        "text": "Ela não sabia o que o futuro traria, mas sabia disto:",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:12:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "137",
+    "text": "Sometimes love does not arrive loudly.",
+    "translate": [
+      {
+        "text": "Às vezes o amor não chega de forma barulhenta.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:17:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "138",
+    "text": "Sometimes it arrives gently, like the sea at sunset.",
+    "translate": [
+      {
+        "text": "Às vezes chega suavemente, como o mar ao pôr do sol.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:21:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "139",
+    "text": "And in that small town, two hearts found peace...",
+    "translate": [
+      {
+        "text": "E naquela pequena cidade, dois corações encontraram a paz...",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:26:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "140",
+    "text": "...and the beginning of something real.",
+    "translate": [
+      {
+        "text": "...e o começo de algo real.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:31:000",
     "type": "CAPTION"
   },
   {
     "id": "c1a4d9e2-8f7b-4a3e-9d6f-2b8a5c4e1f90",
     "type": "REVIEW",
-    "time": "00:00:000",
+    "time": "09:40:000",
     "newWords": [
       {
         "word": "truth",

@@ -1,11 +1,7 @@
 import { registerRootComponent } from "expo";
 
 import App from "./src/App";
-import TrackPlayer, {
-  Event,
-  isPlaying,
-  State,
-} from "react-native-track-player";
+import TrackPlayer, { Event, State } from "react-native-track-player";
 
 export const PlaybackService = async function () {
   TrackPlayer.addEventListener(Event.RemotePlay, () => TrackPlayer.play());

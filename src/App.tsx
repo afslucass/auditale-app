@@ -7,8 +7,10 @@ import TrackPlayer, {
 import { NavigationContainer } from "@react-navigation/native";
 
 import RootStack from "./screens/RootStack.index";
+
 import { SystemProvider } from "./contexts/system";
 import { AuthProvider } from "./contexts/auth";
+import { PlayingStoryMetadataProvider } from "./contexts/playing-story-metadata";
 
 export default function App() {
   useEffect(() => {
@@ -38,8 +40,10 @@ export default function App() {
     <NavigationContainer>
       <AuthProvider>
         <SystemProvider>
-          <StatusBar style="light" />
-          <RootStack />
+          <PlayingStoryMetadataProvider>
+            <StatusBar style="light" />
+            <RootStack />
+          </PlayingStoryMetadataProvider>
         </SystemProvider>
       </AuthProvider>
     </NavigationContainer>

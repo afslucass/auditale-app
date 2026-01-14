@@ -8,6 +8,7 @@ import useGetStoryDetails from "../../hooks/useGetStoryDetails";
 import { useEffect } from "react";
 import { Text } from "react-native";
 import { Caption } from "../../types/story";
+import TrackPlayer from "react-native-track-player";
 
 export type StoryParams = {
   route: { params: { id: string; title: string; thumbnail: string } };
@@ -27,12 +28,34 @@ function Story({
   };
 
   const handleReviewPress = (params: Caption) => {
-    navigation.navigate("Review", params);
+    navigation.navigate("Review", {
+      caption: params,
+    });
   };
 
   useEffect(() => {
     getStoryDetails(id);
   }, []);
+
+  useEffect(() => {
+    if (data) {
+      const configureTrack = async () => {
+        const storyTrack = {
+          id: data!.id,
+          url: data!.audio,
+          title: data!.title,
+          artist: "Auditale",
+          genre: data!.description,
+          artwork: "https://picsum.photos/200",
+          duration: 530,
+        };
+
+        await TrackPlayer.add([storyTrack]);
+        await TrackPlayer.play();
+      };
+      configureTrack();
+    }
+  }, [data]);
 
   if (loading) {
     return <Text>Loading</Text>;
@@ -57,7 +80,7 @@ function Story({
         />
       </SectionsContainer>
       <SectionsContainer>
-        <AudioPlayerControls story={data} />
+        <AudioPlayerControls />
       </SectionsContainer>
     </Screen>
   );

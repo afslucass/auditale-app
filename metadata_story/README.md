@@ -1,14 +1,29 @@
 para a historia, usar voz do mp3
 
-para traduzir e falar o resumo, podemos usar o feat de text to speech nativa do OS
-https://www.npmjs.com/package/react-native-tts
+vamos ter um audio so para a historia completa
 
-1. ao apertar o play, a story deve comecar.
+vamos precisar de audios de ia para cada palavra nova.
 
-2. quando o narrador falar uma frase, o app deve acompanhar na timeline
+vamos precisar dce audios de ia para cada descricao de review.
 
-3. o usuario pode alterar o tempo do audio pela progressbar.
+quando o usuario iniciar uma track, o app vai chamar a funcao TrackPlayer.add as historias e os resumos e palavras.
 
-4. ao pressionar os botoes de avancar ou diminuir, o app avanca a frase.
+quando o usuario entrar em um resumos, guardamos o tempo da historia q parou, iniciamos o resumo, e quando terminar, voltamos para a historia de onde ela parou
 
-5. se o usuario pressionar uma frase na timeline, o leitor deve pular para aquela frase
+O Q ESTA ACIMA NAO FUNCIONOU
+
+NOVa abordagem:
+
+vamos ter o audio com a historia e os reviews tudo junto,
+
+e vamos ter nos metadados, os tempos dos CAPTIONS e do REVIEW
+
+a cada instante, vamos verificar se o audio esta em uma CAPTION ou em uma REVUEW
+
+se estiver no CAPTION, mostra a timeline, se estiver no REVIEW, exibe a tela de REVIEW
+
+na TELA de REVIEW, vai ter o msm componente playback, se o usuario sair da review, o app volta para a tela anterior
+
+NOVAS PALAVRAS
+
+quando o app terminar um review, o app vai parar o audio corrente, e carregar o audio das palavras aprendidas

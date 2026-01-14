@@ -60,7 +60,7 @@ const getStoryDetails = async (id: string) => {
     throw new Error(detailsError.message);
   }
 
-  const { data: audio } = await supabase.storage
+  const { data: audio } = supabase.storage
     .from("story audios")
     .getPublicUrl(`${id}.mp3`);
 

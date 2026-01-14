@@ -5,18 +5,25 @@ import { Screen, SectionsContainer } from "./Review.styles";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox.index";
 import VocabularyCheck from "../../components/VocabularyCheck/VocabularyCheck.index";
 import { Caption } from "../../types/story";
+import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
+import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
 
-export type ReviewParams = { route: { params: Caption } };
+export type ReviewParams = {
+  route: { params: { caption: Caption } };
+};
 
 function Review({
   route: {
-    params: { translate, newWords },
+    params: {
+      caption: { translate, newWords },
+    },
   },
 }: ReviewParams) {
   const navigation = useNavigation();
+  const { setPreventGoToReview } = usePlayingStoryMetadataContext();
 
   const handleGoBack = () => {
-    navigation.goBack();
+    setPreventGoToReview(true);
   };
 
   if (!translate || !newWords) {
@@ -32,6 +39,7 @@ function Review({
         image="https://picsum.photos/200"
       />
       <SectionsContainer>
+        <AudioPlayerControls />
         <DescriptionBox text={translate[0].text} />
         <VocabularyCheck items={newWords} />
       </SectionsContainer>

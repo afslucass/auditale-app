@@ -25,21 +25,20 @@ import {
 } from "./AudioPlayerControls.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors/colors";
-import { Story } from "../../types/story";
 import { formatDuration } from "../../helpers/time";
-
-type Props = {
-  story: Story | null;
-};
+import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
 
 const SPEED_OPTIONS = [0.5, 1, 1.25, 1.5, 2];
 
-export default function AudioPlayerControls({ story }: Props) {
+export default function AudioPlayerControls() {
   const [speed, setSpeed] = useState(1);
   const [openSpeedMenu, setOpenSpeedMenu] = useState(false);
 
   const progress = useProgress(250);
   const { bufferingDuringPlay, playing } = useIsPlaying();
+
+  const { usarHasSlidingTimeline, setUsarHasSlidingTimeline } =
+    usePlayingStoryMetadataContext();
 
   async function safeSeekTo(time: number) {
     // 1️⃣ Garante decoder ativo
@@ -80,24 +79,6 @@ export default function AudioPlayerControls({ story }: Props) {
   };
 
   useEffect(() => {
-    if (story) {
-      const configureTrack = async () => {
-        const track = {
-          url: story!.audio,
-          title: story!.title,
-          artist: "Auditale",
-          genre: story!.description,
-          artwork: "https://picsum.photos/200",
-          duration: 530,
-        };
-        await TrackPlayer.add([track]);
-        TrackPlayer.play();
-      };
-      configureTrack();
-    }
-  }, [story]);
-
-  useEffect(() => {
     TrackPlayer.setRate(speed);
   }, [speed]);
 
@@ -127,6 +108,8 @@ export default function AudioPlayerControls({ story }: Props) {
 
       <SliderBar
         value={sliderValue}
+        onTouchStart={() => setUsarHasSlidingTimeline(true)}
+        onTouchEnd={() => setUsarHasSlidingTimeline(false)}
         onValueChange={handleSliderChange}
         tapToSeek
       />

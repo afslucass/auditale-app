@@ -31,13 +31,12 @@ import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-met
 const SPEED_OPTIONS = [0.5, 1, 1.25, 1.5, 2];
 
 export default function AudioPlayerControls() {
-  const [speed, setSpeed] = useState(1);
   const [openSpeedMenu, setOpenSpeedMenu] = useState(false);
 
   const progress = useProgress(250);
   const { bufferingDuringPlay, playing } = useIsPlaying();
 
-  const { usarHasSlidingTimeline, setUsarHasSlidingTimeline } =
+  const { speed, setSpeed, setUsarHasSlidingTimeline } =
     usePlayingStoryMetadataContext();
 
   async function safeSeekTo(time: number) {
@@ -77,10 +76,6 @@ export default function AudioPlayerControls() {
     }
     await TrackPlayer.pause();
   };
-
-  useEffect(() => {
-    TrackPlayer.setRate(speed);
-  }, [speed]);
 
   const sliderValue = (progress.position * 100) / progress.duration / 100;
 

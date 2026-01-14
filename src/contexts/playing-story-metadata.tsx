@@ -1,7 +1,4 @@
-import React, { PropsWithChildren, useContext, useMemo, useState } from "react";
-
-import { TEXTS as ptbr } from "../constants/texts/ptbr";
-import { Language } from "../types/global";
+import React, { PropsWithChildren, useContext, useState } from "react";
 
 export enum PlayingStoryScreen {
   STORY = "STORY",
@@ -20,6 +17,8 @@ export type PlayingStoryMetadataContextTypes = {
   setPreventGoToReview: (value: boolean) => void;
   usarHasSlidingTimeline: boolean;
   setUsarHasSlidingTimeline: (value: boolean) => void;
+  speed: number;
+  setSpeed: (value: number) => void;
 };
 
 const PlayingStoryMetadataContext =
@@ -37,6 +36,7 @@ export const PlayingStoryMetadataProvider = ({
   const [preventGoToReview, setPreventGoToReview] = useState<boolean>(false);
   const [usarHasSlidingTimeline, setUsarHasSlidingTimeline] =
     useState<boolean>(false);
+  const [speed, setSpeed] = useState<number>(1);
 
   return (
     <PlayingStoryMetadataContext.Provider
@@ -47,6 +47,8 @@ export const PlayingStoryMetadataProvider = ({
         setPreventGoToReview,
         usarHasSlidingTimeline,
         setUsarHasSlidingTimeline,
+        speed,
+        setSpeed,
       }}
     >
       {children}

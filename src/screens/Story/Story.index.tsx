@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { Text } from "react-native";
 import { Caption } from "../../types/story";
 import TrackPlayer from "react-native-track-player";
+import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
 
 export type StoryParams = {
   route: { params: { id: string; title: string; thumbnail: string } };
@@ -22,6 +23,7 @@ function Story({
   const navigation = useNavigation<any>();
 
   const [getStoryDetails, { data, loading, error }] = useGetStoryDetails();
+  const { speed } = usePlayingStoryMetadataContext();
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -56,6 +58,10 @@ function Story({
       configureTrack();
     }
   }, [data]);
+
+  useEffect(() => {
+    TrackPlayer.setRate(speed);
+  }, [speed]);
 
   if (loading) {
     return <Text>Loading</Text>;

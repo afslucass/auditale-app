@@ -27,3 +27,7 @@ na TELA de REVIEW, vai ter o msm componente playback, se o usuario sair da revie
 NOVAS PALAVRAS
 
 quando o app terminar um review, o app vai parar o audio corrente, e carregar o audio das palavras aprendidas
+
+LIMITACOES
+
+a ia nao consegue gerar legendas 100% sincronizadas com o audio, sera q se agent gerar as legendas pelas partes do audio melhora?

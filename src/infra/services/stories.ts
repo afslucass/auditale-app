@@ -5,7 +5,7 @@ const getStories = async (limit: number) => {
   const { data, error } = await supabase
     .from("Story")
     .select(
-      `id, title, description, gender, duration, free, audio, difficulty, created_at, language, thumbnail`
+      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`
     )
     .order("created_at", { ascending: false })
     .limit(limit);
@@ -25,7 +25,7 @@ const getPaginatedAndFilteredStoriesOrderingByCreation = async (
   const query = supabase
     .from("Story")
     .select(
-      `id, title, description, gender, duration, free, audio, difficulty, created_at, language, thumbnail`
+      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`
     )
     .order("created_at", { ascending: false })
     .limit(pageSize);

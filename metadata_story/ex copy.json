@@ -1,0 +1,934 @@
+[
+  {
+    "id": "1",
+    "text": "Chapter 1.",
+    "translate": [
+      {
+        "text": "Capítulo 1.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:000:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "2",
+    "text": "The village of Drownings End existed in a state of perpetual dampness, a forgotten seam where the gray sea stitched itself to the black cliffs.",
+    "translate": [
+      {
+        "text": "O vilarejo de Drownings End existia em um estado de umidade perpétua, uma costura esquecida onde o mar cinzento se unia aos penhascos negros.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:01:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "3",
+    "text": "Rain was not weather here; it was atmosphere.",
+    "translate": [
+      {
+        "text": "A chuva não era clima aqui; era atmosfera.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:11:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "4",
+    "text": "It beat on the mossy thatch, dripped from the bent pines, and filled the narrow lanes with the sound of a slow, endless leak.",
+    "translate": [
+      {
+        "text": "Ela batia no telhado de palha musgoso, gotejava dos pinheiros curvados e enchia as ruelas estreitas com o som de um vazamento lento e infinito.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:15:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "5",
+    "text": "In his lighthouse, Silas kept his own kind of vigil.",
+    "translate": [
+      {
+        "text": "Em seu farol, Silas mantinha seu próprio tipo de vigília.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:24:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "6",
+    "text": "He was the village archivist, a curator of faded ledgers, water-stained maps, and the quiet papery scent of forgotten things.",
+    "translate": [
+      {
+        "text": "Ele era o arquivista do vilarejo, curador de livros contábeis desbotados, mapas manchados de água e o cheiro silencioso de papel de coisas esquecidas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:31:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "7",
+    "text": "His great-uncle Erasmus, the previous archivist, had been found three days prior, sitting rigid in his high-backed chair.",
+    "translate": [
+      {
+        "text": "Seu tio-avô Erasmus, o arquivista anterior, fora encontrado três dias antes, sentado rigidamente em sua cadeira de encosto alto.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:43:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "8",
+    "text": "The village doctor called it a stroke; Silas suspected otherwise.",
+    "translate": [
+      {
+        "text": "O médico do vilarejo chamou de derrame; Silas suspeitava do contrário.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "00:58:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "9",
+    "text": "The only item of note in Erasmus's Spartan will was a specific bequest: a sealed oak box for his nephew.",
+    "translate": [
+      {
+        "text": "O único item digno de nota no testamento espartano de Erasmus era um legado específico: uma caixa de carvalho lacrada para seu sobrinho.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:08:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "10",
+    "text": "Silas pried it open in the lamplight of the library.",
+    "translate": [
+      {
+        "text": "Silas a abriu à luz do lampião na biblioteca.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:23:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "11",
+    "text": "Inside was a journal; its leather cover was mottled with dark blooming stains that felt unpleasantly spongy.",
+    "translate": [
+      {
+        "text": "Dentro havia um diário; sua capa de couro estava manchada com marcas escuras que pareciam desagradavelmente esponjosas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:34:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "12",
+    "text": "With careful tools, Silas broke the clasp.",
+    "translate": [
+      {
+        "text": "Com ferramentas cuidadosas, Silas quebrou o fecho.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "01:49:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "13",
+    "text": "The first page held only a date and a single line: 'It does not end with the sinking. It begins.'",
+    "translate": [
+      {
+        "text": "A primeira página continha apenas uma data e uma única linha: 'Não termina com o naufrágio. Começa.'",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:02:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "14",
+    "text": "As his fingers traced the paper, a sound fizzed at the edge of his hearing.",
+    "translate": [
+      {
+        "text": "Enquanto seus dedos traçavam o papel, um som chiou no limite de sua audição.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:14:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "15",
+    "text": "He opened it to a later page, a frantic scrawl: 'She calls from the rocks. She says my name. She says she is so cold.'",
+    "translate": [
+      {
+        "text": "Ele o abriu em uma página posterior, um garrancho frenético: 'Ela chama das rochas. Ela diz meu nome. Ela diz que está com tanto frio.'",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:30:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "16",
+    "text": "Silas jerked back, the journal falling to the table with a thick slap.",
+    "translate": [
+      {
+        "text": "Silas recuou bruscamente, o diário caindo sobre a mesa com um baque surdo.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:44:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "17",
+    "text": "The inheritance was not a journal; it was an echo chamber.",
+    "translate": [
+      {
+        "text": "A herança não era um diário; era uma câmara de eco.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "02:53:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "18",
+    "type": "REVIEW",
+    "time": "02:59:000",
+    "newWords": [
+      {
+        "word": "Perpetual",
+        "translate": [
+          {
+            "text": "Perpétuo",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Vigil",
+        "translate": [
+          {
+            "text": "Vigília",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Bequest",
+        "translate": [
+          {
+            "text": "Legado",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Tarnished",
+        "translate": [
+          {
+            "text": "Manchado",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Inert",
+        "translate": [
+          {
+            "text": "Inerte",
+            "language": "PT_BR"
+          }
+        ]
+      }
+    ],
+    "translate": [
+      {
+        "text": "No vilarejo eternamente chuvoso de Drowning's End, o arquivista recluso Silas Vale herda de seu tio-avô falecido uma caixa lacrada. Dentro, encontra um diário com capa manchada de água e cheiro de mar profundo. Ao abri-lo, Silas descobre que o diário não contém apenas escritas, mas também os sussurros fantasmais dos afogados, com vozes que passam do papel diretamente para sua percepção. A herança revela-se não ser um mero livro, mas uma perigosa câmara de ecos do passado trágico do mar, e Silas compreende que os mortos querem ser ouvidos.",
+        "language": "PT_BR"
+      }
+    ],
+    "description": "In the perpetually rainy village of Drowning's End, the reclusive archivist Silas Vale inherits a sealed box from his deceased great-uncle. Inside, he finds a diary with a water-stained cover and the scent of the deep sea. Upon opening it, Silas discovers that the diary contains not only writings but also the ghostly whispers of the drowned, voices that travel from the paper directly into his perception. The inheritance turns out to be not merely a book, but a dangerous echo chamber of the sea's tragic past, and Silas understands that the dead wish to be heard."
+  },
+  {
+    "id": "23",
+    "text": "Chapter 2.",
+    "translate": [
+      {
+        "text": "Capítulo 2.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:07:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "24",
+    "text": "Driven by a morbid compulsion he could not name, Silas began to transcribe the journal.",
+    "translate": [
+      {
+        "text": "Movido por uma compulsão mórbida que não conseguia nomear, Silas começou a transcrever o diário.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:08:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "25",
+    "text": "He set up his desk in the lantern room, offering a 360-degree view of the relentless sea.",
+    "translate": [
+      {
+        "text": "Ele montou sua mesa na sala da lanterna, que oferecia uma vista de 360 graus do mar implacável.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:22:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "26",
+    "text": "By night, with a single oil lamp, he deciphered the water-warped script.",
+    "translate": [
+      {
+        "text": "À noite, com um único lampião a óleo, ele decifrava a escrita deformada pela água.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:39:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "27",
+    "text": "The entries were vignettes of despair: a fisherman seeing a loved one's face in the froth, a lifeboat crew rowing toward phantom lights.",
+    "translate": [
+      {
+        "text": "As entradas eram vinhetas de desespero: um pescador vendo o rosto de um ente querido na espuma, uma tripulação de bote salva-vidas remando em direção a luzes fantasmas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "04:47:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "28",
+    "text": "With each sentence Silas copied, the atmosphere in the lighthouse thickened.",
+    "translate": [
+      {
+        "text": "A cada frase que Silas copiava, a atmosfera no farol adensava-se.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:07:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "29",
+    "text": "One night, he saw a handprint, slick and cold, materializing on the inside of the glass dome.",
+    "translate": [
+      {
+        "text": "Certa noite, ele viu a impressão de uma mão, viscosa e fria, materializando-se no interior da cúpula de vidro.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:28:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "30",
+    "text": "On another evening, the smell of wet wool and pipe tobacco, Erasmus's scent, would fill the room.",
+    "translate": [
+      {
+        "text": "Em outra noite, o cheiro de lã molhada e tabaco de cachimbo, o cheiro de Erasmus, enchia a sala.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "05:51:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "31",
+    "text": "The most terrifying change was in the journal itself; entries began to bleed a brownish liquid.",
+    "translate": [
+      {
+        "text": "A mudança mais terrível foi no próprio diário; as entradas começaram a sangrar um líquido acastanhado.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:14:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "32",
+    "text": "New faint lines of text would sometimes appear in the margins: 'He is not gone. He waits. Do you see?'",
+    "translate": [
+      {
+        "text": "Novas linhas tênues de texto às vezes apareciam nas margens: 'Ele não se foi. Ele espera. Você vê?'",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:33:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "33",
+    "text": "Silas was no longer just an archivist; he was a medium conducting a symphony of the dead.",
+    "translate": [
+      {
+        "text": "Silas não era mais apenas um arquivista; ele era um médium regendo uma sinfonia dos mortos.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "06:48:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "34",
+    "type": "REVIEW",
+    "time": "07:11:000",
+    "newWords": [
+      {
+        "word": "Morbid",
+        "translate": [
+          {
+            "text": "Mórbido",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Vignettes",
+        "translate": [
+          {
+            "text": "Vinhetas",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Decipher",
+        "translate": [
+          {
+            "text": "Decifrar",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Materializing",
+        "translate": [
+          {
+            "text": "Materializando-se",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Apex",
+        "translate": [
+          {
+            "text": "Ápice",
+            "language": "PT_BR"
+          }
+        ]
+      }
+    ],
+    "translate": [
+      {
+        "text": "Silas, movido por uma compulsão mórbida, começa a transcrever o diário na sala do farol. À medida que copia as entradas fragmentadas e desesperadas das vítimas do mar, os fenômenos sobrenaturais se intensificam: sons de batidas de barco, cheiros fantasmais e impressões de mãos úmidas no vidro. O próprio diário parece reagir à sua presença, com entradas antigas 'sangrando' um líquido acastanhado e novos escritos aparecendo nas margens. Silas percebe que não está apenas preservando a história, mas atuando como um médium, e que o farol está se tornando o ponto focal onde o passado trágico está forçando seu caminho de volta para o presente.",
+        "language": "PT_BR"
+      }
+    ],
+    "description": "Driven by a morbid compulsion, Silas begins transcribing the diary in the lighthouse room. As he copies the fragmented, desperate entries of the sea's victims, the supernatural phenomena intensify: sounds of boat-knocks, phantom smells, and impressions of wet hands on the glass. The diary itself seems to react to his presence, with old entries 'bleeding' a brownish liquid and new writings appearing in the margins. Silas realizes he is not merely preserving history, but acting as a medium, and that the lighthouse is becoming the focal point where the tragic past is forcing its way back into the present."
+  },
+  {
+    "id": "39",
+    "text": "Chapter 3.",
+    "translate": [
+      {
+        "text": "Capítulo 3.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "07:59:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "40",
+    "text": "The breaking point came with the entry about the Evening Star.",
+    "translate": [
+      {
+        "text": "O ponto de ruptura veio com a entrada sobre o Evening Star.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:02:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "41",
+    "text": "The author described watching the schooner approach the hidden reef on a moonless night and recorded the exact time of the first distress flare.",
+    "translate": [
+      {
+        "text": "O autor descreveu a escuna aproximando-se do recife oculto em uma noite sem lua e registrou a hora exata do primeiro sinal de socorro.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:14:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "42",
+    "text": "He wrote of the screams as a dissonant choir and the final silence as the most satisfactory punctuation.",
+    "translate": [
+      {
+        "text": "Ele escreveu sobre os gritos como um coro dissonante e o silêncio final como a pontuação mais satisfatória.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:33:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "43",
+    "text": "A cold, sick understanding crystallized in Silas's gut.",
+    "translate": [
+      {
+        "text": "Uma compreensão fria e doentia cristalizou-se nas entranhas de Silas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "08:44:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "44",
+    "text": "Every major maritime disaster for sixty years coincided with a period where the author, a man who signed only a looping 'C', was in residence.",
+    "translate": [
+      {
+        "text": "Todo grande desastre marítimo por sessenta anos coincidia com um período em que o autor, um homem que assinava apenas com um 'C', estava presente.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:000:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "45",
+    "text": "The author hadn't been a chronicler of tragedy; he had been its architect.",
+    "translate": [
+      {
+        "text": "O autor não fora um cronista da tragédia; ele fora seu arquiteto.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:16:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "46",
+    "text": "The whispers and manifestations weren't ghosts seeking solace; they were instruments of a story of predation.",
+    "translate": [
+      {
+        "text": "Os sussurros e manifestações não eram fantasmas buscando consolo; eram instrumentos de uma história de predação.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:34:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "47",
+    "text": "As this realization dawned, the final blank page began to darken with an image.",
+    "translate": [
+      {
+        "text": "Enquanto essa percepção surgia, a página final em branco começou a escurecer com uma imagem.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "09:51:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "48",
+    "text": "It was a drawing of the lantern room, and in the window, the silhouette of a man seated at a desk: Silas himself.",
+    "translate": [
+      {
+        "text": "Era um desenho da sala da lanterna e, na janela, a silhueta de um homem sentado a uma mesa: o próprio Silas.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "10:04:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "49",
+    "text": "A new sentence formed: 'Every story needs an author, Silas Vale. The pen is offered. Will you take it?'",
+    "translate": [
+      {
+        "text": "Uma nova frase formou-se: 'Toda história precisa de um autor, Silas Vale. A pena é oferecida. Você a aceitará?'",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "10:19:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "50",
+    "text": "The voices showed him what the story required next: a shape moving on the cliffs, a misplaced lantern, a cry swallowed by the wind.",
+    "translate": [
+      {
+        "text": "As vozes mostraram-lhe o que a história exigia a seguir: um vulto movendo-se nos penhascos, um lampião fora do lugar, um grito engolido pelo vento.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "10:41:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "51",
+    "type": "REVIEW",
+    "time": "11:15:000",
+    "newWords": [
+      {
+        "word": "Lucíd",
+        "translate": [
+          {
+            "text": "Lúcido",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Dissonant",
+        "translate": [
+          {
+            "text": "Dissonante",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Orchestrated",
+        "translate": [
+          {
+            "text": "Orquestrado",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Coalesced",
+        "translate": [
+          {
+            "text": "Coalesceram",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Susceptible",
+        "translate": [
+          {
+            "text": "Suscetível",
+            "language": "PT_BR"
+          }
+        ]
+      }
+    ],
+    "translate": [
+      {
+        "text": "Silas atinge um ponto de ruptão ao transcrever uma entrada sobre o naufrágio do Evening Star, escrita de forma límpida e clínica da perspectiva da costa. Ao cruzar dados do diário com os arquivos da vila, ele descobre um padrão horrível: o autor, identificado apenas por um 'C', não era um mero cronista, mas o arquiteto das tragédias. O diário é revelado como um dispositivo ativo que orquestrou os desastres. Com essa realização, a última página em branco do diário escurece, formando uma imagem da silhueta de Silas no farol. Uma nova sentença surge, oferecendo-lhe a pena para se tornar o novo autor da narrativa, apresentando-lhe flashes mentais do que a 'história' exige a seguir.",
+        "language": "PT_BR"
+      }
+    ],
+    "description": "Silas reaches a breaking point while transcribing an entry about the wreck of the Evening Star, written in a chillingly clear and clinical tone from the perspective of the shore. Cross-referencing the diary's data with the village archives, he uncovers a horrifying pattern: the author, identified only by a 'C', was not a mere chronicler, but the architect of the tragedies. The diary is revealed as an active device that orchestrated the disasters. With this realization, the final blank page of the diary darkens, forming an image of Silas's silhouette in the lighthouse. A new sentence coalesces, offering him the pen to become the new author of the narrative, presenting him with mental flashes of what the 'story' demands next."
+  },
+  {
+    "id": "56",
+    "text": "Chapter 4.",
+    "translate": [
+      {
+        "text": "Capítulo 4.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "12:09:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "57",
+    "text": "The offered pen was not an object, but a compulsion. It settled in Silas's mind with perfect, terrible clarity.",
+    "translate": [
+      {
+        "text": "A pena oferecida não era um objeto, mas uma compulsão. Instalou-se na mente de Silas com uma clareza perfeita e terrível.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "12:12:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "58",
+    "text": "A loose stone, a single well-placed shove in the dark; the journal would record it and the hunger within its pages would be sated.",
+    "translate": [
+      {
+        "text": "Uma pedra solta, um único empurrão bem dado no escuro; o diário registraria isso e a fome em suas páginas seria saciada.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "12:26:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "59",
+    "text": "The chorus of drowned voices now hummed not with sorrow, but with anticipation.",
+    "translate": [
+      {
+        "text": "O coro de vozes afogadas agora murmurava não com tristeza, mas com antecipação.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "12:47:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "60",
+    "text": "Silas looked from the illustration to the storm-lashed windows. The village below was ignorant of the choice being made.",
+    "translate": [
+      {
+        "text": "Silas olhou da ilustração para as janelas açoitadas pela tempestade. O vilarejo abaixo ignorava a escolha que estava sendo feita.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "13:000:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "61",
+    "text": "Had Erasmus been offered the pen? Was his death the story's revenge for a refusal, or was it his own final entry, a self-sacrifice?",
+    "translate": [
+      {
+        "text": "Será que a pena fora oferecida a Erasmus? Teria sido sua morte a vingança da história por uma recusa, ou fora sua última entrada, um autossacrifício?",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "13:17:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "62",
+    "text": "The journal gave no answer, only the patient wet blankness of the final page.",
+    "translate": [
+      {
+        "text": "O diário não deu resposta, apenas o vazio úmido e paciente da página final.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "13:38:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "63",
+    "text": "Then he understood the flaw: the story required an author, but it was itself only a story.",
+    "translate": [
+      {
+        "text": "Então ele entendeu a falha: a história exigia um autor, mas ela própria era apenas uma história.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "13:47:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "64",
+    "text": "Its power lived by being told; it fed on being given form.",
+    "translate": [
+      {
+        "text": "Seu poder vivia por ser contada; alimentava-se de ganhar forma.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "14:02:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "65",
+    "text": "Silas did not reach for his transcription pen; instead, he picked up the journal itself.",
+    "translate": [
+      {
+        "text": "Silas não buscou sua pena de transcrição; em vez disso, pegou o próprio diário.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "14:13:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "66",
+    "text": "He carried it to the massive, defunct iron brazier that once held the lighthouse's great flame.",
+    "translate": [
+      {
+        "text": "Ele o carregou até o enorme braseiro de ferro desativado que outrora continha a grande chama do farol.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "14:29:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "67",
+    "text": "From his pocket, he took the small tin of kerosene he used for his lamps.",
+    "translate": [
+      {
+        "text": "De seu bolso, tirou a pequena lata de querosene que usava para seus lampiões.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "14:46:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "68",
+    "text": "The narrative showed him one last vivid flash: his own name written in beautiful script at the top of the blank page.",
+    "translate": [
+      {
+        "text": "A narrativa mostrou-lhe um último lampejo vívido: seu próprio nome escrito em bela caligrafia no topo da página em branco.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "14:56:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "69",
+    "text": "Silas poured the kerosene over the book and struck a match.",
+    "translate": [
+      {
+        "text": "Silas derramou o querosene sobre o livro e riscou um fósforo.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "15:08:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "70",
+    "text": "The flame caught with a soft 'whump' that silenced the voices instantly.",
+    "translate": [
+      {
+        "text": "A chama pegou com um sopro suave que silenciou as vozes instantaneamente.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "15:19:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "71",
+    "text": "As it burned, the pressure in the lighthouse bled away; the handprint on the glass evaporated.",
+    "translate": [
+      {
+        "text": "Enquanto queimava, a pressão no farol esvaía-se; a marca da mão no vidro evaporou.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "15:33:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "72",
+    "text": "When the last ember faded, a profound and ordinary silence remained.",
+    "translate": [
+      {
+        "text": "Quando a última brasa se apagou, restou um silêncio profundo e comum.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "15:49:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "73",
+    "text": "Silas had chosen to be an editor; and his final edit was the most powerful of all: a deletion.",
+    "translate": [
+      {
+        "text": "Silas escolhera ser um editor; e sua edição final foi a mais poderosa de todas: uma deleção.",
+        "language": "PT_BR"
+      }
+    ],
+    "time": "16:05:000",
+    "type": "CAPTION"
+  },
+  {
+    "id": "74",
+    "type": "REVIEW",
+    "time": "16:14:000",
+    "newWords": [
+      {
+        "word": "Impeccable",
+        "translate": [
+          {
+            "text": "Impecável",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Sated",
+        "translate": [
+          {
+            "text": "Saciaram",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Brazier",
+        "translate": [
+          {
+            "text": "Braseiro",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Cacophony",
+        "translate": [
+          {
+            "text": "Cacofonia",
+            "language": "PT_BR"
+          }
+        ]
+      },
+      {
+        "word": "Deliberation",
+        "translate": [
+          {
+            "text": "Deliberação",
+            "language": "PT_BR"
+          }
+        ]
+      }
+    ],
+    "translate": [
+      {
+        "text": "Confrontado com a oferta da 'pena' e com a compulsão de se tornar o novo autor da narrativa macabra, Silas compreende a lógica do diário: seu poder reside na continuidade, em ser alimentado por um contador de histórias. Recusando-se a cometer o sacrifício exigido, ele percebe que pode quebrar a corrente não cedendo, mas destruindo a própria fonte. Silas coloca o diário na antiga braçadeira do farol, encharca-o com querosene e o incendeia. O diário queima com uma chama sobrenatural, e à medida que é consumido, todas as manifestações e pressões no farol cessam. Silas escolhe ser um editor em vez de um autor, e sua edição final—a deleção completa da história—quebra a maldição, deixando apenas o silêncio normal da chuva e do mar.",
+        "language": "PT_BR"
+      }
+    ],
+    "description": "Confronted with the offer of the 'pen' and the compulsion to become the new author of the macabre narrative, Silas comprehends the diary's logic: its power resides in continuity, in being fed by a storyteller. Refusing to commit the required sacrifice, he realizes he can break the chain not by complying, but by destroying the very source. Silas places the diary in the lighthouse's ancient brazier, soaks it in kerosene, and sets it ablaze. The diary burns with a supernatural flame, and as it is consumed, all the manifestations and pressures within the lighthouse cease. Silas chooses to be an editor instead of an author, and his final edit—the complete deletion of the story—shatters the curse, leaving behind only the normal silence of the rain and the sea."
+  }
+]

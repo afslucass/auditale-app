@@ -1,0 +1,8 @@
+file 'cap1.mp3'
+file 'res cap1.mp3'
+file 'cap2.mp3'
+file 'res cap2.mp3'
+file 'cap3.mp3'
+file 'res cap3.mp3'
+file 'cap4.mp3'
+file 'res cap4.mp3'

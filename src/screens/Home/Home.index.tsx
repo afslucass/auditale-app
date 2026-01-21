@@ -38,11 +38,10 @@ function Home() {
     navigation.navigate("Search");
   };
 
-  const handlePressStory = (id: string, title: string, thumbnail: string) => {
+  const handlePressStory = (id: string, title: string) => {
     navigation.navigate("Story", {
       id,
       title,
-      thumbnail,
     });
   };
 

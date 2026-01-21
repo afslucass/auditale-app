@@ -16,14 +16,14 @@ import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type StoryCardParams = {
   item: StoryWithoutContent;
-  onPress: (id: string, title: string, thumbnail: string) => void;
+  onPress: (id: string, title: string) => void;
 };
 
 export default function StoryCard({ item, onPress }: StoryCardParams) {
   const { texts } = useSystemContext();
 
   return (
-    <CardContainer onPress={() => onPress(item.id, item.title, item.thumbnail)}>
+    <CardContainer onPress={() => onPress(item.id, item.title)}>
       <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.id) }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>

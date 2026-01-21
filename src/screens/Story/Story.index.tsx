@@ -13,12 +13,12 @@ import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-met
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type StoryParams = {
-  route: { params: { id: string; title: string; thumbnail: string } };
+  route: { params: { id: string; title: string } };
 };
 
 function Story({
   route: {
-    params: { id, title, thumbnail },
+    params: { id, title },
   },
 }: StoryParams) {
   const navigation = useNavigation<any>();
@@ -51,7 +51,7 @@ function Story({
           title: data!.title,
           artist: "Auditale",
           genre: data!.description,
-          artwork: "https://picsum.photos/200",
+          artwork: getStoryThumbnailImageUrl(data!.id),
           duration: 530,
         };
 

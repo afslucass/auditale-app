@@ -19,7 +19,6 @@ export enum CaptionType {
 
 export type Story = {
   id: string;
-  thumbnail: string;
   title: string;
   description: string;
   duration: string;

@@ -13,6 +13,7 @@ import {
 import { useSystemContext } from "../../contexts/system";
 import { StoryWithoutContent } from "../../types/story";
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
+import { get20FirstWords } from "../../helpers/text";
 
 export type StoryCardParams = {
   item: StoryWithoutContent;
@@ -27,7 +28,7 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
       <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.id) }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
-        <Description>{item.description}</Description>
+        <Description>{get20FirstWords(item.description)}</Description>
         <Row>
           <Tag>
             <TagText>{item.gender}</TagText>

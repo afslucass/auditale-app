@@ -31,3 +31,5 @@ quando o app terminar um review, o app vai parar o audio corrente, e carregar o 
 LIMITACOES
 
 a ia nao consegue gerar legendas 100% sincronizadas com o audio, sera q se agent gerar as legendas pelas partes do audio melhora?
+
+eu criei o prompt abaixo para gerar legendas de um audio, so que em alguns trechos da legenda, nao condiz com o que esta no audio, melhore o prompt para que esses erros não aconteçam

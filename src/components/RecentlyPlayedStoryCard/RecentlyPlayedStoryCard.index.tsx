@@ -11,13 +11,14 @@ import {
   Tag,
   TagText,
 } from "./RecentlyPlayedStoryCard.styles";
+import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type RecentlyPlayedStoryCardType = {
-  id: number;
+  id: string;
   image: string;
   title: string;
   progress: number;
-  category: string;
+  gender: string;
 };
 
 export type RecentlyPlayedStoryCardParams = {
@@ -29,7 +30,7 @@ export default function RecentlyPlayedStoryCard({
 }: RecentlyPlayedStoryCardParams) {
   return (
     <CardContainer>
-      <StoryImage source={{ uri: item.image }} />
+      <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.id) }} />
 
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
@@ -42,7 +43,7 @@ export default function RecentlyPlayedStoryCard({
         </ProgressRow>
 
         <Tag>
-          <TagText>{item.category}</TagText>
+          <TagText>{item.gender}</TagText>
         </Tag>
       </InfoContainer>
     </CardContainer>

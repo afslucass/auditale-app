@@ -14,13 +14,14 @@ type CaptionWithRange = Caption & {
 };
 
 type useCaptionSyncParams = {
+  id: string;
   captions?: Caption[] | null;
 };
 
 const REVIEW_AUDIO_BASE_URL =
   "https://erfcqkqqqsglmwjgodbl.supabase.co/storage/v1/object/public/chapter%20review%20audios/PT_BR/";
 
-const useCaptionSync = ({ captions }: useCaptionSyncParams) => {
+const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const navigation = useNavigation<any>();
   const route = useRoute();
@@ -48,7 +49,7 @@ const useCaptionSync = ({ captions }: useCaptionSyncParams) => {
 
   const getActiveCaptionIndex = (
     captions: CaptionWithRange[],
-    position: number
+    position: number,
   ) => {
     return captions.findIndex((c) => position >= c.start && position < c.end);
   };
@@ -73,7 +74,7 @@ const useCaptionSync = ({ captions }: useCaptionSyncParams) => {
 
             setActiveIndex(index);
           }
-        }
+        },
       );
       return () => sub.remove();
     }
@@ -87,6 +88,7 @@ const useCaptionSync = ({ captions }: useCaptionSyncParams) => {
       metadata.screen === PlayingStoryScreen.REVIEW
     ) {
       navigation.navigate("Review", {
+        id,
         caption: captions[metadata.index],
       });
       return;

@@ -7,14 +7,16 @@ import VocabularyCheck from "../../components/VocabularyCheck/VocabularyCheck.in
 import { Caption } from "../../types/story";
 import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
 import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
+import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type ReviewParams = {
-  route: { params: { caption: Caption } };
+  route: { params: { id: string; caption: Caption } };
 };
 
 function Review({
   route: {
     params: {
+      id,
       caption: { translate, newWords },
     },
   },
@@ -36,7 +38,7 @@ function Review({
         variant="story"
         onBack={handleGoBack}
         title={"King Arthur"}
-        image="https://picsum.photos/200"
+        image={getStoryThumbnailImageUrl(id)}
       />
       <SectionsContainer>
         <AudioPlayerControls />

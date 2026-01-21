@@ -116,6 +116,10 @@ No captions contain fabricated or assumed content
 
 Return ONLY the JSON array with no additional text, explanations, or markdown formatting.
 
+# gerar imagem com base na descricao da historia
+
+Vou passar resumos de contos, gere thumbnais para esses contos no estilo cartoon, nao coloque palavras, letras ou numeros: <descricao>
+
 # gerar audio dos capitulos e resumos
 
 1. vai gerar arquivos .wav, colocar eles em uma pasta e executar o seguinte script:

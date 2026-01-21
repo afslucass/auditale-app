@@ -10,6 +10,7 @@ import { Text } from "react-native";
 import { Caption } from "../../types/story";
 import TrackPlayer from "react-native-track-player";
 import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
+import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type StoryParams = {
   route: { params: { id: string; title: string; thumbnail: string } };
@@ -31,6 +32,7 @@ function Story({
 
   const handleReviewPress = (params: Caption) => {
     navigation.navigate("Review", {
+      id,
       caption: params,
     });
   };
@@ -78,10 +80,11 @@ function Story({
         variant="story"
         onBack={handleGoBack}
         title={title}
-        image={thumbnail}
+        image={getStoryThumbnailImageUrl(id)}
       />
       <SectionsContainer>
         <StoryCaptions
+          id={id}
           captions={data?.content ?? ([] as Array<Caption>)}
           onPressReview={handleReviewPress}
         />

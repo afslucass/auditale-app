@@ -12,6 +12,7 @@ import {
 } from "./StoryCard.styles";
 import { useSystemContext } from "../../contexts/system";
 import { StoryWithoutContent } from "../../types/story";
+import { getStoryThumbnailImageUrl } from "../../helpers/story";
 
 export type StoryCardParams = {
   item: StoryWithoutContent;
@@ -20,9 +21,10 @@ export type StoryCardParams = {
 
 export default function StoryCard({ item, onPress }: StoryCardParams) {
   const { texts } = useSystemContext();
+
   return (
     <CardContainer onPress={() => onPress(item.id, item.title, item.thumbnail)}>
-      <StoryImage source={{ uri: item.thumbnail }} />
+      <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.id) }} />
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
         <Description>{item.description}</Description>

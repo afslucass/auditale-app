@@ -14,16 +14,17 @@ import { Caption, CaptionType } from "../../types/story";
 import useCaptionSync from "./hooks/useCaptionSync";
 
 type Props = {
+  id: string;
   captions?: Caption[] | null;
   onPressReview: (data: Caption) => void;
 };
 
-export default function StoryCaptions({ captions, onPressReview }: Props) {
+export default function StoryCaptions({ id, captions, onPressReview }: Props) {
   const { texts } = useSystemContext();
   const scrollRef = useRef<ScrollView>(null);
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
 
-  const { activeIndex } = useCaptionSync({ captions });
+  const { activeIndex } = useCaptionSync({ id, captions });
 
   const [translatedCaptionId, setTranslatedCaptionId] = useState<string>();
 

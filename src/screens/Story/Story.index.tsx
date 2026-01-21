@@ -42,6 +42,7 @@ function Story({
   useEffect(() => {
     if (data) {
       const configureTrack = async () => {
+        await TrackPlayer.reset();
         const storyTrack = {
           id: data!.id,
           url: data!.audio,

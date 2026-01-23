@@ -3,6 +3,7 @@ import StoriesService from "../infra/services/stories";
 import { mapValueToEnumKey } from "../helpers/types";
 import { useSystemContext } from "../contexts/system";
 import { Difficulty, Gender } from "../types/story";
+import { UseGetStoriesReturn } from "./useGetFilteredStories";
 
 type useHandleFilterBarProps = {
   title?: string;
@@ -10,14 +11,7 @@ type useHandleFilterBarProps = {
   setGenre: (value: string) => void;
   difficulty: string;
   setDifficulty: (value: string) => void;
-  fetchStories: (
-    pageSize: number,
-    title?: string | null,
-    gender?: Gender | null,
-    difficulty?: Difficulty | null,
-    currentCreatedAtLastItem?: string | null
-  ) => Promise<void>;
-  pageSize: number;
+  applyFilters: UseGetStoriesReturn["applyFilters"];
 };
 
 type useHandleFilterBarReturnType = {
@@ -32,46 +26,41 @@ const useHandleFilterBar = ({
   setGenre,
   difficulty,
   setDifficulty,
-  fetchStories,
-  pageSize,
+  applyFilters,
 }: useHandleFilterBarProps): useHandleFilterBarReturnType => {
   const { texts } = useSystemContext();
 
   const handleChangeInput = () => {
     let genreKey = mapValueToEnumKey(genre, texts.CONSTANTS.GENRES);
     if (genreKey === "ALL") {
-      genreKey = undefined;
+      genreKey = null;
     }
     let difficultyKey = mapValueToEnumKey(
       difficulty,
-      texts.CONSTANTS.DIFFICULTY
+      texts.CONSTANTS.DIFFICULTY,
     );
-    fetchStories(
-      pageSize,
+    applyFilters({
       title,
-      genreKey as Gender,
-      difficultyKey as Difficulty,
-      null
-    );
+      difficulty: difficultyKey as Difficulty,
+      gender: genreKey as Gender,
+    });
   };
 
   const handleChangeGenre = (value: string) => {
     setGenre(value);
     let genreKey = mapValueToEnumKey(value, texts.CONSTANTS.GENRES);
     if (genreKey === "ALL") {
-      genreKey = undefined;
+      genreKey = null;
     }
     let difficultyKey = mapValueToEnumKey(
       difficulty,
-      texts.CONSTANTS.DIFFICULTY
+      texts.CONSTANTS.DIFFICULTY,
     );
-    fetchStories(
-      pageSize,
+    applyFilters({
       title,
-      genreKey as Gender,
-      difficultyKey as Difficulty,
-      null
-    );
+      difficulty: difficultyKey as Difficulty,
+      gender: genreKey as Gender,
+    });
   };
 
   const handleChangeDifficulty = (value: string) => {
@@ -81,13 +70,11 @@ const useHandleFilterBar = ({
       genreKey = undefined;
     }
     let difficultyKey = mapValueToEnumKey(value, texts.CONSTANTS.DIFFICULTY);
-    fetchStories(
-      pageSize,
+    applyFilters({
       title,
-      genreKey as Gender,
-      difficultyKey as Difficulty,
-      null
-    );
+      difficulty: difficultyKey as Difficulty,
+      gender: genreKey as Gender,
+    });
   };
 
   return { handleChangeGenre, handleChangeDifficulty, handleChangeInput };

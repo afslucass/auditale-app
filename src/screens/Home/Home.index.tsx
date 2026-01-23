@@ -8,14 +8,13 @@ import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { Difficulty, Gender, StoryWithoutContent } from "../../types/story";
-import useGetFilteredStories from "../../hooks/useGetFilteredStories";
+import { StoryWithoutContent } from "../../types/story";
 import { useSystemContext } from "../../contexts/system";
 import { useNavigation } from "@react-navigation/native";
-import { mapValueToEnumKey } from "../../helpers/types";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
+import useGetStories from "../../hooks/useGetFilteredStories";
 
-const STORY_LIMIT = 3;
+const STORY_PAGE_SIZE = 3;
 
 function Home() {
   const { texts } = useSystemContext();
@@ -24,14 +23,15 @@ function Home() {
   const [genre, setGenre] = useState(texts.CONSTANTS.GENRES.ALL);
   const [difficulty, setDifficulty] = useState("");
 
-  const [getStories, { data, error }] = useGetFilteredStories();
+  const { loadMore, applyFilters, stories, error } = useGetStories({
+    initialPageSize: STORY_PAGE_SIZE,
+  });
   const { handleChangeGenre, handleChangeDifficulty } = useHandleFilterBar({
     genre,
     difficulty,
     setGenre,
     setDifficulty,
-    fetchStories: getStories,
-    pageSize: STORY_LIMIT,
+    applyFilters,
   });
 
   const handleFocusInput = () => {
@@ -46,7 +46,7 @@ function Home() {
   };
 
   useEffect(() => {
-    getStories(STORY_LIMIT, null, null, null, null);
+    loadMore();
   }, []);
 
   if (error) {
@@ -56,7 +56,7 @@ function Home() {
   return (
     <Screen>
       <Header />
-      <RecentlyPlayedSection data={data} />
+      <RecentlyPlayedSection data={stories as any} />
       <PlanBanner />
       <FilterBar
         onFocus={handleFocusInput}
@@ -66,7 +66,7 @@ function Home() {
         onChangeDifficulty={handleChangeDifficulty}
       />
       <ListContainer>
-        {(data ?? []).map((item: StoryWithoutContent) => (
+        {(stories ?? []).map((item: StoryWithoutContent) => (
           <StoryCard onPress={handlePressStory} key={item.id} item={item} />
         ))}
       </ListContainer>

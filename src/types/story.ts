@@ -27,7 +27,6 @@ export type Story = {
   created_at: string;
   gender: Gender;
   free: boolean;
-  audio: string;
   content: Caption[];
 };
 

@@ -1,26 +1,39 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { ScrollView, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header/Header.index";
 import { ListContainer, Screen } from "./Search.styles";
 import { useSystemContext } from "../../contexts/system";
-import useGetFilteredStories from "../../hooks/useGetFilteredStories";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { Difficulty, Gender, StoryWithoutContent } from "../../types/story";
+import { StoryWithoutContent } from "../../types/story";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
-import { mapValueToEnumKey } from "../../helpers/types";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
+import useGetStories from "../../hooks/useGetFilteredStories";
 
-const PAGE_SIZE = 6;
+const STORY_PAGE_SIZE = 6;
 
 function Search() {
   const navigation = useNavigation();
   const { texts } = useSystemContext();
 
+  const scrollViewRef = useRef<ScrollView>(null);
+
   const [genre, setGenre] = useState(texts.CONSTANTS.GENRES.ALL);
   const [difficulty, setDifficulty] = useState("");
   const [title, setTitle] = useState("");
 
-  const [getStories, { data }] = useGetFilteredStories();
+  const {
+    loadMore,
+    applyFilters,
+    refresh,
+    stories,
+    error,
+    loading,
+    loadingMore,
+    hasMore,
+  } = useGetStories({
+    initialPageSize: STORY_PAGE_SIZE,
+  });
   const { handleChangeInput, handleChangeGenre, handleChangeDifficulty } =
     useHandleFilterBar({
       title,
@@ -28,16 +41,35 @@ function Search() {
       difficulty,
       setGenre,
       setDifficulty,
-      fetchStories: getStories,
-      pageSize: PAGE_SIZE,
+      applyFilters,
     });
+
+  const handleScroll = useCallback(
+    (event: any) => {
+      const { layoutMeasurement, contentOffset, contentSize } =
+        event.nativeEvent;
+      const paddingToBottom = 100;
+      const isCloseToBottomValue =
+        layoutMeasurement.height + contentOffset.y >=
+        contentSize.height - paddingToBottom;
+
+      if (isCloseToBottomValue && hasMore && !loadingMore && !loading) {
+        loadMore();
+      }
+    },
+    [hasMore, loadingMore, loading, loadMore],
+  );
 
   const handleGoBack = () => {
     navigation.goBack();
   };
 
+  if (error) {
+    return <Text>Error</Text>;
+  }
+
   return (
-    <Screen>
+    <Screen ref={scrollViewRef} onScroll={handleScroll}>
       <Header
         variant="simple-back-button"
         onBack={handleGoBack}
@@ -53,8 +85,8 @@ function Search() {
         onEndEditing={handleChangeInput}
       />
       <ListContainer>
-        {(data ?? []).map((item: StoryWithoutContent) => (
-          <StoryCard key={item.id} item={item} />
+        {stories.map((item: StoryWithoutContent) => (
+          <StoryCard key={item.id} item={item} onPress={() => null} />
         ))}
       </ListContainer>
     </Screen>

@@ -11,6 +11,8 @@ import { Caption } from "../../types/story";
 import TrackPlayer from "react-native-track-player";
 import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
+import OverlayLoading from "../../components/OverlayLoading/OverlayLoading.index";
+import Error from "../../components/Error/Error.index";
 
 export type StoryParams = {
   route: { params: { id: string; title: string } };
@@ -35,6 +37,10 @@ function Story({
       id,
       caption: params,
     });
+  };
+
+  const handleRetryButton = () => {
+    getStoryDetails(id);
   };
 
   useEffect(() => {
@@ -67,11 +73,11 @@ function Story({
   }, [speed]);
 
   if (loading) {
-    return <Text>Loading</Text>;
+    return <OverlayLoading />;
   }
 
   if (error) {
-    return <Text>error</Text>;
+    return <Error onRetry={handleRetryButton} />;
   }
 
   return (

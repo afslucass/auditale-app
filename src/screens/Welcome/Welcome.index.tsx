@@ -13,8 +13,6 @@ import {
   GoogleImage,
 } from "./Welcome.styles";
 import { useSystemContext } from "../../contexts/system";
-import { Ionicons } from "@expo/vector-icons";
-import { COLORS } from "../../constants/colors/colors";
 import { Image, Text } from "react-native";
 import * as WebBrowser from "expo-web-browser";
 

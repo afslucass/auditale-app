@@ -17,6 +17,11 @@ export const TEXTS = {
     },
     DESCRIPTION_BOX: { TITLE: "Descrição" },
     VOCABULARY_CHECK: { TITLE: "Vocabulário" },
+    ERROR: {
+      TITLE: "Algo deu errado",
+      MESSAGE: "Por favor, tente novamente",
+      RETRY: "Tentar novamente",
+    },
   },
   SCREENS: {
     HOME: {

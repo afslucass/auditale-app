@@ -5,7 +5,7 @@ const getStories = async (limit: number) => {
   const { data, error } = await supabase
     .from("Story")
     .select(
-      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`
+      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`,
     )
     .order("created_at", { ascending: false })
     .limit(limit);
@@ -20,12 +20,12 @@ const getPaginatedAndFilteredStoriesOrderingByCreation = async (
   title?: string | null,
   gender?: Gender | null,
   difficulty?: Difficulty | null,
-  currentCreatedAtLastItem?: string | null
+  currentCreatedAtLastItem?: string | null,
 ) => {
   const query = supabase
     .from("Story")
     .select(
-      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`
+      `id, title, description, gender, duration, free, difficulty, created_at, language, thumbnail`,
     )
     .order("created_at", { ascending: false })
     .limit(pageSize);
@@ -49,6 +49,8 @@ const getPaginatedAndFilteredStoriesOrderingByCreation = async (
   return data;
 };
 
+const TWO_HOURS_IN_SECONDS = 7200;
+
 const getStoryDetails = async (id: string) => {
   const { data: details, error: detailsError } = await supabase
     .from("Story")
@@ -60,11 +62,15 @@ const getStoryDetails = async (id: string) => {
     throw new Error(detailsError.message);
   }
 
-  const { data: audio } = supabase.storage
+  const { data: signedUrlData, error: signedUrlError } = await supabase.storage
     .from("story audios")
-    .getPublicUrl(`${id}.mp3`);
+    .createSignedUrl(`${id}.mp3`, TWO_HOURS_IN_SECONDS);
 
-  const output = { ...details, audio: audio.publicUrl };
+  if (signedUrlError) {
+    throw new Error(`Erro ao obter URL do áudio: ${signedUrlError.message}`);
+  }
+
+  const output = { ...details, audio: signedUrlData.signedUrl };
   return output;
 };
 

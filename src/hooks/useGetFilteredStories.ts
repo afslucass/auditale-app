@@ -13,6 +13,7 @@ type UseGetStoriesOptions = {
 };
 
 export type UseGetStoriesReturn = {
+  fetchStories: () => void;
   stories: StoryWithoutContent[];
   loading: boolean;
   error: boolean;
@@ -127,18 +128,15 @@ const useGetStories = (
     [refresh],
   );
 
-  const initialLoad = useCallback(async () => {
+  const fetchStories = useCallback(async () => {
     if (!isInitialLoad.current) return;
 
     isInitialLoad.current = false;
     await refresh();
   }, [refresh]);
 
-  useState(() => {
-    initialLoad();
-  });
-
   return {
+    fetchStories,
     stories,
     loading,
     error,

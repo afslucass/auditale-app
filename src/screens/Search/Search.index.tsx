@@ -1,18 +1,28 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ScrollView, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header/Header.index";
 import { ListContainer, Screen } from "./Search.styles";
 import { useSystemContext } from "../../contexts/system";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { StoryWithoutContent } from "../../types/story";
+import { Gender, StoryWithoutContent } from "../../types/story";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
 import useGetStories from "../../hooks/useGetFilteredStories";
 
 const STORY_PAGE_SIZE = 6;
 
-function Search() {
+type SearchParams = {
+  route: {
+    params?: {
+      genre: Gender;
+    };
+  };
+};
+
+function Search(props: SearchParams) {
+  const initialGenre = props.route.params?.genre;
+
   const navigation = useNavigation();
   const { texts } = useSystemContext();
 
@@ -25,7 +35,6 @@ function Search() {
   const {
     loadMore,
     applyFilters,
-    refresh,
     stories,
     error,
     loading,
@@ -64,6 +73,12 @@ function Search() {
     navigation.goBack();
   };
 
+  useEffect(() => {
+    if (initialGenre) {
+      applyFilters({ gender: initialGenre });
+    }
+  }, [initialGenre]);
+
   if (error) {
     return <Text>Error</Text>;
   }
@@ -76,7 +91,7 @@ function Search() {
         title={texts.SCREENS.SEARCH.SCREEN_TITLE}
       />
       <FilterBar
-        autoFocus
+        autoFocus={!initialGenre}
         selectedGenre={genre}
         selectedDifficulty={difficulty}
         onChangeGenre={handleChangeGenre}

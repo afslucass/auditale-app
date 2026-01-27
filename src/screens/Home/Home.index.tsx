@@ -8,7 +8,7 @@ import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { StoryWithoutContent } from "../../types/story";
+import { Gender, StoryWithoutContent } from "../../types/story";
 import { useSystemContext } from "../../contexts/system";
 import { useNavigation } from "@react-navigation/native";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
@@ -23,9 +23,10 @@ function Home() {
   const [genre, setGenre] = useState(texts.CONSTANTS.GENRES.ALL);
   const [difficulty, setDifficulty] = useState("");
 
-  const { loadMore, applyFilters, stories, error } = useGetStories({
-    initialPageSize: STORY_PAGE_SIZE,
-  });
+  const { fetchStories, loadMore, applyFilters, stories, error } =
+    useGetStories({
+      initialPageSize: STORY_PAGE_SIZE,
+    });
   const { handleChangeGenre, handleChangeDifficulty } = useHandleFilterBar({
     genre,
     difficulty,
@@ -46,7 +47,7 @@ function Home() {
   };
 
   useEffect(() => {
-    loadMore();
+    fetchStories();
   }, []);
 
   if (error) {
@@ -74,24 +75,27 @@ function Home() {
         data={[
           {
             id: "1",
-            title: "Sci-fi",
-            storiesCount: 24,
+            title: texts.CONSTANTS.GENRES.SCI_FI,
             gradient: [COLORS.PURPLE, COLORS.PURPLE_2],
             icon: "rocket",
+            onPress: () =>
+              navigation.navigate("Search", { genre: Gender.SCI_FI }),
           },
           {
             id: "2",
-            title: "Action",
-            storiesCount: 24,
+            title: texts.CONSTANTS.GENRES.MYSTERIUM,
             gradient: [COLORS.PINK, COLORS.PINK_2],
             icon: "car-sport",
+            onPress: () =>
+              navigation.navigate("Search", { genre: Gender.MYSTERIUM }),
           },
           {
             id: "3",
-            title: "Romance",
-            storiesCount: 24,
+            title: texts.CONSTANTS.GENRES.ROMANCE,
             gradient: [COLORS.RED, COLORS.RED_2],
             icon: "heart-outline",
+            onPress: () =>
+              navigation.navigate("Search", { genre: Gender.ROMANCE }),
           },
         ]}
       />

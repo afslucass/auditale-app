@@ -15,9 +15,9 @@ import { COLORS } from "../../../../constants/colors/colors";
 export type RecommendedItem = {
   id: string;
   title: string;
-  storiesCount: number;
   gradient: string[];
   icon: string;
+  onPress: () => void;
 };
 
 type Props = {
@@ -36,7 +36,7 @@ export default function GenresSection({ data }: Props) {
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={item.onPress}>
             <Card colors={item.gradient}>
               <CardIcon
                 name={item.icon as any}
@@ -45,10 +45,6 @@ export default function GenresSection({ data }: Props) {
               />
               <CardContent>
                 <CardTitle>{item.title}</CardTitle>
-                <CardSubtitle>
-                  {item.storiesCount}{" "}
-                  {texts.SCREENS.HOME.GENRES_SECTION.STORIES_LABEL}
-                </CardSubtitle>
               </CardContent>
             </Card>
           </TouchableOpacity>

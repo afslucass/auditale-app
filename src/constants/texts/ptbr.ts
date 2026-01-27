@@ -31,7 +31,6 @@ export const TEXTS = {
       },
       GENRES_SECTION: {
         TITLE: "Para você",
-        STORIES_LABEL: "histórias",
       },
     },
     SEARCH: {

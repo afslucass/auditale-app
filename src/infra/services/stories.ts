@@ -74,10 +74,49 @@ const getStoryDetails = async (id: string) => {
   return output;
 };
 
+const getLearnedWordsByStory = async (id: string) => {
+  try {
+    const { data, error } = await supabase
+      .from("story_learned_words")
+      .select(
+        `
+        chapter_review_id,
+        LearnedWords:learned_word_id (
+          id,
+          word,
+          language,
+          word_category,
+          translated_word,
+          translated_language,
+          created_at,
+          updated_at
+        )
+      `,
+      )
+      .eq("story_id", id)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    const learnedWords =
+      data?.map((item) => ({
+        ...item.LearnedWords,
+        review_id: item.chapter_review_id,
+      })) || [];
+    return learnedWords;
+  } catch (error) {
+    console.error("Error fetching learned words by story:", error);
+    throw error;
+  }
+};
+
 const StoriesService = {
   getStories,
   getPaginatedAndFilteredStoriesOrderingByCreation,
   getStoryDetails,
+  getLearnedWordsByStory,
 };
 
 export default StoriesService;

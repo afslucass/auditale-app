@@ -8,6 +8,7 @@ export enum PlayingStoryScreen {
 export type PlayingStoryMetadata = {
   screen: PlayingStoryScreen;
   index: number | null;
+  lastReviewId: string | null;
 };
 
 export type PlayingStoryMetadataContextTypes = {
@@ -23,7 +24,7 @@ export type PlayingStoryMetadataContextTypes = {
 
 const PlayingStoryMetadataContext =
   React.createContext<PlayingStoryMetadataContextTypes>(
-    {} as PlayingStoryMetadataContextTypes
+    {} as PlayingStoryMetadataContextTypes,
   );
 
 export const PlayingStoryMetadataProvider = ({
@@ -32,6 +33,7 @@ export const PlayingStoryMetadataProvider = ({
   const [metadata, setMetadata] = useState<PlayingStoryMetadata>({
     index: null,
     screen: PlayingStoryScreen.STORY,
+    lastReviewId: null,
   });
   const [preventGoToReview, setPreventGoToReview] = useState<boolean>(false);
   const [usarHasSlidingTimeline, setUsarHasSlidingTimeline] =

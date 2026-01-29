@@ -19,7 +19,7 @@ type Props = {
   onPressReview: (data: Caption) => void;
 };
 
-export default function StoryCaptions({ id, captions, onPressReview }: Props) {
+function StoryCaptions({ id, captions, onPressReview }: Props) {
   const { texts } = useSystemContext();
   const scrollRef = useRef<ScrollView>(null);
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
@@ -104,3 +104,5 @@ export default function StoryCaptions({ id, captions, onPressReview }: Props) {
     </Container>
   );
 }
+
+export default StoryCaptions;

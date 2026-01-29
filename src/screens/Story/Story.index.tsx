@@ -6,7 +6,6 @@ import StoryCaptions from "../../components/StoryCaptions/StoryCaptions.index";
 import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
 import useGetStoryDetails from "../../hooks/useGetStoryDetails";
 import { useEffect } from "react";
-import { Text } from "react-native";
 import { Caption } from "../../types/story";
 import TrackPlayer from "react-native-track-player";
 import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";

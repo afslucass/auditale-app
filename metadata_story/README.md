@@ -1,35 +1,54 @@
-para a historia, usar voz do mp3
+feat: Adicionar palavras aprendidas
 
-vamos ter um audio so para a historia completa
+- Precisamos de um audio de introducao para a secao de palavras novas
+- Precisamos dos audios das palavras e suas traducoes (x traduz para y)
+- estrutura de dados:
 
-vamos precisar de audios de ia para cada palavra nova.
+```json
+{
+  "id": "uuid", // id q sera o nome do audio da traducao
+  "word": "Brazier",
+  "language": "EN_US",
+  "wordCategory": WordCategory,
+  "translatedWord": "Braseiro",
+  "translatedLanguage": "PT_BR"
+}
+```
 
-vamos precisar dce audios de ia para cada descricao de review.
+```ts
+export enum WordCategory {
+  NOUN = "NOUN",
+  VERB = "VERB",
+  ADJECTIVE = "ADJECTIVE",
+  ADVERB = "ADVERB",
+  INTERJECTION = "INTERJECTION",
+  PHRASAL_VERB = "PHRASAL_VERB",
+}
+```
 
-quando o usuario iniciar uma track, o app vai chamar a funcao TrackPlayer.add as historias e os resumos e palavras.
+OBS: Feature so possivel para usuarios logados
 
-quando o usuario entrar em um resumos, guardamos o tempo da historia q parou, iniciamos o resumo, e quando terminar, voltamos para a historia de onde ela parou
+- Apos o app terminar algum resumo, o app deve pausar o audio principal
+- O app deve tocar o audio de introducao da secao de palavras aprendidas e apos deve tocar todos os audios de palavras aprendidas
+- Se o usuario mexer no playback, o app deve interromper os audios das palavras.
+- Apos terminar os audios das palavras, o app deve continuar de onde parou na historia
 
-O Q ESTA ACIMA NAO FUNCIONOU
+salvar os dados de palavras novas
 
-NOVa abordagem:
+- apos terminar de ler os audios, o app deve verificar se as novas palavras n estao presentes na lista de palavras q o usuario ja aprendeu
 
-vamos ter o audio com a historia e os reviews tudo junto,
+# Criar uma tabela, LearnedWords:
 
-e vamos ter nos metadados, os tempos dos CAPTIONS e do REVIEW
+com a estrutura do json acima
 
-a cada instante, vamos verificar se o audio esta em uma CAPTION ou em uma REVUEW
+- no json das storias, vai ter so o id para linkar com a tabela das palavras
+- o app vai ter q buscar na tabela pelas palaras atravez do id
+- para as palavras q sao novas, o app deve adicionar
 
-se estiver no CAPTION, mostra a timeline, se estiver no REVIEW, exibe a tela de REVIEW
+adicionar relacoes entre a tabela Words e Profiles e Stories
 
-na TELA de REVIEW, vai ter o msm componente playback, se o usuario sair da review, o app volta para a tela anterior
+# Fazer ja com a melhoria, vamos ter 2 tables de relacao N:N
 
-NOVAS PALAVRAS
+LearnedWords : Profiles
 
-quando o app terminar um review, o app vai parar o audio corrente, e carregar o audio das palavras aprendidas
-
-LIMITACOES
-
-a ia nao consegue gerar legendas 100% sincronizadas com o audio, sera q se agent gerar as legendas pelas partes do audio melhora?
-
-eu criei o prompt abaixo para gerar legendas de um audio, so que em alguns trechos da legenda, nao condiz com o que esta no audio, melhore o prompt para que esses erros não aconteçam
+LearnedWords : Stories (adicionando uma prop, qual capitulo eh aquela palavra)

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Caption, CaptionType } from "../../../types/story";
+import { Caption, CaptionType, LearnedWords } from "../../../types/story";
 import { parseDurationToSeconds } from "../../../helpers/time";
 import TrackPlayer, { Event } from "react-native-track-player";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -7,6 +7,9 @@ import {
   PlayingStoryScreen,
   usePlayingStoryMetadataContext,
 } from "../../../contexts/playing-story-metadata";
+import StoriesService from "../../../infra/services/stories";
+
+import useLearnedWordsPlayer from "./useLearnedWordsPlayer";
 
 type CaptionWithRange = Caption & {
   start: number;
@@ -18,12 +21,12 @@ type useCaptionSyncParams = {
   captions?: Caption[] | null;
 };
 
-const REVIEW_AUDIO_BASE_URL =
-  "https://erfcqkqqqsglmwjgodbl.supabase.co/storage/v1/object/public/chapter%20review%20audios/PT_BR/";
-
 const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [learnedWords, setLearnedWords] = useState<LearnedWords[] | null>(null);
+
   const navigation = useNavigation<any>();
+
   const route = useRoute();
 
   const {
@@ -33,6 +36,8 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
     metadata,
     setMetadata,
   } = usePlayingStoryMetadataContext();
+  const { loadLearnedWordsSection, playLearnedWordsSection } =
+    useLearnedWordsPlayer({ learnedWords } as any);
 
   const timeline = useMemo((): undefined | CaptionWithRange[] => {
     return captions?.map((caption, index) => {
@@ -58,18 +63,26 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
     if (timeline) {
       const sub = TrackPlayer.addEventListener(
         Event.PlaybackProgressUpdated,
-        ({ position }) => {
+        async ({ position }) => {
           const index = getActiveCaptionIndex(timeline, position);
           if (index !== activeIndex && index !== -1) {
             if (captions && captions[index].type === CaptionType.REVIEW) {
               if (metadata.screen !== PlayingStoryScreen.REVIEW) {
-                setMetadata({ screen: PlayingStoryScreen.REVIEW, index });
+                setMetadata({
+                  screen: PlayingStoryScreen.REVIEW,
+                  index,
+                  lastReviewId: captions[index].id,
+                });
               }
               return;
             }
             if (metadata.screen !== PlayingStoryScreen.STORY) {
               setPreventGoToReview(false);
-              setMetadata({ screen: PlayingStoryScreen.STORY, index });
+              setMetadata({
+                screen: PlayingStoryScreen.STORY,
+                index,
+                lastReviewId: metadata.lastReviewId,
+              });
             }
 
             setActiveIndex(index);
@@ -91,10 +104,16 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
         id,
         caption: captions[metadata.index],
       });
+      if (!usarHasSlidingTimeline) {
+        loadLearnedWordsSection(captions[metadata.index].id);
+      }
       return;
     }
     if (metadata.screen === PlayingStoryScreen.STORY) {
       navigation.popTo("Story", route.params);
+      if (!usarHasSlidingTimeline) {
+        playLearnedWordsSection();
+      }
     }
   }, [metadata]);
 
@@ -103,6 +122,12 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
       navigation.popTo("Story", route.params);
     }
   }, [preventGoToReview]);
+
+  useEffect(() => {
+    StoriesService.getLearnedWordsByStory(id).then((value) =>
+      setLearnedWords(value as any),
+    );
+  }, [id]);
 
   return { activeIndex };
 };

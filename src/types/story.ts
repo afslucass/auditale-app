@@ -6,6 +6,15 @@ export enum Gender {
   MYSTERIUM = "MYSTERIUM",
 }
 
+export enum WordCategory {
+  NOUN = "NOUN",
+  VERB = "VERB",
+  ADJECTIVE = "ADJECTIVE",
+  ADVERB = "ADVERB",
+  INTERJECTION = "INTERJECTION",
+  PHRASAL_VERB = "PHRASAL_VERB",
+}
+
 export enum Difficulty {
   BEGINNER = "BEGINNER",
   INTERMEDIATE = "INTERMEDIATE",
@@ -49,5 +58,14 @@ export type Caption = {
   time: string;
   type: CaptionType;
   description: string;
-  newWords: NewWords[];
+};
+
+export type LearnedWords = {
+  id: string;
+  word_category: WordCategory;
+  word: string;
+  language: Language;
+  translated_word: string;
+  translated_language: Language;
+  review_id: string;
 };

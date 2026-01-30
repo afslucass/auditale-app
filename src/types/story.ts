@@ -46,11 +46,6 @@ export type TranslatedText = {
   text: string;
 };
 
-export type NewWords = {
-  translate: TranslatedText[];
-  word: string;
-};
-
 export type Caption = {
   id: string;
   text?: string;

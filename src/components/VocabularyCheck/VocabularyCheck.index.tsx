@@ -9,10 +9,10 @@ import {
 } from "./VocabularyCheck.styles";
 import { COLORS } from "../../constants/colors/colors";
 import { useSystemContext } from "../../contexts/system";
-import { NewWords } from "../../types/story";
+import { LearnedWords } from "../../types/story";
 
 type Props = {
-  items: NewWords[];
+  items: LearnedWords[];
 };
 
 export default function VocabularyCheck({ items }: Props) {
@@ -25,7 +25,7 @@ export default function VocabularyCheck({ items }: Props) {
         {items?.map((item) => (
           <Card key={item.word}>
             <Word>{item.word}</Word>
-            <Meaning>{item.translate[0].text}</Meaning>
+            <Meaning>{item.translated_word}</Meaning>
           </Card>
         ))}
       </ScrollView>

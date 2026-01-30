@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useContext, useState } from "react";
+import { LearnedWords } from "../types/story";
 
 export enum PlayingStoryScreen {
   STORY = "STORY",
@@ -20,6 +21,8 @@ export type PlayingStoryMetadataContextTypes = {
   setUsarHasSlidingTimeline: (value: boolean) => void;
   speed: number;
   setSpeed: (value: number) => void;
+  learnedWords: LearnedWords[] | null;
+  setLearnedWords: (value: LearnedWords[]) => void;
 };
 
 const PlayingStoryMetadataContext =
@@ -39,6 +42,7 @@ export const PlayingStoryMetadataProvider = ({
   const [usarHasSlidingTimeline, setUsarHasSlidingTimeline] =
     useState<boolean>(false);
   const [speed, setSpeed] = useState<number>(1);
+  const [learnedWords, setLearnedWords] = useState<LearnedWords[] | null>(null);
 
   return (
     <PlayingStoryMetadataContext.Provider
@@ -51,6 +55,8 @@ export const PlayingStoryMetadataProvider = ({
         setUsarHasSlidingTimeline,
         speed,
         setSpeed,
+        learnedWords,
+        setLearnedWords,
       }}
     >
       {children}

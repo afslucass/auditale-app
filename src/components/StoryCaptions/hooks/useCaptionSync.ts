@@ -23,7 +23,6 @@ type useCaptionSyncParams = {
 
 const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [learnedWords, setLearnedWords] = useState<LearnedWords[] | null>(null);
 
   const navigation = useNavigation<any>();
 
@@ -35,6 +34,8 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
     setPreventGoToReview,
     metadata,
     setMetadata,
+    learnedWords,
+    setLearnedWords,
   } = usePlayingStoryMetadataContext();
   const { loadLearnedWordsSection, playLearnedWordsSection } =
     useLearnedWordsPlayer({ learnedWords } as any);

@@ -16,19 +16,24 @@ export type ReviewParams = {
 function Review({
   route: {
     params: {
-      id,
-      caption: { translate, newWords },
+      id: storyId,
+      caption: { id: captionId, translate },
     },
   },
 }: ReviewParams) {
   const navigation = useNavigation();
-  const { setPreventGoToReview } = usePlayingStoryMetadataContext();
+  const { setPreventGoToReview, learnedWords } =
+    usePlayingStoryMetadataContext();
+
+  const learnedWordsFromThisChapter = learnedWords?.filter(
+    (word) => word.review_id === captionId,
+  );
 
   const handleGoBack = () => {
     setPreventGoToReview(true);
   };
 
-  if (!translate || !newWords) {
+  if (!translate || !learnedWordsFromThisChapter) {
     return null;
   }
 
@@ -38,12 +43,12 @@ function Review({
         variant="story"
         onBack={handleGoBack}
         title={"King Arthur"}
-        image={getStoryThumbnailImageUrl(id)}
+        image={getStoryThumbnailImageUrl(storyId)}
       />
       <SectionsContainer>
         <AudioPlayerControls />
         <DescriptionBox text={translate[0].text} />
-        <VocabularyCheck items={newWords} />
+        <VocabularyCheck items={learnedWordsFromThisChapter} />
       </SectionsContainer>
     </Screen>
   );

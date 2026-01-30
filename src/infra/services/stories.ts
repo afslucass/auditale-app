@@ -112,11 +112,29 @@ const getLearnedWordsByStory = async (id: string) => {
   }
 };
 
+const addUserLearnedWord = async (userId: string, learnedWordIds: string[]) => {
+  const records = learnedWordIds.map((wordId) => ({
+    user_id: userId,
+    learned_word_id: wordId,
+  }));
+
+  const { error } = await supabase.from("user_learned_words").insert(records);
+
+  if (error) {
+    if (error.code === "23505") {
+      console.error("Usuário já aprendeu esta palavra");
+      throw error;
+    }
+  }
+  return;
+};
+
 const StoriesService = {
   getStories,
   getPaginatedAndFilteredStoriesOrderingByCreation,
   getStoryDetails,
   getLearnedWordsByStory,
+  addUserLearnedWord,
 };
 
 export default StoriesService;

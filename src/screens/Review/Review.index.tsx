@@ -1,5 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
-
+import { useEffect, useMemo } from "react";
 import Header from "../../components/Header/Header.index";
 import { Screen, SectionsContainer } from "./Review.styles";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox.index";
@@ -8,6 +7,7 @@ import { Caption } from "../../types/story";
 import AudioPlayerControls from "../../components/AudioPlayerControls/AudioPlayerControls.index";
 import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-metadata";
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
+import useAddUserLearnedWords from "../../hooks/useAddUserLearnedWords";
 
 export type ReviewParams = {
   route: { params: { id: string; caption: Caption } };
@@ -21,12 +21,14 @@ function Review({
     },
   },
 }: ReviewParams) {
-  const navigation = useNavigation();
   const { setPreventGoToReview, learnedWords } =
     usePlayingStoryMetadataContext();
 
-  const learnedWordsFromThisChapter = learnedWords?.filter(
-    (word) => word.review_id === captionId,
+  const [fetchAddLearnedWords] = useAddUserLearnedWords();
+
+  const learnedWordsFromThisChapter = useMemo(
+    () => learnedWords?.filter((word) => word.review_id === captionId),
+    [learnedWords],
   );
 
   const handleGoBack = () => {
@@ -36,6 +38,13 @@ function Review({
   if (!translate || !learnedWordsFromThisChapter) {
     return null;
   }
+
+  useEffect(() => {
+    if (learnedWordsFromThisChapter) {
+      console.log(learnedWordsFromThisChapter);
+      fetchAddLearnedWords(learnedWordsFromThisChapter.map((word) => word.id));
+    }
+  }, [learnedWordsFromThisChapter]);
 
   return (
     <Screen>

@@ -10,13 +10,14 @@ import { getStoryThumbnailImageUrl } from "../../helpers/story";
 import useAddUserLearnedWords from "../../hooks/useAddUserLearnedWords";
 
 export type ReviewParams = {
-  route: { params: { id: string; caption: Caption } };
+  route: { params: { id: string; title: string; caption: Caption } };
 };
 
 function Review({
   route: {
     params: {
       id: storyId,
+      title,
       caption: { id: captionId, translate },
     },
   },
@@ -50,7 +51,7 @@ function Review({
       <Header
         variant="story"
         onBack={handleGoBack}
-        title={"King Arthur"}
+        title={title}
         image={getStoryThumbnailImageUrl(storyId)}
       />
       <SectionsContainer>

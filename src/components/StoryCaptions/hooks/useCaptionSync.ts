@@ -18,10 +18,11 @@ type CaptionWithRange = Caption & {
 
 type useCaptionSyncParams = {
   id: string;
+  title: string;
   captions?: Caption[] | null;
 };
 
-const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
+const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const navigation = useNavigation<any>();
@@ -103,6 +104,7 @@ const useCaptionSync = ({ id, captions }: useCaptionSyncParams) => {
     ) {
       navigation.navigate("Review", {
         id,
+        title,
         caption: captions[metadata.index],
       });
       if (!usarHasSlidingTimeline) {

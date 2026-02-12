@@ -37,6 +37,7 @@ function Story({
   const handleReviewPress = (params: Caption) => {
     navigation.navigate("Review", {
       id,
+      title,
       caption: params,
     });
   };
@@ -101,6 +102,7 @@ function Story({
       />
       <SectionsContainer>
         <StoryCaptions
+          title={title}
           id={id}
           captions={data?.content ?? ([] as Array<Caption>)}
           onPressReview={handleReviewPress}

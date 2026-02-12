@@ -15,16 +15,17 @@ import useCaptionSync from "./hooks/useCaptionSync";
 
 type Props = {
   id: string;
+  title: string;
   captions?: Caption[] | null;
   onPressReview: (data: Caption) => void;
 };
 
-function StoryCaptions({ id, captions, onPressReview }: Props) {
+function StoryCaptions({ id, title, captions, onPressReview }: Props) {
   const { texts } = useSystemContext();
   const scrollRef = useRef<ScrollView>(null);
   const layoutsRef = useRef<Record<number, { y: number; height: number }>>({});
 
-  const { activeIndex } = useCaptionSync({ id, captions });
+  const { activeIndex } = useCaptionSync({ id, title, captions });
 
   const [translatedCaptionId, setTranslatedCaptionId] = useState<string>();
 

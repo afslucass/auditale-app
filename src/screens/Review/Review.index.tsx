@@ -41,7 +41,6 @@ function Review({
 
   useEffect(() => {
     if (learnedWordsFromThisChapter) {
-      console.log(learnedWordsFromThisChapter);
       fetchAddLearnedWords(learnedWordsFromThisChapter.map((word) => word.id));
     }
   }, [learnedWordsFromThisChapter]);

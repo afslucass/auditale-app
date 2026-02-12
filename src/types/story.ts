@@ -64,3 +64,13 @@ export type LearnedWords = {
   translated_language: Language;
   review_id: string;
 };
+
+export type LastReadingStory = {
+  story_id: string;
+  title: string;
+  description: string;
+  gender: Gender;
+  time_user_left: number;
+  duration: number;
+  created_at: string;
+};

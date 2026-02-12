@@ -31,7 +31,7 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
         <Description>{get20FirstWords(item.description)}</Description>
         <Row>
           <Tag>
-            <TagText>{item.gender}</TagText>
+            <TagText>{texts.CONSTANTS.GENRES[item.gender]}</TagText>
           </Tag>
           <DurationText>
             {item.duration} {texts.CONSTANTS.TIME.LABEL.MIN}

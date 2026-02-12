@@ -12,38 +12,37 @@ import {
   TagText,
 } from "./RecentlyPlayedStoryCard.styles";
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
-
-export type RecentlyPlayedStoryCardType = {
-  id: string;
-  image: string;
-  title: string;
-  progress: number;
-  gender: string;
-};
+import { LastReadingStory } from "../../types/story";
+import { mapValueToEnumKey } from "../../helpers/types";
+import { useSystemContext } from "../../contexts/system";
 
 export type RecentlyPlayedStoryCardParams = {
-  item: RecentlyPlayedStoryCardType;
+  item: LastReadingStory;
 };
 
 export default function RecentlyPlayedStoryCard({
   item,
 }: RecentlyPlayedStoryCardParams) {
+  const { texts } = useSystemContext();
+
+  const progress = (item.time_user_left / item.duration) * 100;
+
   return (
     <CardContainer>
-      <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.id) }} />
+      <StoryImage source={{ uri: getStoryThumbnailImageUrl(item.story_id) }} />
 
       <InfoContainer>
         <StoryTitle>{item.title}</StoryTitle>
 
         <ProgressRow>
           <ProgressBarBackground>
-            <ProgressBarFill style={{ width: `${item.progress}%` }} />
+            <ProgressBarFill style={{ width: `${progress}%` }} />
           </ProgressBarBackground>
-          <ProgressText>{item.progress}%</ProgressText>
+          <ProgressText>{progress}%</ProgressText>
         </ProgressRow>
 
         <Tag>
-          <TagText>{item.gender}</TagText>
+          <TagText>{texts.CONSTANTS.GENRES[item.gender]}</TagText>
         </Tag>
       </InfoContainer>
     </CardContainer>

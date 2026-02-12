@@ -4,14 +4,15 @@ import {
   SectionTitle,
   ListContainer,
 } from "./RecentlyPlayedSection.styles";
-import RecentlyPlayedStoryCard, {
-  RecentlyPlayedStoryCardType,
-} from "../../../../components/RecentlyPlayedStoryCard/RecentlyPlayedStoryCard.index";
+import RecentlyPlayedStoryCard from "../../../../components/RecentlyPlayedStoryCard/RecentlyPlayedStoryCard.index";
 import { useSystemContext } from "../../../../contexts/system";
+import { LastReadingStory } from "../../../../types/story";
 
 export type RecentlyPlayedSectionParams = {
-  data: RecentlyPlayedStoryCardType[];
+  data: LastReadingStory[];
 };
+
+const MAX_SHOW_LAST_STORIES = 3;
 
 export default function RecentlyPlayedSection({
   data = [],
@@ -24,8 +25,8 @@ export default function RecentlyPlayedSection({
         {texts.SCREENS.HOME.RECENTLY_PLAYED_SECTION.TITLE}
       </SectionTitle>
       <ListContainer>
-        {data.map((item) => (
-          <RecentlyPlayedStoryCard key={item.id} item={item} />
+        {data.slice(0, MAX_SHOW_LAST_STORIES).map((item) => (
+          <RecentlyPlayedStoryCard key={item.story_id} item={item} />
         ))}
       </ListContainer>
     </SectionContainer>

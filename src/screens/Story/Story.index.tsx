@@ -12,6 +12,8 @@ import { usePlayingStoryMetadataContext } from "../../contexts/playing-story-met
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
 import OverlayLoading from "../../components/OverlayLoading/OverlayLoading.index";
 import Error from "../../components/Error/Error.index";
+import { parseDurationToSeconds } from "../../helpers/time";
+import useHandleLastReadingStories from "../../hooks/useHandleLastReadingStories";
 
 export type StoryParams = {
   route: { params: { id: string; title: string } };
@@ -26,6 +28,7 @@ function Story({
 
   const [getStoryDetails, { data, loading, error }] = useGetStoryDetails();
   const { speed } = usePlayingStoryMetadataContext();
+  const { addLastReadingStories } = useHandleLastReadingStories();
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -57,13 +60,22 @@ function Story({
           artist: "Auditale",
           genre: data!.description,
           artwork: getStoryThumbnailImageUrl(data!.id),
-          duration: 530,
+          duration: parseDurationToSeconds(data!.duration),
         };
 
         await TrackPlayer.add([storyTrack]);
         await TrackPlayer.play();
       };
       configureTrack();
+      addLastReadingStories({
+        created_at: Date.now().toString(),
+        description: data!.description,
+        time_user_left: 0,
+        story_id: data!.id,
+        duration: parseDurationToSeconds(data!.duration),
+        gender: data!.gender,
+        title: data!.title,
+      });
     }
   }, [data]);
 

@@ -10,15 +10,17 @@ import FilterBar from "../../components/FilterBar/FilterBar.index";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
 import { Gender, StoryWithoutContent } from "../../types/story";
 import { useSystemContext } from "../../contexts/system";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
 import useGetStories from "../../hooks/useGetFilteredStories";
+import useHandleLastReadingStories from "../../hooks/useHandleLastReadingStories";
 
 const STORY_PAGE_SIZE = 3;
 
 function Home() {
   const { texts } = useSystemContext();
   const navigation = useNavigation<any>();
+  const isFocused = useIsFocused();
 
   const [genre, setGenre] = useState(texts.CONSTANTS.GENRES.ALL);
   const [difficulty, setDifficulty] = useState("");
@@ -27,6 +29,8 @@ function Home() {
     useGetStories({
       initialPageSize: STORY_PAGE_SIZE,
     });
+  const { getLastReadingStories, data: lastReadingStories } =
+    useHandleLastReadingStories();
   const { handleChangeGenre, handleChangeDifficulty } = useHandleFilterBar({
     genre,
     difficulty,
@@ -50,6 +54,12 @@ function Home() {
     fetchStories();
   }, []);
 
+  useEffect(() => {
+    if (isFocused) {
+      getLastReadingStories();
+    }
+  }, [isFocused]);
+
   if (error) {
     return <Text>error</Text>;
   }
@@ -57,7 +67,7 @@ function Home() {
   return (
     <Screen>
       <Header />
-      <RecentlyPlayedSection data={stories as any} />
+      <RecentlyPlayedSection data={lastReadingStories} />
       <PlanBanner />
       <FilterBar
         onFocus={handleFocusInput}

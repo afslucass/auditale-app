@@ -124,6 +124,7 @@ Vou passar resumos de contos, gere thumbnais para esses contos no estilo cartoon
 
 1. vai gerar arquivos .wav, colocar eles em uma pasta e executar o seguinte script:
    for input in \*.wav; do ffmpeg -i "$input" -codec:a libmp3lame -qscale:a 2 "${input%.wav}.mp3"; done
+   (remove '\')
 2. para juntar os audio, criar um arquivo e listar os audios, ex:
    file 'cap1.mp3'
    file 'res cap1.mp3'
@@ -137,3 +138,11 @@ Vou passar resumos de contos, gere thumbnais para esses contos no estilo cartoon
 dps, executar: ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp3
 
 3. execute 'ffmpeg -i output.mp3 -b:a 128k output_comp.mp3' para comprimir
+
+# gerar audio das palavras aprendidas:
+
+1. ir em https://aistudio.google.com/generate-speech?model=gemini-2.5-pro-preview-tts
+2. selecionar single spealer audio e voice: puck
+3. colocar em STYLE STRUCTIONS: Read aloud in a warm and friendly tone (the first word is in english, the others is in brazilian portuguese)
+4. colocar o texto no formato: {ingles} traduz para {portugues}
+5. baixar e converter .wav para .mp3

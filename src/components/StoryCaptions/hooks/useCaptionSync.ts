@@ -70,13 +70,22 @@ const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
           if (index !== activeIndex && index !== -1) {
             if (captions && captions[index].type === CaptionType.REVIEW) {
               if (metadata.screen !== PlayingStoryScreen.REVIEW) {
+                if (!usarHasSlidingTimeline) {
+                  loadLearnedWordsSection(captions[index].id);
+                }
                 setMetadata({
                   screen: PlayingStoryScreen.REVIEW,
                   index,
                   lastReviewId: captions[index].id,
                 });
               }
+              setActiveIndex(index);
               return;
+            }
+            if (captions && captions[index - 1].type === CaptionType.REVIEW) {
+              if (!usarHasSlidingTimeline) {
+                playLearnedWordsSection();
+              }
             }
             if (metadata.screen !== PlayingStoryScreen.STORY) {
               setPreventGoToReview(false);
@@ -107,16 +116,10 @@ const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
         title,
         caption: captions[metadata.index],
       });
-      if (!usarHasSlidingTimeline) {
-        loadLearnedWordsSection(captions[metadata.index].id);
-      }
       return;
     }
     if (metadata.screen === PlayingStoryScreen.STORY) {
       navigation.popTo("Story", route.params);
-      if (!usarHasSlidingTimeline) {
-        playLearnedWordsSection();
-      }
     }
   }, [metadata]);
 

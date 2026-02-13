@@ -14,6 +14,7 @@ import { useSystemContext } from "../../contexts/system";
 import { StoryWithoutContent } from "../../types/story";
 import { getStoryThumbnailImageUrl } from "../../helpers/story";
 import { get20FirstWords } from "../../helpers/text";
+import { parseDurationToMinutes } from "../../helpers/time";
 
 export type StoryCardParams = {
   item: StoryWithoutContent;
@@ -34,7 +35,8 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
             <TagText>{texts.CONSTANTS.GENRES[item.gender]}</TagText>
           </Tag>
           <DurationText>
-            {item.duration} {texts.CONSTANTS.TIME.LABEL.MIN}
+            {parseDurationToMinutes(item.duration)}{" "}
+            {texts.CONSTANTS.TIME.LABEL.MIN}
           </DurationText>
         </Row>
       </InfoContainer>

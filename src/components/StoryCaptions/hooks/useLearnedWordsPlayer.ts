@@ -5,6 +5,9 @@ import TrackPlayer from "react-native-track-player";
 interface UseLearnedWordsPlayerProps {
   learnedWords?: any[];
 }
+type PlayLearnedWordsSectionParams = {
+  preventPlayStory: boolean;
+};
 
 const audioSource = require("../../../assets/audio/new_words/new_words_section_title_ptbr_1.mp3");
 
@@ -100,48 +103,53 @@ const useSimpleLearnedWordsPlayer = ({
   );
 
   // Inicia a reprodução
-  const playLearnedWordsSection = useCallback(async () => {
-    if (isPlaying || playersRef.current.length === 0) return;
+  const playLearnedWordsSection = useCallback(
+    async (params?: PlayLearnedWordsSectionParams) => {
+      if (isPlaying || playersRef.current.length === 0) return;
 
-    try {
-      setIsPlaying(true);
+      try {
+        setIsPlaying(true);
 
-      // Pausa música de fundo
-      await TrackPlayer.pause();
+        // Pausa música de fundo
+        await TrackPlayer.pause();
 
-      // Toca áudio de introdução
-      player.seekTo(0);
-      player.play();
+        // Toca áudio de introdução
+        player.seekTo(0);
+        player.play();
 
-      // Aguarda introdução
-      await new Promise((resolve) =>
-        setTimeout(resolve, player.duration * 1000),
-      );
-
-      // Toca cada palavra em sequência
-      for (const audioPlayer of playersRef.current) {
-        audioPlayer.seekTo(0);
-        audioPlayer.play();
-
+        // Aguarda introdução
         await new Promise((resolve) =>
-          setTimeout(resolve, (audioPlayer.duration || 2) * 1000),
+          setTimeout(resolve, player.duration * 1000),
         );
 
-        audioPlayer.pause();
-        audioPlayer.seekTo(0);
-      }
+        // Toca cada palavra em sequência
+        for (const audioPlayer of playersRef.current) {
+          audioPlayer.seekTo(0);
+          audioPlayer.play();
 
-      // Retoma música de fundo
-      await TrackPlayer.play();
-      setIsPlaying(false);
-    } catch (error) {
-      console.error("Erro na reprodução:", error);
-      setIsPlaying(false);
-      try {
-        await TrackPlayer.play();
-      } catch {}
-    }
-  }, [isPlaying, player]);
+          await new Promise((resolve) =>
+            setTimeout(resolve, (audioPlayer.duration || 2) * 1000),
+          );
+
+          audioPlayer.pause();
+          audioPlayer.seekTo(0);
+        }
+
+        // Retoma música de fundo
+        if (!params?.preventPlayStory) {
+          await TrackPlayer.play();
+        }
+        setIsPlaying(false);
+      } catch (error) {
+        console.error("Erro na reprodução:", error);
+        setIsPlaying(false);
+        try {
+          await TrackPlayer.play();
+        } catch {}
+      }
+    },
+    [isPlaying, player],
+  );
 
   // Para a reprodução
   const stopPlayback = useCallback(async () => {

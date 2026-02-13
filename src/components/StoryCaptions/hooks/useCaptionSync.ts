@@ -63,7 +63,7 @@ const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
 
   useEffect(() => {
     if (timeline) {
-      const sub = TrackPlayer.addEventListener(
+      const playbackUpdateListener = TrackPlayer.addEventListener(
         Event.PlaybackProgressUpdated,
         async ({ position }) => {
           const index = getActiveCaptionIndex(timeline, position);
@@ -100,7 +100,21 @@ const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
           }
         },
       );
-      return () => sub.remove();
+
+      const playbackEndedListener = TrackPlayer.addEventListener(
+        Event.PlaybackQueueEnded,
+        () => {
+          if (!usarHasSlidingTimeline) {
+            playLearnedWordsSection({ preventPlayStory: true });
+            TrackPlayer.seekTo(0);
+            navigation.popTo("Story", route.params);
+          }
+        },
+      );
+      return () => {
+        playbackUpdateListener.remove();
+        playbackEndedListener.remove();
+      };
     }
   }, [timeline, activeIndex]);
 

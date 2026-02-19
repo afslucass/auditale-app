@@ -1,0 +1,2 @@
+def createStoryThumbnail():
+    return None

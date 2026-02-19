@@ -3,6 +3,8 @@ from image import createStoryThumbnail
 from text import createBriefingStory, createStory, createStoryContentMetadata, createStoryInfo, mergeStoryContentMetadata
 from uploads import uploadImage, createWords, createStory
 
+from services_ia import runPrompt
+
 def setup():
     createBriefingStory()
     createStory()

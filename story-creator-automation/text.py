@@ -1,5 +1,9 @@
+from agent_ia import Agent
+
 def createBriefingStory():
-    # ask user a genre, and generate a briefing
+    chat = Agent()
+    res = chat.prompt("Oi, meu nome é João.")
+    print(res)
     return None
 
 def createStory():

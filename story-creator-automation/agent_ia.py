@@ -1,4 +1,6 @@
 from google import genai
+from google.genai import types
+
 from env import GOOGLE_IA_KEY
 
 client = genai.Client(
@@ -16,11 +18,13 @@ class Agent:
         Envia uma mensagem, incluindo o histórico, e atualiza o histórico com a resposta.
         """
         conteudos_para_enviar = self.historico.copy()
-        conteudos_para_enviar.append({
-            "role": "user",
-            "content": mensagem_usuario
-        })
-
+        conteudos_para_enviar.append(
+            types.Content(
+                    role="user",
+                    parts=[types.Part.from_text(text=mensagem_usuario)]
+            )
+        )
+        
         try:
             response = self.client.models.generate_content(
                 model=self.modelo,
@@ -30,8 +34,18 @@ class Agent:
             if response and hasattr(response, 'text'):
                 texto_resposta = response.text
 
-                self.historico.append({"role": "user", "content": mensagem_usuario})
-                self.historico.append({"role": "model", "content": texto_resposta})
+                self.historico.append(
+                    types.Content(
+                        role="user",
+                        parts=[types.Part.from_text(text=mensagem_usuario)]
+                    )
+                )
+                self.historico.append(
+                    types.Content(
+                        role="model",
+                        parts=[types.Part.from_text(text=texto_resposta)]
+                    )
+                )
                 return texto_resposta
             else:
                 return "Erro: Resposta vazia ou inválida."

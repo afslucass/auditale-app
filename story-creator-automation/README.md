@@ -1,3 +1,13 @@
+# Setup
+
+No windows wsl:
+1. python3 -m venv .env
+2. source .env/bin/activate
+3. pip install google-genai (se nao tiver instalado)
+
+Em outras plataformas:
+- pip install google-genai
+
 # Requisitos
 
 - O bot ira gerar uma historia de cada vez, cabendo ao usuario escolher o genero e aprovando a historia.

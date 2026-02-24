@@ -43,3 +43,4 @@ yarn-error.*
 # python code metadata
 __pycache__
 env.py
+.env

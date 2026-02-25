@@ -1,9 +1,28 @@
+import json
+
 from agent_ia import Agent
+from prompts import CREATE_STORY
 
 def createBriefingStory():
+    chapters_number = int(input("Digite a quantidade de capitulos: "))
+    genre = input("Digite o genero literario da historia: ")
+
     chat = Agent()
-    res = chat.prompt("Oi, meu nome é João.")
-    print(res)
+
+    chat.prompt(CREATE_STORY)
+    overview = chat.prompt(f"{genre}. chapter number: {chapters_number}")
+    print(overview)
+
+    approved = int(input("Continuar com geracao da historia? 0/1: "))
+    if (approved == 0):
+        return None
+
+    story = []
+    for i in range(chapters_number):
+        res = chat.prompt("approved and continue")
+        story.append(json.loads(res))
+
+    # salvar historia em um arquivo
     return None
 
 def createStory():

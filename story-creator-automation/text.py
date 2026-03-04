@@ -3,7 +3,7 @@ import json
 from agent_ia import Agent
 from prompts import CREATE_STORY
 
-def createBriefingStory():
+def createStoryText():
     chapters_number = int(input("Digite a quantidade de capitulos: "))
     genre = input("Digite o genero literario da historia: ")
 
@@ -22,12 +22,9 @@ def createBriefingStory():
         res = chat.prompt("approved and continue")
         story.append(json.loads(res))
 
-    # salvar historia em um arquivo
-    return None
+    with open('temp/story.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(story, arquivo, indent=4, ensure_ascii=False)
 
-def createStory():
-    # if user agree, generates each chapter and chapter description, with its learned words
-    # stories it in a file
     return None
 
 def createStoryContentMetadata():

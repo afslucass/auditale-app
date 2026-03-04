@@ -46,3 +46,15 @@ Important requirements for the "words" array:
 7. Ensure the final chapter provides a satisfying narrative conclusion.
 
 Important: The description and vocabulary words must be generated automatically with each chapter. Only chapter-by-chapter progression requires user authorization. The "chapter" field must contain all text compressed into a single line with no line breaks whatsoever."""
+
+GENERATE_CHAPTER_AUDIO="""
+Read aloud in a warm and friendly tone:
+"""
+
+GENERATE_CHAPTER_DESC_AUDIO="""
+Read aloud in a warm and friendly tone (text is in brazilian portuguese):
+"""
+
+GENERATE_NEW_WORDS_AUDIO="""
+Read aloud in a warm and friendly tone (the first word is in united states english, the rest is in brazilian portuguese):
+"""

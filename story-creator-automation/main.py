@@ -1,11 +1,10 @@
 from audio import generateChapterDescriptionAudios, generateStoryAudios, generateWordsAudios, mergeStoryAudios
 from image import createStoryThumbnail
-from text import createBriefingStory, createStory, createStoryContentMetadata, createStoryInfo, mergeStoryContentMetadata
+from text import createStoryText, createStoryContentMetadata, createStoryInfo, mergeStoryContentMetadata
 from uploads import uploadImage, createWords, createStory
 
 def setup():
-    createBriefingStory()
-    createStory()
+    createStoryText()
 
     generateStoryAudios()
     generateChapterDescriptionAudios()

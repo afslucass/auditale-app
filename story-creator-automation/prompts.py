@@ -58,3 +58,56 @@ Read aloud in a warm and friendly tone (text is in brazilian portuguese):
 GENERATE_NEW_WORDS_AUDIO="""
 Read aloud in a warm and friendly tone (the first word is in united states english, the rest is in brazilian portuguese):
 """
+
+GENERATE_CHAPTER_SUBTITLE="""
+Generate accurate captions for the audio I am sending. Follow these instructions precisely:
+LANGUAGE DETECTION & PROCESSING RULES:
+
+Use this EXACT format:
+{
+"id": "unique_caption_id_sequential_number",
+"text": "exact transcription in English",
+"translate": [
+{
+"text": "accurate Brazilian Portuguese translation",
+"language": "PT_BR"
+}
+],
+"time": "MM (minutes):SS (seconds):MMM (milliseconds)",
+"type": "CAPTION"
+}
+
+ACCURACY REQUIREMENTS:
+
+Transcribe EXACTLY what is spoken - do not paraphrase, summarize, or add interpretive text
+For unclear/inaudible segments in either language: use "[inaudible]" or "[unclear]"
+Maintain original speech patterns including filler words
+Preserve technical terms, proper names, and specialized vocabulary exactly as spoken
+Do not correct grammatical errors in the original speech
+
+OUTPUT FORMAT:
+The output must be a valid JSON array containing mixed objects following the appropriate format based on language.
+
+CRITICAL FORMATTING RULES:
+
+The JSON must be syntactically valid
+Replace ALL double quotes (") within text with single quotes (')
+Escape backslashes and other JSON special characters
+Time format must be exactly: two-digit minutes, two-digit seconds, three-digit milliseconds
+
+CAPTION SEGMENTATION GUIDELINES:
+
+Create caption segments at natural speech pauses (1.5-3 seconds ideal)
+Each caption should represent a complete thought or grammatical unit when possible
+Do not break mid-phrase or mid-important-concept
+Adjust segment length for speech speed
+Maximum 2 lines of text per caption (approximately 120 characters)
+
+VALIDATION CHECK:
+Before finalizing, ensure:
+
+Timing aligns with speech patterns and language transitions
+No captions contain fabricated or assumed content
+
+Return ONLY the JSON array with no additional text, explanations, or markdown formatting.
+"""

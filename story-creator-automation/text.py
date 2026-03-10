@@ -4,6 +4,7 @@ import uuid
 from agent_ia import Agent
 from audio_agent_ia import AudioAgent
 from prompts import CREATE_STORY, GENERATE_CHAPTER_SUBTITLE
+from time_helper import time_to_millis, millis_to_time
 
 def createStoryText():
     chapters_number = int(input("Digite a quantidade de capitulos: "))
@@ -71,4 +72,6 @@ def createStoryInfo():
 
 def mergeStoryContentMetadata():
     # merge content of files above, and update time of each subtitle and chapter description section
+    print (time_to_millis("20:02:000"))
+    print (millis_to_time(1202000))
     return None

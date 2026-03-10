@@ -1,4 +1,4 @@
-from audio import generateChapterDescriptionAudios, generateStoryAudios, generateWordsAudios, mergeStoryAudios
+from audio import convertAudioToMP3, generateStoryAudios, mergeStoryAudios
 from image import createStoryThumbnail
 from text import createStoryText, createStoryContentMetadata, createStoryInfo, mergeStoryContentMetadata
 from uploads import uploadImage, createWords, createStory
@@ -7,8 +7,7 @@ def setup():
     createStoryText()
 
     generateStoryAudios()
-    generateChapterDescriptionAudios()
-    generateWordsAudios()
+    convertAudioToMP3()
 
     createStoryContentMetadata()
     createStoryInfo()

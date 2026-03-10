@@ -1,12 +1,10 @@
 import json
+import os
 
 from text_to_speech_agent_ia import TextToSpeechAgent
 from prompts import GENERATE_CHAPTER_AUDIO, GENERATE_CHAPTER_DESC_AUDIO, GENERATE_NEW_WORDS_AUDIO
 
 def generateStoryAudios(): 
-    # generate story audio, chapter by chapter
-    # convert to mp3 and story local
-
     with open('temp/story.json', 'r', encoding='utf-8') as arquivo:
         dados = json.load(arquivo)
 
@@ -20,14 +18,8 @@ def generateStoryAudios():
 
     return None
 
-def generateChapterDescriptionAudios(): 
-    # generate chapter audio, chapter by chapter
-    # convert to mp3 and story local
-    return None
-
-def generateWordsAudios(): 
-    # generate each word audio
-    # convert to mp3 and story local
+def convertAudioToMP3(): 
+    os.system('cd temp && for input in *.wav; do ffmpeg -i "$input" -codec:a libmp3lame -qscale:a 2 "${input%.wav}.mp3"; done')
     return None
 
 def mergeStoryAudios():

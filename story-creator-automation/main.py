@@ -10,11 +10,11 @@ def setup():
     convertAudioToMP3()
 
     createStoryContentMetadata()
-    createStoryInfo()
 
     mergeStoryContentMetadata()
     mergeStoryAudios()
 
+    createStoryInfo()
     createStoryThumbnail()
 
     uploadImage()

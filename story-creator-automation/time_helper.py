@@ -1,3 +1,5 @@
+import subprocess
+
 def time_to_millis(time_str):
     """
     Convert time string in format "MM:SS:MMM" to milliseconds.
@@ -62,3 +64,25 @@ def millis_to_time(milliseconds):
         
     except Exception as e:
         raise ValueError(f"Error converting milliseconds: {e}")
+
+def get_audio_duration_ms(file_path):
+    """
+    Get the duration of an audio file in milliseconds using ffprobe.
+    
+    Args:
+        file_path (str): Path to the audio file
+    
+    Returns:
+        int: Duration in milliseconds
+    """
+    try:
+        result = subprocess.run([
+            'ffprobe', '-v', 'error', '-show_entries',
+            'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1',
+            file_path
+        ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        duration_sec = float(result.stdout.strip())
+        return int(duration_sec * 1000)
+    except Exception as e:
+        print(f"Error getting duration for {file_path}: {e}")
+        return 0

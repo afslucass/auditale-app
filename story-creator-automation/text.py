@@ -4,7 +4,7 @@ import uuid
 from agent_ia import Agent
 from audio_agent_ia import AudioAgent
 from prompts import CREATE_STORY, GENERATE_CHAPTER_SUBTITLE
-from time_helper import time_to_millis, millis_to_time
+from time_helper import time_to_millis, millis_to_time, get_audio_duration_ms
 
 def createStoryText():
     chapters_number = int(input("Digite a quantidade de capitulos: "))
@@ -71,23 +71,41 @@ def createStoryInfo():
     return None
 
 def mergeStoryContentMetadata():
-    # merge content of files above, and update time of each subtitle and chapter description section
+    with open('temp/story.json', 'r', encoding='utf-8') as arquivo:
+        dados = json.load(arquivo)
+        
+    metadata = []
+    current_duration_ms = 0
+    
+    for index in range(len(dados)):
+        # READ chapter-{index}-metadata.json
+        with open(f'temp/chapter-{index}-metadata.json', 'r', encoding='utf-8') as f:
+            chapter_metadata = json.load(f)
+            
+        for item in chapter_metadata:
+            if current_duration_ms > 0:
+                original_ms = time_to_millis(item['time'])
+                item['time'] = millis_to_time(original_ms + current_duration_ms)
+            metadata.append(item)
+            
+        # Add chapter duration
+        ch_duration = get_audio_duration_ms(f'temp/chapter-{index}.mp3')
+        current_duration_ms += ch_duration
+        
+        # READ chapter-desc-{index}-metadata.json
+        with open(f'temp/chapter-desc-{index}-metadata.json', 'r', encoding='utf-8') as f:
+            chapter_desc_metadata = json.load(f)
+            
+        # Set time to current_duration_ms
+        chapter_desc_metadata['time'] = millis_to_time(current_duration_ms)
+        metadata.append(chapter_desc_metadata)
+        
+        # Add desc duration to current_duration
+        desc_duration = get_audio_duration_ms(f'temp/chapter-desc-{index}.mp3')
+        current_duration_ms += desc_duration
 
-    # we need merge all content metadata files, ex: chapter-0, chapter-desc-0, chapter-1, chapter-desc-1
+    # write metadata to temp/metadata.json
+    with open('temp/metadata.json', 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, indent=4, ensure_ascii=False)
 
-    # so, update timeline following below rules:
-    # create metadata.json file, add chapter-0-metadata as content.
-    # in metadata.json, push chapter-desc-0 content to json list
-    #   look to chapter-0.mp3 file and get duration of media, 
-    #   convert duration to time format and save in chapter-desc-0 content saved in metadata.json, in time property
-    # get duration of chapter-0.mp3 and chapter-desc-0.mp3 and sum them. add them in current_duration var.
-    # push chapter-1-metadata to metadata.json, look for every 'time' prop of chapter-1-metadata added to metadata.json and sum its content with current_duration var
-    # in metadata.json, push chapter-desc-1 content to json list
-    #   look to chapter-1.mp3 file and get duration of media, sum it with current_duration var and update current_duration with value.
-    #   convert value above to time format and save in chapter-desc-1 content saved in metadata.json, in time property
-    # repeat until all files are processed
-
-
-    print (time_to_millis("20:02:000"))
-    print (millis_to_time(1202000))
     return None

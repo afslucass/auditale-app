@@ -72,6 +72,22 @@ def createStoryInfo():
 
 def mergeStoryContentMetadata():
     # merge content of files above, and update time of each subtitle and chapter description section
+
+    # we need merge all content metadata files, ex: chapter-0, chapter-desc-0, chapter-1, chapter-desc-1
+
+    # so, update timeline following below rules:
+    # create metadata.json file, add chapter-0-metadata as content.
+    # in metadata.json, push chapter-desc-0 content to json list
+    #   look to chapter-0.mp3 file and get duration of media, 
+    #   convert duration to time format and save in chapter-desc-0 content saved in metadata.json, in time property
+    # get duration of chapter-0.mp3 and chapter-desc-0.mp3 and sum them. add them in current_duration var.
+    # push chapter-1-metadata to metadata.json, look for every 'time' prop of chapter-1-metadata added to metadata.json and sum its content with current_duration var
+    # in metadata.json, push chapter-desc-1 content to json list
+    #   look to chapter-1.mp3 file and get duration of media, sum it with current_duration var and update current_duration with value.
+    #   convert value above to time format and save in chapter-desc-1 content saved in metadata.json, in time property
+    # repeat until all files are processed
+
+
     print (time_to_millis("20:02:000"))
     print (millis_to_time(1202000))
     return None

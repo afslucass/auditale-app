@@ -23,5 +23,14 @@ def convertAudioToMP3():
     return None
 
 def mergeStoryAudios():
-    # merge story and chapter description audios and save it
+    with open('temp/story.json', 'r', encoding='utf-8') as arquivo:
+        dados = json.load(arquivo)
+
+    with open('temp/concat_list.txt', 'w', encoding='utf-8') as f:
+        for index in range(len(dados)):
+            f.write(f"file 'chapter-{index}.mp3'\n")
+            f.write(f"file 'chapter-desc-{index}.mp3'\n")
+
+    os.system("cd temp && ffmpeg -y -f concat -safe 0 -i concat_list.txt -c copy story.mp3")
+
     return None

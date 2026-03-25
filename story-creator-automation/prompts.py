@@ -126,3 +126,8 @@ The JSON format must be exactly as follows:
 Ensure the output is pure valid JSON:
 
 """
+
+CREATE_STORY_THUMBNAIL="""Create a cartoon-like thumbnail without white borders that conveys the feelings and setting of the following story. It must be expressive and capture the essence of the narrative.
+
+Story context:
+"""

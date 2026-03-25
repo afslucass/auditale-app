@@ -3,7 +3,7 @@ import uuid
 
 from agent_ia import Agent
 from audio_agent_ia import AudioAgent
-from prompts import CREATE_STORY, GENERATE_CHAPTER_SUBTITLE
+from prompts import CREATE_STORY, GENERATE_CHAPTER_SUBTITLE, CREATE_STORY_INFO
 from time_helper import time_to_millis, millis_to_time, get_audio_duration_ms
 
 def createStoryText():
@@ -67,7 +67,27 @@ def createStoryContentMetadata():
     return None
 
 def createStoryInfo():
-    # create story name, description, etc
+    with open('temp/story.json', 'r', encoding='utf-8') as f:
+        story_content = f.read()
+
+    chat = Agent()
+    response = chat.prompt(CREATE_STORY_INFO + story_content)
+
+    # Clean the response to ensure it's valid JSON
+    response_clean = response.strip()
+    if response_clean.startswith("```json"):
+        response_clean = response_clean[7:]
+    elif response_clean.startswith("```"):
+        response_clean = response_clean[3:]
+    if response_clean.endswith("```"):
+        response_clean = response_clean[:-3]
+    response_clean = response_clean.strip()
+
+    info_json = json.loads(response_clean)
+
+    with open('temp/story-info.json', 'w', encoding='utf-8') as f:
+        json.dump(info_json, f, indent=4, ensure_ascii=False)
+
     return None
 
 def mergeStoryContentMetadata():

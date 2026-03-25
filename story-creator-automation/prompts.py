@@ -111,3 +111,18 @@ No captions contain fabricated or assumed content
 
 Return ONLY the JSON array with no additional text, explanations, or markdown formatting.
 """
+
+CREATE_STORY_INFO="""Based on the provided story JSON content below, generate metadata for the story.
+You must return ONLY a raw JSON object with no markdown formatting, backticks, or other text.
+
+The JSON format must be exactly as follows:
+{
+  "title": "<A fitting title for the overall story in English (en_US)>",
+  "description": "<A summary of the entire story in English (en_US), maximum 100 words>",
+  "difficulty": "<Must be exactly one of: BEGINNER, INTERMEDIATE, or ADVANCED>",
+  "genre": "<Must be exactly one of: ROMANCE, SCI_FI, or MYSTERIUM>"
+}
+
+Ensure the output is pure valid JSON:
+
+"""

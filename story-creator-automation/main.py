@@ -17,9 +17,11 @@ def setup():
     createStoryInfo()
     createStoryThumbnail()
 
-    uploadImage()
+    story_id = createStory()
+    if story_id:
+        uploadImage(story_id)
     createWords()
-    createStory()
+    
     
     return None
 

@@ -4,9 +4,9 @@ import json
 import time_helper
 from supabase_infra import supabase
 
-def uploadImage():
+def uploadImage(story_id):
     file_path = "temp/story-thumbnail.jpg"
-    file_name = f"{uuid.uuid4()}.jpg"
+    file_name = f"{story_id}.jpg"
     
     supabase.storage.from_("story thumbnails").upload(
         path=file_name,

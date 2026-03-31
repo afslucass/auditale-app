@@ -42,7 +42,7 @@ def createWords(story_id):
                 })
 
     if learned_words_payload:
-        supabase.table("LearnedWords").insert(learned_words_payload).execute()
+        supabase.table("learnedwords").insert(learned_words_payload).execute()
 
     if story_learned_words_payload:
         supabase.table("story_learned_words").insert(story_learned_words_payload).execute()

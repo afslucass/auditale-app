@@ -16,8 +16,37 @@ def uploadImage(story_id):
     
     return file_name
 
-def createWords():
-    
+def createWords(story_id):
+    with open("temp/metadata.json", "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+
+    learned_words_payload = []
+    story_learned_words_payload = []
+
+    for item in metadata:
+        if item.get("type") == "REVIEW":
+            chapter_review_id = item.get("id")
+            for word_obj in item.get("newWords", []):
+                learned_words_payload.append({
+                    "id": word_obj["id"],
+                    "word": word_obj["word"],
+                    "language": word_obj["language"],
+                    "word_category": word_obj["wordCategory"],
+                    "translated_word": word_obj["translatedWord"],
+                    "translated_language": word_obj["translatedLanguage"]
+                })
+                story_learned_words_payload.append({
+                    "story_id": story_id,
+                    "learned_word_id": word_obj["id"],
+                    "chapter_review_id": chapter_review_id
+                })
+
+    if learned_words_payload:
+        supabase.table("LearnedWords").insert(learned_words_payload).execute()
+
+    if story_learned_words_payload:
+        supabase.table("story_learned_words").insert(story_learned_words_payload).execute()
+
     return None
 
 def createStory():

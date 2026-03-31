@@ -20,8 +20,7 @@ def setup():
     story_id = createStory()
     if story_id:
         uploadImage(story_id)
-    createWords()
-    
+        createWords(story_id)
     
     return None
 

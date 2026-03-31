@@ -47,6 +47,18 @@ def createWords(story_id):
     if story_learned_words_payload:
         supabase.table("story_learned_words").insert(story_learned_words_payload).execute()
 
+    for payload in learned_words_payload:
+        word_id = payload["id"]
+        audio_file_path = f"temp/{word_id}.mp3"
+        try:
+            supabase.storage.from_("learned words audios").upload(
+                path=f"{word_id}.mp3",
+                file=audio_file_path,
+                file_options={"content-type": "audio/mpeg"}
+            )
+        except Exception as e:
+            print(f"Error uploading audio for word {word_id}: {e}")
+            
     return None
 
 def createStory():

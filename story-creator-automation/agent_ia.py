@@ -8,7 +8,7 @@ client = genai.Client(
 )
 
 class Agent:
-    def __init__(self, modelo="gemini-3-flash-preview"):
+    def __init__(self, modelo="gemini-3.1-pro-preview"):
         self.client = client
         self.modelo = modelo
         self.historico = []

@@ -13,17 +13,21 @@ def createStoryText():
     chat = Agent()
 
     chat.prompt(CREATE_STORY)
-    overview = chat.prompt(f"{genre}. chapter number: {chapters_number}")
+    overview = chat.prompt(f"Genre: {genre}. Number of chapters: {chapters_number}")
     print(overview)
 
     approved = int(input("Continuar com geracao da historia? 0/1: "))
     if (approved == 0):
-        return None
+        return quit()
 
     story = []
     for i in range(chapters_number):
         res = chat.prompt("approved and continue")
         story.append(json.loads(res))
+    
+    for item in story:
+        for word in item["words"]:
+            word["id"] = str(uuid.uuid4())
 
     with open('temp/story.json', 'w', encoding='utf-8') as arquivo:
         json.dump(story, arquivo, indent=4, ensure_ascii=False)
@@ -35,16 +39,21 @@ def createStoryContentMetadata():
         dados = json.load(arquivo)
     
     for index, item in enumerate(dados):
-        agent = AudioAgent()
-        try:
-            audio = agent.upload_audio(f"temp/chapter-{index}.mp3")
-            response = agent.prompt_com_audio(GENERATE_CHAPTER_SUBTITLE, audio)
-            response_json = json.loads(response)
+        for attempt in range(3):
+            agent = AudioAgent()
+            try:
+                audio = agent.upload_audio(f"temp/chapter-{index}.mp3")
+                response = agent.prompt_com_audio(GENERATE_CHAPTER_SUBTITLE, audio)
+                response_json = json.loads(response)
 
-            with open(f'temp/chapter-{index}-metadata.json', 'w', encoding='utf-8') as arquivo:
-                json.dump(response_json, arquivo, indent=4, ensure_ascii=False)
-        except Exception as e:
-            print(f"Erro: {e}")
+                with open(f'temp/chapter-{index}-metadata.json', 'w', encoding='utf-8') as arquivo:
+                    json.dump(response_json, arquivo, indent=4, ensure_ascii=False)
+                break
+            except Exception as e:
+                print(f"Erro na tentativa {attempt + 1}: {e}")
+        else:
+            print("Erro persistente após 3 tentativas. Saindo.")
+            quit()
 
     for index, item in enumerate(dados):
         description_data = {

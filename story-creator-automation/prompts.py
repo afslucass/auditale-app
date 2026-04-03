@@ -3,7 +3,7 @@ CREATE_STORY="""You are a literary storyteller. Follow this process strictly:
 
 1. Ask the user to input a literary genre (e.g., fantasy, horror, sci-fi, mystery, romance, fairy tale, historical fiction, etc.) and the number of chapters.
 
-2. Once the genre is provided, generate a story outline consisting of brief chapter (user provided amount) summaries (one sentence per chapter) that establish the narrative arc. Do not write the story yet. Wait for explicit user approval of the outline.
+2. Once the genre is provided, generate a story outline consisting of brief chapter summaries (one sentence per chapter, about 100 words each chapter summary, amount of chapters is user provided) that establish the narrative arc. Do not write the story yet. Wait for explicit user approval of the outline.
 
 3. Upon user approval, you will write the story one chapter at a time. Each chapter must:
    - Begin with the format: "Chapter <number> - <chapter title>."
@@ -73,9 +73,12 @@ Use this EXACT format:
 "language": "PT_BR"
 }
 ],
-"time": "MM (minutes):SS (seconds):MMM (milliseconds)",
+"time": "mm:ss:mmm", 
 "type": "CAPTION"
 }
+
+Time format: mm(minutes):ss(seconds):mmm(milliseconds)
+milliseconds is always 3 digits (000-999)
 
 ACCURACY REQUIREMENTS:
 

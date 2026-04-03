@@ -64,38 +64,42 @@ class TextToSpeechAgent:
         if estilo:
             texto = f"Say {estilo}: {texto}"
         
-        try:
-            response = self.client.models.generate_content(
-                model=self.modelo,
-                contents=texto,
-                config=types.GenerateContentConfig(
-                    response_modalities=["AUDIO"],
-                    speech_config=types.SpeechConfig(
-                        voice_config=types.VoiceConfig(
-                            prebuilt_voice_config=types.PrebuiltVoiceConfig(
-                                voice_name=voz_selecionada,
+        for attempt in range(3):
+            try:
+                response = self.client.models.generate_content(
+                    model=self.modelo,
+                    contents=texto,
+                    config=types.GenerateContentConfig(
+                        response_modalities=["AUDIO"],
+                        speech_config=types.SpeechConfig(
+                            voice_config=types.VoiceConfig(
+                                prebuilt_voice_config=types.PrebuiltVoiceConfig(
+                                    voice_name=voz_selecionada,
+                                )
                             )
-                        )
-                    ),
+                        ),
+                    )
                 )
-            )
-            
-            if response and response.candidates:
-                dados_audio = response.candidates[0].content.parts[0].inline_data.data
                 
-                # Salvar arquivo se especificado
-                if arquivo:
-                    self._salvar_wav(dados_audio, arquivo)
-                    print(f"Áudio salvo em: {arquivo}")
+                if response and response.candidates:
+                    dados_audio = response.candidates[0].content.parts[0].inline_data.data
+                    
+                    # Salvar arquivo se especificado
+                    if arquivo:
+                        self._salvar_wav(dados_audio, arquivo)
+                        print(f"Áudio salvo em: {arquivo}")
+                    
+                    return dados_audio
+                else:
+                    print(f"Erro: Resposta vazia na tentativa {attempt + 1}")
+                    continue
+                    
+            except Exception as e:
+                print(f"Erro na tentativa {attempt + 1}: {e}")
+                continue
                 
-                return dados_audio
-            else:
-                print("Erro: Resposta vazia")
-                return None
-                
-        except Exception as e:
-            print(f"Erro: {e}")
-            return None
+        print("Erro persistente após 3 tentativas. Saindo.")
+        quit()
     
     def listar_vozes(self):
         """Retorna vozes disponíveis"""

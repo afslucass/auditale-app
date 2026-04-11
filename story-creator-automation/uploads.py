@@ -86,5 +86,17 @@ def createStory():
     response = supabase.table("Story").insert(payload).execute()
     
     if hasattr(response, 'data') and len(response.data) > 0:
-        return response.data[0]["id"]
+        id = response.data[0]["id"]
+
+        audio_file_path = f"temp/story.mp3"
+        try:
+            supabase.storage.from_("story audios").upload(
+                path=f"{id}.mp3",
+                file=audio_file_path,
+                file_options={"content-type": "audio/mpeg"}
+            )
+        except Exception as e:
+            print(f"Error uploading audio for story: {e}")
+
+        return id
     return None

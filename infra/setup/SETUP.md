@@ -18,6 +18,8 @@ psql \
 
 # Config Auth
 
+Ref: https://supabase.com/docs/guides/auth/social-login/auth-google?queryGroups=platform&platform=react-native#prerequisites
+
 # Config Storage
 
 Nothing to do

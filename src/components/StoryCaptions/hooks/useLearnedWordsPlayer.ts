@@ -12,7 +12,7 @@ type PlayLearnedWordsSectionParams = {
 const audioSource = require("../../../assets/audio/new_words/new_words_section_title_ptbr_1.mp3");
 
 const AUDIO_BASE_URL =
-  "https://erfcqkqqqsglmwjgodbl.supabase.co/storage/v1/object/public/learned%20words%20audios/";
+  `${process.env.EXPO_PUBLIC_SUPABASE_URL}/storage/v1/object/public/learned%20words%20audios/`
 
 const useSimpleLearnedWordsPlayer = ({
   learnedWords,

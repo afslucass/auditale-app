@@ -12,6 +12,12 @@ Em outras plataformas:
 
 - pip install google-genai supabase
 
+# ENVs
+
+1. SUPABASE_URL: pegar atravez da home
+2. SUPABASE_KEY: ir em settings -> API Keys -> Secrets Keys
+3. GOOGLE_IA_KEY: obter em Google IA Studio -> Chaves de api
+
 # Requisitos
 
 - O bot ira gerar uma historia de cada vez, cabendo ao usuario escolher o genero e aprovando a historia.

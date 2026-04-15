@@ -20,6 +20,16 @@ psql \
 
 Ref: https://supabase.com/docs/guides/auth/social-login/auth-google?queryGroups=platform&platform=react-native#prerequisites
 
+Apos seguir o tutorial acima, ir em Authentication -> URL Configuration -> Site URL
+MUdar URL para o deeplink do app.
+
+Ir em SQL Editor, rodar:
+```sql
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
+```
+
 # Config Storage
 
-Nothing to do
+As pastas ja vem importadas, mas precisa adicionar todas as policies novamente, ver storage_policies

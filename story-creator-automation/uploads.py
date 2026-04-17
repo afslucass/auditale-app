@@ -67,6 +67,10 @@ def createStory():
         
     with open("temp/metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
+
+    for item in metadata:
+        if "newWords" in item:
+            del item["newWords"]
         
     duration_ms = time_helper.get_audio_duration_ms("temp/story.mp3")
     duration_str = time_helper.millis_to_time(duration_ms)

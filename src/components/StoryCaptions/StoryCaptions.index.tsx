@@ -56,7 +56,7 @@ function StoryCaptions({ id, title, captions, onPressReview }: Props) {
     if (caption.type === "CAPTION") {
       const text =
         caption.id === translatedCaptionId
-          ? caption.translate?.[0].text
+          ? caption.translated_text
           : caption.text;
 
       return (

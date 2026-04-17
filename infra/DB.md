@@ -16,7 +16,7 @@ CAPTION type
 
 id: uuid,
 text: string
-translate: [{language: LANGUAGE, text: string}]
+translated_text: string
 time: 'MM:SS:ML'
 type: CAPTION_TYPE
 
@@ -26,8 +26,7 @@ id: uuid
 type: CAPTION_TYPE,
 time: 'MM:SS:ML'
 description: string
-translate: [{language: LANGUAGE, text: string}]
-newWords: [{ word: string, translate: [{language: LANGUAGE, text: string}] }],
+translated_text: string
 
 ## TABLES
 
@@ -53,7 +52,6 @@ user_id: uuid
 word: string
 type: WORD_TYPE
 language: LANGUAGE
-translate: [{language: LANGUAGE, text: string}]
 
 User
 

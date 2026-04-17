@@ -18,7 +18,7 @@ function Review({
     params: {
       id: storyId,
       title,
-      caption: { id: captionId, translate },
+      caption: { id: captionId, translated_text },
     },
   },
 }: ReviewParams) {
@@ -36,7 +36,7 @@ function Review({
     setPreventGoToReview(true);
   };
 
-  if (!translate || !learnedWordsFromThisChapter) {
+  if (!translated_text || !learnedWordsFromThisChapter) {
     return null;
   }
 
@@ -56,7 +56,7 @@ function Review({
       />
       <SectionsContainer>
         <AudioPlayerControls />
-        <DescriptionBox text={translate[0].text} />
+        <DescriptionBox text={translated_text} />
         <VocabularyCheck items={learnedWordsFromThisChapter} />
       </SectionsContainer>
     </Screen>

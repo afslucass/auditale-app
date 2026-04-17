@@ -41,15 +41,10 @@ export type Story = {
 
 export type StoryWithoutContent = Omit<Story, "content">;
 
-export type TranslatedText = {
-  language: Language;
-  text: string;
-};
-
 export type Caption = {
   id: string;
   text?: string;
-  translate?: TranslatedText[];
+  translated_text: string;
   time: string;
   type: CaptionType;
   description: string;

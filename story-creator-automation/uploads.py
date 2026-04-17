@@ -26,14 +26,14 @@ def createWords(story_id):
     for item in metadata:
         if item.get("type") == "REVIEW":
             chapter_review_id = item.get("id")
-            for word_obj in item.get("newWords", []):
+            for word_obj in item.get("new_words", []):
                 learned_words_payload.append({
                     "id": word_obj["id"],
                     "word": word_obj["word"],
                     "language": word_obj["language"],
-                    "word_category": word_obj["wordCategory"],
-                    "translated_word": word_obj["translatedWord"],
-                    "translated_language": word_obj["translatedLanguage"]
+                    "word_category": word_obj["word_category"],
+                    "translated_word": word_obj["translated_word"],
+                    "translated_language": word_obj["translated_language"]
                 })
                 story_learned_words_payload.append({
                     "story_id": story_id,

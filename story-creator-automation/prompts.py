@@ -26,9 +26,9 @@ The JSON format must be exactly as follows:
       "id": "<generate a UUID here>",
       "word": "<challenging English word from the chapter>",
       "language": "EN_US",
-      "wordCategory": "<WordCategory: NOUN, VERB, ADJECTIVE, ADVERB, INTERJECTION, or PHRASAL_VERB>",
-      "translatedWord": "<Portuguese (Brazil) translation>",
-      "translatedLanguage": "PT_BR"
+      "word_category": "<WordCategory: NOUN, VERB, ADJECTIVE, ADVERB, INTERJECTION, or PHRASAL_VERB>",
+      "translated_word": "<Portuguese (Brazil) translation>",
+      "translated_language": "PT_BR"
     }
   ]
 }
@@ -67,12 +67,7 @@ Use this EXACT format:
 {
 "id": "unique_caption_id_sequential_number",
 "text": "exact transcription in English",
-"translate": [
-{
-"text": "accurate Brazilian Portuguese translation",
-"language": "PT_BR"
-}
-],
+"translated_text": "accurate Brazilian Portuguese translation", 
 "time": "mm:ss:mmm", 
 "type": "CAPTION"
 }

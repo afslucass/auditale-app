@@ -14,7 +14,7 @@ def generateStoryAudios():
         tts.falar(item["chapter"], estilo=GENERATE_CHAPTER_AUDIO, arquivo=f"temp/chapter-{index}.wav")
         tts.falar(item["description"], estilo=GENERATE_CHAPTER_DESC_AUDIO, arquivo=f"temp/chapter-desc-{index}.wav")
         for word in item["words"]:
-            tts.falar(f"{word['word']} traduz para {word['translatedWord']}", estilo=GENERATE_NEW_WORDS_AUDIO, arquivo=f"temp/{word['id']}.wav")
+            tts.falar(f"{word['word']} traduz para {word['translated_word']}", estilo=GENERATE_NEW_WORDS_AUDIO, arquivo=f"temp/{word['id']}.wav")
 
     return None
 

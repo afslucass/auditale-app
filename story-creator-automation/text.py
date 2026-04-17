@@ -60,14 +60,8 @@ def createStoryContentMetadata():
             "id": str(uuid.uuid4()),
             "type": "REVIEW",
             "time": "00:00:000",
-            "description": "",
-            "translate": [
-                {
-                    "text": item["description"],
-                    "language": "PT_BR"
-                }
-            ],
-            "newWords": item["words"]
+            "translated_text": item["description"],
+            "new_words": item["words"]
         }
 
         with open(f'temp/chapter-desc-{index}-metadata.json', 'w', encoding='utf-8') as arquivo:

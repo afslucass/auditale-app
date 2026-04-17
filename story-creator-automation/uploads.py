@@ -83,7 +83,6 @@ def createStory():
         "gender": story_info.get("genre"),
         "duration": duration_str,
         "free": True,
-        "thumbnail": None,
         "content": metadata,
         "difficulty": story_info.get("difficulty")
     }

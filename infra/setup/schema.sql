@@ -94,7 +94,6 @@ CREATE TABLE IF NOT EXISTS "public"."stories" (
     "gender" "text" NOT NULL,
     "duration" "text" NOT NULL,
     "free" boolean DEFAULT false NOT NULL,
-    "thumbnail" "text",
     "content" "jsonb" NOT NULL,
     "difficulty" "text" NOT NULL
 );

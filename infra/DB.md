@@ -40,7 +40,6 @@ description: string
 gender: GENDER
 duration: 'HH:MM:SS'
 free: boolean
-thumbnail: image_url
 content: string
 audio: audio_url
 difficulty: DIFFICULTY

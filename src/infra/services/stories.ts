@@ -3,7 +3,7 @@ import { supabase } from "../setup/supabase";
 
 const getStories = async (limit: number) => {
   const { data, error } = await supabase
-    .from("Story")
+    .from("stories")
     .select(
       `id, title, description, gender, duration, free, difficulty, created_at, learning_language, native_language, thumbnail`,
     )
@@ -23,7 +23,7 @@ const getPaginatedAndFilteredStoriesOrderingByCreation = async (
   currentCreatedAtLastItem?: string | null,
 ) => {
   const query = supabase
-    .from("Story")
+    .from("stories")
     .select(
       `id, title, description, gender, duration, free, difficulty, created_at, learning_language, native_language, thumbnail`,
     )
@@ -53,7 +53,7 @@ const TWO_HOURS_IN_SECONDS = 7200;
 
 const getStoryDetails = async (id: string) => {
   const { data: details, error: detailsError } = await supabase
-    .from("Story")
+    .from("stories")
     .select()
     .eq("id", id)
     .single();

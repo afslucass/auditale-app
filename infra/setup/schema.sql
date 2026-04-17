@@ -84,7 +84,7 @@ SET default_tablespace = '';
 SET default_table_access_method = "heap";
 
 
-CREATE TABLE IF NOT EXISTS "public"."Story" (
+CREATE TABLE IF NOT EXISTS "public"."stories" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "created_at" timestamp with time zone DEFAULT "now"() NOT NULL,
     "learning_language" "text" NOT NULL,
@@ -100,14 +100,14 @@ CREATE TABLE IF NOT EXISTS "public"."Story" (
 );
 
 
-ALTER TABLE "public"."Story" OWNER TO "postgres";
+ALTER TABLE "public"."stories" OWNER TO "postgres";
 
 
-COMMENT ON TABLE "public"."Story" IS 'Stories users can hear';
+COMMENT ON TABLE "public"."stories" IS 'Stories users can hear';
 
 
 
-CREATE TABLE IF NOT EXISTS "public"."learnedwords" (
+CREATE TABLE IF NOT EXISTS "public"."learned_words" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "word" "text" NOT NULL,
     "language" "text" NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS "public"."learnedwords" (
 );
 
 
-ALTER TABLE "public"."learnedwords" OWNER TO "postgres";
+ALTER TABLE "public"."learned_words" OWNER TO "postgres";
 
 
 CREATE TABLE IF NOT EXISTS "public"."profiles" (
@@ -160,12 +160,12 @@ CREATE TABLE IF NOT EXISTS "public"."user_learned_words" (
 ALTER TABLE "public"."user_learned_words" OWNER TO "postgres";
 
 
-ALTER TABLE ONLY "public"."Story"
+ALTER TABLE ONLY "public"."stories"
     ADD CONSTRAINT "Story_pkey" PRIMARY KEY ("id");
 
 
 
-ALTER TABLE ONLY "public"."learnedwords"
+ALTER TABLE ONLY "public"."learned_words"
     ADD CONSTRAINT "learnedwords_pkey" PRIMARY KEY ("id");
 
 
@@ -211,17 +211,17 @@ ALTER TABLE ONLY "public"."profiles"
 
 
 ALTER TABLE ONLY "public"."story_learned_words"
-    ADD CONSTRAINT "story_learned_words_learned_word_id_fkey" FOREIGN KEY ("learned_word_id") REFERENCES "public"."learnedwords"("id") ON DELETE CASCADE;
+    ADD CONSTRAINT "story_learned_words_learned_word_id_fkey" FOREIGN KEY ("learned_word_id") REFERENCES "public"."learned_words"("id") ON DELETE CASCADE;
 
 
 
 ALTER TABLE ONLY "public"."story_learned_words"
-    ADD CONSTRAINT "story_learned_words_story_id_fkey" FOREIGN KEY ("story_id") REFERENCES "public"."Story"("id") ON DELETE CASCADE;
+    ADD CONSTRAINT "story_learned_words_story_id_fkey" FOREIGN KEY ("story_id") REFERENCES "public"."stories"("id") ON DELETE CASCADE;
 
 
 
 ALTER TABLE ONLY "public"."user_learned_words"
-    ADD CONSTRAINT "user_learned_words_learned_word_id_fkey" FOREIGN KEY ("learned_word_id") REFERENCES "public"."learnedwords"("id") ON DELETE CASCADE;
+    ADD CONSTRAINT "user_learned_words_learned_word_id_fkey" FOREIGN KEY ("learned_word_id") REFERENCES "public"."learned_words"("id") ON DELETE CASCADE;
 
 
 
@@ -238,7 +238,7 @@ CREATE POLICY "Enable insert for users based on user_id" ON "public"."user_learn
 
 
 
-CREATE POLICY "Enable read access for all users" ON "public"."learnedwords" FOR SELECT USING (true);
+CREATE POLICY "Enable read access for all users" ON "public"."learned_words" FOR SELECT USING (true);
 
 
 
@@ -250,7 +250,7 @@ CREATE POLICY "Enable read for users based on user_id" ON "public"."user_learned
 
 
 
-ALTER TABLE "public"."Story" ENABLE ROW LEVEL SECURITY;
+ALTER TABLE "public"."stories" ENABLE ROW LEVEL SECURITY;
 
 
 CREATE POLICY "Users can insert their own profile." ON "public"."profiles" FOR INSERT WITH CHECK ((( SELECT "auth"."uid"() AS "uid") = "id"));
@@ -261,7 +261,7 @@ CREATE POLICY "Users can update own profile." ON "public"."profiles" FOR UPDATE 
 
 
 
-ALTER TABLE "public"."learnedwords" ENABLE ROW LEVEL SECURITY;
+ALTER TABLE "public"."learned_words" ENABLE ROW LEVEL SECURITY;
 
 
 ALTER TABLE "public"."profiles" ENABLE ROW LEVEL SECURITY;
@@ -270,7 +270,7 @@ ALTER TABLE "public"."profiles" ENABLE ROW LEVEL SECURITY;
 ALTER TABLE "public"."story_learned_words" ENABLE ROW LEVEL SECURITY;
 
 
-CREATE POLICY "teste-policy" ON "public"."Story" FOR SELECT USING (true);
+CREATE POLICY "teste-policy" ON "public"."stories" FOR SELECT USING (true);
 
 
 
@@ -460,15 +460,15 @@ GRANT ALL ON FUNCTION "public"."handle_new_user"() TO "service_role";
 
 
 
-GRANT ALL ON TABLE "public"."Story" TO "anon";
-GRANT ALL ON TABLE "public"."Story" TO "authenticated";
-GRANT ALL ON TABLE "public"."Story" TO "service_role";
+GRANT ALL ON TABLE "public"."stories" TO "anon";
+GRANT ALL ON TABLE "public"."stories" TO "authenticated";
+GRANT ALL ON TABLE "public"."stories" TO "service_role";
 
 
 
-GRANT ALL ON TABLE "public"."learnedwords" TO "anon";
-GRANT ALL ON TABLE "public"."learnedwords" TO "authenticated";
-GRANT ALL ON TABLE "public"."learnedwords" TO "service_role";
+GRANT ALL ON TABLE "public"."learned_words" TO "anon";
+GRANT ALL ON TABLE "public"."learned_words" TO "authenticated";
+GRANT ALL ON TABLE "public"."learned_words" TO "service_role";
 
 
 

@@ -42,7 +42,7 @@ def createWords(story_id):
                 })
 
     if learned_words_payload:
-        supabase.table("learnedwords").insert(learned_words_payload).execute()
+        supabase.table("learned_words").insert(learned_words_payload).execute()
 
     if story_learned_words_payload:
         supabase.table("story_learned_words").insert(story_learned_words_payload).execute()
@@ -88,7 +88,7 @@ def createStory():
         "difficulty": story_info.get("difficulty")
     }
     
-    response = supabase.table("Story").insert(payload).execute()
+    response = supabase.table("stories").insert(payload).execute()
     
     if hasattr(response, 'data') and len(response.data) > 0:
         id = response.data[0]["id"]

@@ -33,7 +33,8 @@ translated_text: string
 Story
 
 id: uuid
-language: LANGUAGE
+learning_language: LANGUAGE
+native_language: LANGUAGE
 title: string
 description: string
 gender: GENDER

@@ -31,7 +31,8 @@ export type Story = {
   title: string;
   description: string;
   duration: string;
-  language: Language;
+  learning_language: Language;
+  native_language: Language;
   difficulty: Difficulty;
   created_at: string;
   gender: Gender;

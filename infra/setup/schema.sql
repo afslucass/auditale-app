@@ -87,7 +87,8 @@ SET default_table_access_method = "heap";
 CREATE TABLE IF NOT EXISTS "public"."Story" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "created_at" timestamp with time zone DEFAULT "now"() NOT NULL,
-    "language" "text" NOT NULL,
+    "learning_language" "text" NOT NULL,
+    "native_language" "text" NOT NULL,
     "title" "text" NOT NULL,
     "description" "text" NOT NULL,
     "gender" "text" NOT NULL,

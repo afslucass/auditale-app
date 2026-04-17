@@ -72,7 +72,8 @@ def createStory():
     duration_str = time_helper.millis_to_time(duration_ms)
     
     payload = {
-        "language": "EN_US",
+        "learning_language": "EN_US",
+        "native_language": "PT_BR",
         "title": story_info.get("title"),
         "description": story_info.get("description"),
         "gender": story_info.get("genre"),

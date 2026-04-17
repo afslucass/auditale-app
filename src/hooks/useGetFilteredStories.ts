@@ -1,13 +1,13 @@
 // hooks/useGetStories.ts
 import { useState, useCallback, useRef } from "react";
 import StoriesService from "../infra/services/stories";
-import { Difficulty, Gender, StoryWithoutContent } from "../types/story";
+import { Difficulty, Genre, StoryWithoutContent } from "../types/story";
 
 type UseGetStoriesOptions = {
   initialPageSize?: number;
   initialFilters?: {
     title?: string | null;
-    gender?: Gender | null;
+    genre?: Genre | null;
     difficulty?: Difficulty | null;
   };
 };
@@ -22,7 +22,7 @@ export type UseGetStoriesReturn = {
   refresh: () => Promise<void>;
   applyFilters: (filters: {
     title?: string | null;
-    gender?: Gender | null;
+    genre?: Genre | null;
     difficulty?: Difficulty | null;
   }) => Promise<void>;
   hasMore: boolean;
@@ -55,7 +55,7 @@ const useGetStories = (
         await StoriesService.getPaginatedAndFilteredStoriesOrderingByCreation(
           pageSize.current,
           currentFilters.current.title,
-          currentFilters.current.gender,
+          currentFilters.current.genre,
           currentFilters.current.difficulty,
           cursor.current,
         );
@@ -94,7 +94,7 @@ const useGetStories = (
         await StoriesService.getPaginatedAndFilteredStoriesOrderingByCreation(
           pageSize.current,
           currentFilters.current.title,
-          currentFilters.current.gender,
+          currentFilters.current.genre,
           currentFilters.current.difficulty,
           null,
         );
@@ -119,7 +119,7 @@ const useGetStories = (
   const applyFilters = useCallback(
     async (filters: {
       title?: string | null;
-      gender?: Gender | null;
+      genre?: Genre | null;
       difficulty?: Difficulty | null;
     }) => {
       currentFilters.current = { ...currentFilters.current, ...filters };

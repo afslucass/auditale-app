@@ -2,7 +2,7 @@
 
 ## CONSTANTS
 
-GENDER: ROMANCE | SCI_FI | TERROR
+GENRE: ROMANCE | SCI_FI | TERROR
 CAPTION_TYPE: CAPTION | REVIEW
 LANGUAGE: PT_BR | EN_US | ES_ES
 WORD_TYPE: VERB | PHRASAL_VERB | SUBSTANTIVE | ADJECTIVE
@@ -37,7 +37,7 @@ learning_language: LANGUAGE
 native_language: LANGUAGE
 title: string
 description: string
-gender: GENDER
+genre: GENRE
 duration: 'HH:MM:SS'
 free: boolean
 content: string

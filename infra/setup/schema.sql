@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS "public"."stories" (
     "native_language" "text" NOT NULL,
     "title" "text" NOT NULL,
     "description" "text" NOT NULL,
-    "gender" "text" NOT NULL,
+    "genre" "text" NOT NULL,
     "duration" "text" NOT NULL,
     "free" boolean DEFAULT false NOT NULL,
     "content" "jsonb" NOT NULL,

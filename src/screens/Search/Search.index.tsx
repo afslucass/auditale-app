@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header.index";
 import { ListContainer, Screen } from "./Search.styles";
 import { useSystemContext } from "../../contexts/system";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { Gender, StoryWithoutContent } from "../../types/story";
+import { Genre, StoryWithoutContent } from "../../types/story";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
 import useGetStories from "../../hooks/useGetFilteredStories";
@@ -15,7 +15,7 @@ const STORY_PAGE_SIZE = 6;
 type SearchParams = {
   route: {
     params?: {
-      genre: Gender;
+      genre: Genre;
     };
   };
 };
@@ -75,7 +75,7 @@ function Search(props: SearchParams) {
 
   useEffect(() => {
     if (initialGenre) {
-      applyFilters({ gender: initialGenre });
+      applyFilters({ genre: initialGenre });
     }
   }, [initialGenre]);
 

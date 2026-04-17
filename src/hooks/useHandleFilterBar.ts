@@ -2,7 +2,7 @@ import { useState } from "react";
 import StoriesService from "../infra/services/stories";
 import { mapValueToEnumKey } from "../helpers/types";
 import { useSystemContext } from "../contexts/system";
-import { Difficulty, Gender } from "../types/story";
+import { Difficulty, Genre } from "../types/story";
 import { UseGetStoriesReturn } from "./useGetFilteredStories";
 
 type useHandleFilterBarProps = {
@@ -42,7 +42,7 @@ const useHandleFilterBar = ({
     applyFilters({
       title,
       difficulty: difficultyKey as Difficulty,
-      gender: genreKey as Gender,
+      genre: genreKey as Genre,
     });
   };
 
@@ -59,7 +59,7 @@ const useHandleFilterBar = ({
     applyFilters({
       title,
       difficulty: difficultyKey as Difficulty,
-      gender: genreKey as Gender,
+      genre: genreKey as Genre,
     });
   };
 
@@ -73,7 +73,7 @@ const useHandleFilterBar = ({
     applyFilters({
       title,
       difficulty: difficultyKey as Difficulty,
-      gender: genreKey as Gender,
+      genre: genreKey as Genre,
     });
   };
 

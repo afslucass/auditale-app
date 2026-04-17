@@ -32,7 +32,7 @@ export default function StoryCard({ item, onPress }: StoryCardParams) {
         <Description>{get20FirstWords(item.description)}</Description>
         <Row>
           <Tag>
-            <TagText>{texts.CONSTANTS.GENRES[item.gender]}</TagText>
+            <TagText>{texts.CONSTANTS.GENRES[item.genre]}</TagText>
           </Tag>
           <DurationText>
             {parseDurationToMinutes(item.duration)}{" "}

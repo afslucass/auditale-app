@@ -80,7 +80,7 @@ def createStory():
         "native_language": "PT_BR",
         "title": story_info.get("title"),
         "description": story_info.get("description"),
-        "gender": story_info.get("genre"),
+        "genre": story_info.get("genre"),
         "duration": duration_str,
         "free": True,
         "content": metadata,

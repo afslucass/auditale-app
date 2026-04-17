@@ -48,7 +48,7 @@ export default function RecentlyPlayedStoryCard({
         </ProgressRow>
 
         <Tag>
-          <TagText>{texts.CONSTANTS.GENRES[item.gender]}</TagText>
+          <TagText>{texts.CONSTANTS.GENRES[item.genre]}</TagText>
         </Tag>
       </InfoContainer>
     </CardContainer>

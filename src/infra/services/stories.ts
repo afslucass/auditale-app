@@ -1,11 +1,11 @@
-import { Difficulty, Gender } from "../../types/story";
+import { Difficulty, Genre } from "../../types/story";
 import { supabase } from "../setup/supabase";
 
 const getStories = async (limit: number) => {
   const { data, error } = await supabase
     .from("stories")
     .select(
-      `id, title, description, gender, duration, free, difficulty, created_at, learning_language, native_language`,
+      `id, title, description, genre, duration, free, difficulty, created_at, learning_language, native_language`,
     )
     .order("created_at", { ascending: false })
     .limit(limit);
@@ -18,22 +18,22 @@ const getStories = async (limit: number) => {
 const getPaginatedAndFilteredStoriesOrderingByCreation = async (
   pageSize: number,
   title?: string | null,
-  gender?: Gender | null,
+  genre?: Genre | null,
   difficulty?: Difficulty | null,
   currentCreatedAtLastItem?: string | null,
 ) => {
   const query = supabase
     .from("stories")
     .select(
-      `id, title, description, gender, duration, free, difficulty, created_at, learning_language, native_language`,
+      `id, title, description, genre, duration, free, difficulty, created_at, learning_language, native_language`,
     )
     .order("created_at", { ascending: false })
     .limit(pageSize);
   if (currentCreatedAtLastItem) {
     query.lt("created_at", currentCreatedAtLastItem);
   }
-  if (gender) {
-    query.eq("gender", gender);
+  if (genre) {
+    query.eq("genre", genre);
   }
   if (difficulty) {
     query.eq("difficulty", difficulty);

@@ -74,7 +74,7 @@ function Story({
         time_user_left: 0,
         story_id: data!.id,
         duration: parseDurationToSeconds(data!.duration),
-        gender: data!.gender,
+        genre: data!.genre,
         title: data!.title,
       });
     }

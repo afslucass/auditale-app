@@ -8,7 +8,7 @@ import GenresSection from "./components/GenresSection/GenresSection.index";
 import { COLORS } from "../../constants/colors/colors";
 import FilterBar from "../../components/FilterBar/FilterBar.index";
 import StoryCard from "../../components/StoryCard/StoryCard.index";
-import { Gender, StoryWithoutContent } from "../../types/story";
+import { Genre, StoryWithoutContent } from "../../types/story";
 import { useSystemContext } from "../../contexts/system";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import useHandleFilterBar from "../../hooks/useHandleFilterBar";
@@ -89,7 +89,7 @@ function Home() {
             gradient: [COLORS.PURPLE, COLORS.PURPLE_2],
             icon: "rocket",
             onPress: () =>
-              navigation.navigate("Search", { genre: Gender.SCI_FI }),
+              navigation.navigate("Search", { genre: Genre.SCI_FI }),
           },
           {
             id: "2",
@@ -97,7 +97,7 @@ function Home() {
             gradient: [COLORS.PINK, COLORS.PINK_2],
             icon: "car-sport",
             onPress: () =>
-              navigation.navigate("Search", { genre: Gender.MYSTERIUM }),
+              navigation.navigate("Search", { genre: Genre.MYSTERIUM }),
           },
           {
             id: "3",
@@ -105,7 +105,7 @@ function Home() {
             gradient: [COLORS.RED, COLORS.RED_2],
             icon: "heart-outline",
             onPress: () =>
-              navigation.navigate("Search", { genre: Gender.ROMANCE }),
+              navigation.navigate("Search", { genre: Genre.ROMANCE }),
           },
         ]}
       />

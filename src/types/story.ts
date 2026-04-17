@@ -1,6 +1,6 @@
 import { Language } from "./global";
 
-export enum Gender {
+export enum Genre {
   ROMANCE = "ROMANCE",
   SCI_FI = "SCI_FI",
   MYSTERIUM = "MYSTERIUM",
@@ -35,7 +35,7 @@ export type Story = {
   native_language: Language;
   difficulty: Difficulty;
   created_at: string;
-  gender: Gender;
+  genre: Genre;
   free: boolean;
   content: Caption[];
 };
@@ -65,7 +65,7 @@ export type LastReadingStory = {
   story_id: string;
   title: string;
   description: string;
-  gender: Gender;
+  genre: Genre;
   time_user_left: number;
   duration: number;
   created_at: string;

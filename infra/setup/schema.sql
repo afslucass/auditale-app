@@ -64,6 +64,32 @@ CREATE TYPE "public"."word_category_enum" AS ENUM (
 
 ALTER TYPE "public"."word_category_enum" OWNER TO "postgres";
 
+CREATE TYPE "public"."genre_enum" AS ENUM (
+    "ROMANCE",
+    "SCI_FI",
+    "MYSTERIUM",
+);
+
+
+ALTER TYPE "public"."genre_enum" OWNER TO "postgres";
+
+CREATE TYPE "public"."difficulty_enum" AS ENUM (
+    "BEGINNER",
+    "INTERMEDIATE",
+    "ADVANCED",
+);
+
+
+ALTER TYPE "public"."difficulty_enum" OWNER TO "postgres";
+
+CREATE TYPE "public"."language_enum" AS ENUM (
+    "PT_BR",
+    "EN_US",
+);
+
+
+ALTER TYPE "public"."language_enum" OWNER TO "postgres";
+
 
 CREATE OR REPLACE FUNCTION "public"."handle_new_user"() RETURNS "trigger"
     LANGUAGE "plpgsql" SECURITY DEFINER
@@ -87,15 +113,15 @@ SET default_table_access_method = "heap";
 CREATE TABLE IF NOT EXISTS "public"."stories" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "created_at" timestamp with time zone DEFAULT "now"() NOT NULL,
-    "learning_language" "text" NOT NULL,
-    "native_language" "text" NOT NULL,
+    "learning_language" "public"."language_enum" NOT NULL,
+    "native_language" "public"."language_enum" NOT NULL,
     "title" "text" NOT NULL,
     "description" "text" NOT NULL,
-    "genre" "text" NOT NULL,
+    "genre" "public"."genre_enum" NOT NULL,
     "duration" "text" NOT NULL,
     "free" boolean DEFAULT false NOT NULL,
     "content" "jsonb" NOT NULL,
-    "difficulty" "text" NOT NULL
+    "difficulty" "public"."difficulty_enum" NOT NULL
 );
 
 
@@ -109,10 +135,10 @@ COMMENT ON TABLE "public"."stories" IS 'Stories users can hear';
 CREATE TABLE IF NOT EXISTS "public"."learned_words" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "word" "text" NOT NULL,
-    "language" "text" NOT NULL,
+    "language" "public"."language_enum" NOT NULL,
     "word_category" "public"."word_category_enum" NOT NULL,
     "translated_word" "text" NOT NULL,
-    "translated_language" "text" NOT NULL,
+    "translated_language" "public"."language_enum" NOT NULL,
     "created_at" timestamp with time zone DEFAULT "now"(),
     "updated_at" timestamp with time zone DEFAULT "now"()
 );

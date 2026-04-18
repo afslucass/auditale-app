@@ -64,7 +64,7 @@ const getStoryDetails = async (id: string) => {
 
   const { data: signedUrlData, error: signedUrlError } = await supabase.storage
     .from("story audios")
-    .createSignedUrl(`${id}.mp3`, TWO_HOURS_IN_SECONDS);
+    .createSignedUrl(`US_EN-PT_BR/${id}.mp3`, TWO_HOURS_IN_SECONDS);
 
   if (signedUrlError) {
     throw new Error(`Erro ao obter URL do áudio: ${signedUrlError.message}`);

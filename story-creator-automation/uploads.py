@@ -95,7 +95,7 @@ def createStory():
         audio_file_path = f"temp/story.mp3"
         try:
             supabase.storage.from_("story audios").upload(
-                path=f"{id}.mp3",
+                path=f"US_EN-PT_BR/{id}.mp3",
                 file=audio_file_path,
                 file_options={"content-type": "audio/mpeg"}
             )

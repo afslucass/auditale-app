@@ -38,4 +38,4 @@ No DB, usar snake case:
 
 12. refatorar BEGINER para BEGGINER
 
-
+Retestar isso tudo

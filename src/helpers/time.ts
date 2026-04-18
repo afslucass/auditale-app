@@ -17,32 +17,33 @@ export function formatDuration(seconds: number): string {
 export function parseDurationToSeconds(duration: string): number {
   const parts = duration.split(":").map(Number);
 
-  if (parts.length !== 3 || parts.some(isNaN)) {
-    throw new Error("Formato de duração inválido. Use mm:ss:ms");
+  if (parts.length !== 4 || parts.some(isNaN)) {
+    throw new Error("Formato de duração inválido. Use hh:mm:ss:ms");
   }
 
-  const [minutes, seconds, milliseconds] = parts;
+  const [hours, minutes, seconds, milliseconds] = parts;
 
-  if (seconds >= 60 || milliseconds >= 1000) {
+  if (minutes >= 60 || seconds >= 60 || milliseconds >= 1000) {
     throw new Error("Valores fora do intervalo válido");
   }
 
-  return minutes * 60 + seconds + milliseconds / 1000;
+  return hours * 3600 + minutes * 60 + seconds + milliseconds / 1000;
 }
 
 export function parseDurationToMinutes(duration: string): number {
   const parts = duration.split(":").map(Number);
 
-  if (parts.length !== 3 || parts.some(isNaN)) {
-    throw new Error("Formato de duração inválido. Use mm:ss:ms");
+  if (parts.length !== 4 || parts.some(isNaN)) {
+    throw new Error("Formato de duração inválido. Use hh:mm:ss:ms");
   }
 
-  const [minutes, seconds, milliseconds] = parts;
+  const [hours, minutes, seconds, milliseconds] = parts;
 
-  if (seconds >= 60 || milliseconds >= 1000) {
+  if (minutes >= 60 || seconds >= 60 || milliseconds >= 1000) {
     throw new Error("Valores fora do intervalo válido");
   }
 
-  const totalMinutes = minutes + seconds / 60 + milliseconds / 60000;
+  const totalMinutes =
+    hours * 60 + minutes + seconds / 60 + milliseconds / 60000;
   return Math.ceil(totalMinutes);
 }

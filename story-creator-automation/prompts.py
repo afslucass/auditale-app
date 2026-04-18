@@ -68,11 +68,11 @@ Use this EXACT format:
 "id": "unique_caption_id_sequential_number",
 "text": "exact transcription in English",
 "translated_text": "accurate Brazilian Portuguese translation", 
-"time": "mm:ss:mmm", 
+"time": "hh:mm:ss:mmm", 
 "type": "CAPTION"
 }
 
-Time format: mm(minutes):ss(seconds):mmm(milliseconds)
+Time format: hh(hours):mm(minutes):ss(seconds):mmm(milliseconds)
 milliseconds is always 3 digits (000-999)
 
 ACCURACY REQUIREMENTS:

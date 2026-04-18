@@ -6,7 +6,7 @@ GENRE: ROMANCE | SCI_FI | TERROR
 CAPTION_TYPE: CAPTION | REVIEW
 LANGUAGE: PT_BR | EN_US | ES_ES
 WORD_TYPE: VERB | PHRASAL_VERB | SUBSTANTIVE | ADJECTIVE
-DIFFICULTY: BEGGINER | INTERMEDIATE | ADVANCED
+DIFFICULTY: BEGINNER | INTERMEDIATE | ADVANCED
 
 ## STORY CONTENT FORMAT
 
@@ -17,14 +17,14 @@ CAPTION type
 id: uuid,
 text: string
 translated_text: string
-time: 'MM:SS:ML'
+time: 'HH:MM:SS:ML'
 type: CAPTION_TYPE
 
 REVIEW type
 
 id: uuid
 type: CAPTION_TYPE,
-time: 'MM:SS:ML'
+time: 'HH:MM:SS:ML'
 description: string
 translated_text: string
 
@@ -38,7 +38,7 @@ native_language: LANGUAGE
 title: string
 description: string
 genre: GENRE
-duration: 'HH:MM:SS'
+duration: 'HH:MM:SS:ML'
 free: boolean
 content: string
 audio: audio_url

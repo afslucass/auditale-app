@@ -34,7 +34,7 @@ The JSON format must be exactly as follows:
 }
 
 Important requirements for the "words" array:
-- Must contain between 5 and 10 words
+- Must contain between 3 and 6 words
 - Each word should be challenging for an English student
 - Select words from the chapter just written
 - Generate a unique UUID for each word's "id" field
@@ -72,7 +72,12 @@ Use this EXACT format:
 "type": "CAPTION"
 }
 
-Time format: hh(hours):mm(minutes):ss(seconds):mmm(milliseconds)
+Time format: 
+must be in exaxt format: hh:mm:ss:mmm
+hh = hours
+mm = minutes
+ss = seconds
+mmm = milliseconds
 milliseconds is always 3 digits (000-999)
 
 ACCURACY REQUIREMENTS:

@@ -69,6 +69,8 @@ def createStory():
         metadata = json.load(f)
 
     for item in metadata:
+        if item["type"] == "CAPTION":
+            item["id"] = str(uuid.uuid4())
         if "newWords" in item:
             del item["newWords"]
         

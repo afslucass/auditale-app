@@ -65,26 +65,26 @@ CREATE TYPE "public"."word_category_enum" AS ENUM (
 ALTER TYPE "public"."word_category_enum" OWNER TO "postgres";
 
 CREATE TYPE "public"."genre_enum" AS ENUM (
-    "ROMANCE",
-    "SCI_FI",
-    "MYSTERIUM",
+    'ROMANCE',
+    'SCI_FI',
+    'MYSTERIUM'
 );
 
 
 ALTER TYPE "public"."genre_enum" OWNER TO "postgres";
 
 CREATE TYPE "public"."difficulty_enum" AS ENUM (
-    "BEGINNER",
-    "INTERMEDIATE",
-    "ADVANCED",
+    'BEGINNER',
+    'INTERMEDIATE',
+    'ADVANCED'
 );
 
 
 ALTER TYPE "public"."difficulty_enum" OWNER TO "postgres";
 
 CREATE TYPE "public"."language_enum" AS ENUM (
-    "PT_BR",
-    "EN_US",
+    'PT_BR',
+    'EN_US'
 );
 
 

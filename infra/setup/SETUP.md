@@ -3,7 +3,7 @@
 Ref: https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore
 
 1. Install Postgres and psql
-2. Create new Project in supabase
+2. Create new Project in supabase (do not include '@' in password)
 3. Copy Session pooler Connection String
 4. Run below command to setup db (change connection string):
 

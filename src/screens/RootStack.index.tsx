@@ -1,3 +1,4 @@
+import { Text } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./Home/Home.index";
@@ -6,7 +7,7 @@ import Story, { StoryParams } from "./Story/Story.index";
 import Review, { ReviewParams } from "./Review/Review.index";
 import Welcome from "./Welcome/Welcome.index";
 import { useAuthContext } from "../contexts/auth";
-import { Text } from "react-native";
+import useHandleDeeplinks from "../hooks/useHandleDeeplinks";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -20,6 +21,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStack = () => {
   const { isLoading } = useAuthContext();
+  useHandleDeeplinks();
 
   if (isLoading) {
     <Text>Carregando Auth</Text>;

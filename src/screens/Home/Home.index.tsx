@@ -25,10 +25,9 @@ function Home() {
   const [genre, setGenre] = useState(texts.CONSTANTS.GENRES.ALL);
   const [difficulty, setDifficulty] = useState("");
 
-  const { fetchStories, loadMore, applyFilters, stories, error } =
-    useGetStories({
-      initialPageSize: STORY_PAGE_SIZE,
-    });
+  const { fetchStories, applyFilters, stories, error } = useGetStories({
+    initialPageSize: STORY_PAGE_SIZE,
+  });
   const { getLastReadingStories, data: lastReadingStories } =
     useHandleLastReadingStories();
   const { handleChangeGenre, handleChangeDifficulty } = useHandleFilterBar({

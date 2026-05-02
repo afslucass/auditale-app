@@ -11,6 +11,7 @@ import RootStack from "./screens/RootStack.index";
 import { SystemProvider } from "./contexts/system";
 import { AuthProvider } from "./contexts/auth";
 import { PlayingStoryMetadataProvider } from "./contexts/playing-story-metadata";
+import { PaymentsProvider } from "./contexts/payments";
 
 export default function App() {
   useEffect(() => {
@@ -38,14 +39,16 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <AuthProvider>
-        <SystemProvider>
-          <PlayingStoryMetadataProvider>
-            <StatusBar style="light" />
-            <RootStack />
-          </PlayingStoryMetadataProvider>
-        </SystemProvider>
-      </AuthProvider>
+      <PaymentsProvider>
+        <AuthProvider>
+          <SystemProvider>
+            <PlayingStoryMetadataProvider>
+              <StatusBar style="light" />
+              <RootStack />
+            </PlayingStoryMetadataProvider>
+          </SystemProvider>
+        </AuthProvider>
+      </PaymentsProvider>
     </NavigationContainer>
   );
 }

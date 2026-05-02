@@ -50,6 +50,7 @@ export const TEXTS = {
     },
   },
   CONSTANTS: {
+    APP_NAME: "Auditale",
     DURATION: {
       SHORT: "Curta",
       MEDIUM: "Media",

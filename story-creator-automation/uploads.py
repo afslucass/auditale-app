@@ -27,6 +27,18 @@ def createWords(story_id):
         if item.get("type") == "REVIEW":
             chapter_review_id = item.get("id")
             for word_obj in item.get("new_words", []):
+                word_text = word_obj["word"]
+                
+                response = supabase.table("learned_words").select("id").eq("word", word_text).execute()
+                if hasattr(response, 'data') and len(response.data) > 0:
+                    existing_word_id = response.data[0]["id"]
+                    story_learned_words_payload.append({
+                        "story_id": story_id,
+                        "learned_word_id": existing_word_id,
+                        "chapter_review_id": chapter_review_id
+                    })
+                    continue
+                
                 learned_words_payload.append({
                     "id": word_obj["id"],
                     "word": word_obj["word"],

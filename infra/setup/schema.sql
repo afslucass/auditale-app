@@ -134,7 +134,7 @@ COMMENT ON TABLE "public"."stories" IS 'Stories users can hear';
 
 CREATE TABLE IF NOT EXISTS "public"."learned_words" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
-    "word" "text" NOT NULL,
+    "word" "text" NOT NULL UNIQUE,
     "language" "public"."language_enum" NOT NULL,
     "word_category" "public"."word_category_enum" NOT NULL,
     "translated_word" "text" NOT NULL,

@@ -1,5 +1,6 @@
 import json
 import uuid
+import time
 
 from agent_ia import Agent
 from audio_agent_ia import AudioAgent
@@ -22,8 +23,17 @@ def createStoryText():
 
     story = []
     for i in range(chapters_number):
-        res = chat.prompt("approved and continue")
-        story.append(json.loads(res))
+        for attempt in range(3):
+            try:
+                res = chat.prompt("approved and continue")
+                story.append(json.loads(res))
+                break
+            except Exception as e:
+                print(f"Erro na tentativa {attempt + 1}: {e}")
+                time.sleep(2)
+        else:
+            print("Erro persistente após 3 tentativas de obter capitulo. Saindo.")
+            quit()      
     
     for item in story:
         for word in item["words"]:
@@ -44,13 +54,17 @@ def createStoryContentMetadata():
             try:
                 audio = agent.upload_audio(f"temp/chapter-{index}.mp3")
                 response = agent.prompt_com_audio(GENERATE_CHAPTER_SUBTITLE, audio)
+                agent.clear_history()
                 response_json = json.loads(response)
+                for chapter in response_json:
+                    chapter['time'] = millis_to_time(chapter['time'])
 
                 with open(f'temp/chapter-{index}-metadata.json', 'w', encoding='utf-8') as arquivo:
                     json.dump(response_json, arquivo, indent=4, ensure_ascii=False)
                 break
             except Exception as e:
                 print(f"Erro na tentativa {attempt + 1}: {e}")
+                time.sleep(2)
         else:
             print("Erro persistente após 3 tentativas. Saindo.")
             quit()
@@ -59,7 +73,7 @@ def createStoryContentMetadata():
         description_data = {
             "id": str(uuid.uuid4()),
             "type": "REVIEW",
-            "time": "00:00:000",
+            "time": "00:00:00:000",
             "translated_text": item["description"],
             "new_words": item["words"]
         }

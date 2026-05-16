@@ -40,6 +40,10 @@ class AudioAgent:
         
         return response.text if response and hasattr(response, 'text') else "Erro na resposta"
 
+    def clear_history(self):
+        """Limpa o histórico da conversa."""
+        self.historico = []
+
 # Exemplo de uso
 if __name__ == "__main__":
     agent = AudioAgent()

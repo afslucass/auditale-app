@@ -49,13 +49,27 @@ def createStoryContentMetadata():
         dados = json.load(arquivo)
     
     for index, item in enumerate(dados):
-        for attempt in range(3):
+        for attempt in range(5):
             agent = AudioAgent()
             try:
                 audio = agent.upload_audio(f"temp/chapter-{index}.mp3")
                 response = agent.prompt_com_audio(GENERATE_CHAPTER_SUBTITLE, audio)
                 agent.clear_history()
                 response_json = json.loads(response)
+                
+                audio_duration_ms = get_audio_duration_ms(f"temp/chapter-{index}.mp3")
+                
+                if response_json:
+                    last_caption_time = int(response_json[-1]['time'])
+                    if last_caption_time > audio_duration_ms:
+                        raise Exception(f"Tempo da última legenda ({last_caption_time}ms) excede a duração do áudio ({audio_duration_ms}ms)")
+
+                for i in range(len(response_json) - 1):
+                    time1 = int(response_json[i]['time'])
+                    time2 = int(response_json[i+1]['time'])
+                    if (time2 - time1) > 20000:
+                        raise Exception(f"Delta de tempo entre legendas superior a 20 segundos: {time1}ms -> {time2}ms")
+                        
                 for chapter in response_json:
                     chapter['time'] = millis_to_time(chapter['time'])
 
@@ -66,7 +80,7 @@ def createStoryContentMetadata():
                 print(f"Erro na tentativa {attempt + 1}: {e}")
                 time.sleep(2)
         else:
-            print("Erro persistente após 3 tentativas. Saindo.")
+            print("Erro persistente após 5 tentativas. Saindo.")
             quit()
 
     for index, item in enumerate(dados):

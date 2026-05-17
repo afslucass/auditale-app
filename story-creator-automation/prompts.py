@@ -108,6 +108,7 @@ CAPTION SEGMENTATION GUIDELINES:
 - Do not break mid-phrase or mid-important-concept
 - Adjust segment length for speech speed
 - Maximum 2 lines of text per caption (approximately 120 characters)
+- maximum  delta between caption need to be 20000 milliseconds
 
 Return ONLY the JSON array.
 """

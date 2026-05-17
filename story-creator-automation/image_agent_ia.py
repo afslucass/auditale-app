@@ -10,22 +10,25 @@ class ImageAgent:
 
     def generate_image(self, prompt_text, output_path="temp/story-thumbnail.jpg"):
         """Generates an image and saves it to the given path"""
-        try:
-            result = self.client.models.generate_images(
-                model=self.modelo,
-                prompt=prompt_text,
-                config=dict(
-                    number_of_images=1,
-                    output_mime_type="image/jpeg",
-                    aspect_ratio="1:1"
+        for attempt in range(5):
+            try:
+                result = self.client.models.generate_images(
+                    model=self.modelo,
+                    prompt=prompt_text,
+                    config=dict(
+                        number_of_images=1,
+                        output_mime_type="image/jpeg",
+                        aspect_ratio="1:1"
+                    )
                 )
-            )
-            if result.generated_images:
-                image_bytes = result.generated_images[0].image.image_bytes
-                with open(output_path, 'wb') as f:
-                    f.write(image_bytes)
-                return True
-            return False
-        except Exception as e:
-            print(f"Erro na geração de imagem: {e}")
-            return False
+                if result.generated_images:
+                    image_bytes = result.generated_images[0].image.image_bytes
+                    with open(output_path, 'wb') as f:
+                        f.write(image_bytes)
+                    return True
+                raise Exception(f"generated_images nao existe")
+            except Exception as e:
+                print(f"Erro na geração de imagem: {e}")
+        else:
+            print("Erro persistente após 5 tentativas. Saindo.")
+            quit()

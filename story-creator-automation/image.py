@@ -6,10 +6,19 @@ def createStoryThumbnail():
     with open('temp/story.json', 'r', encoding='utf-8') as f:
         story_content = f.read()
 
-    agent = ImageAgent()
-    prompt = f"{CREATE_STORY_THUMBNAIL}\n{story_content}"
-    
-    # 1024x1024 is the default for imagen-3 in our agent configuration
-    agent.generate_image(prompt_text=prompt, output_path="temp/story-thumbnail.jpg")
+    for attempt in range(5):
+        try:
+            agent = ImageAgent()
+            prompt = f"{CREATE_STORY_THUMBNAIL}\n{story_content}"
+            
+            # 1024x1024 is the default for imagen-3 in our agent configuration
+            agent.generate_image(prompt_text=prompt, output_path="temp/story-thumbnail.jpg")
+            break
+        except Exception as e:
+            print(f"Erro na tentativa de gerar imagem {attempt + 1}: {e}")
+            time.sleep(2)
+    else:
+        print("Erro persistente após 5 tentativas. Saindo.")
+        quit()
 
     return None

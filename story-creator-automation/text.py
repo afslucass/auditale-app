@@ -101,20 +101,28 @@ def createStoryInfo():
     with open('temp/story.json', 'r', encoding='utf-8') as f:
         story_content = f.read()
 
-    chat = Agent()
-    response = chat.prompt(CREATE_STORY_INFO + story_content)
+    for attempt in range(5):
+        try:
+            chat = Agent()
+            response = chat.prompt(CREATE_STORY_INFO + story_content)
 
-    # Clean the response to ensure it's valid JSON
-    response_clean = response.strip()
-    if response_clean.startswith("```json"):
-        response_clean = response_clean[7:]
-    elif response_clean.startswith("```"):
-        response_clean = response_clean[3:]
-    if response_clean.endswith("```"):
-        response_clean = response_clean[:-3]
-    response_clean = response_clean.strip()
+            response_clean = response.strip()
+            if response_clean.startswith("```json"):
+                response_clean = response_clean[7:]
+            elif response_clean.startswith("```"):
+                response_clean = response_clean[3:]
+            if response_clean.endswith("```"):
+                response_clean = response_clean[:-3]
+            response_clean = response_clean.strip()
 
-    info_json = json.loads(response_clean)
+            info_json = json.loads(response_clean)
+            break
+        except Exception as e:
+            print(f"Erro na tentativa de gerar descricao da historia {attempt + 1}: {e}")
+            time.sleep(2)
+    else:
+        print("Erro persistente após 5 tentativas. Saindo.")
+        quit()
 
     with open('temp/story-info.json', 'w', encoding='utf-8') as f:
         json.dump(info_json, f, indent=4, ensure_ascii=False)

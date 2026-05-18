@@ -25,6 +25,7 @@ export const IconContainer = styled.TouchableOpacity`
 `;
 
 export const Header = styled.Text`
+  flex: 1;
   font-family: ${getFont("Nunito-Bold")};
   font-size: 18px;
   color: ${COLORS.WHITE};

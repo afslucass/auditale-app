@@ -23,7 +23,7 @@ type SearchParams = {
 function Search(props: SearchParams) {
   const initialGenre = props.route.params?.genre;
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const { texts } = useSystemContext();
 
   const scrollViewRef = useRef<ScrollView>(null);
@@ -73,6 +73,10 @@ function Search(props: SearchParams) {
     navigation.goBack();
   };
 
+  const handleCardPress = (id: string, title: string) => {
+    navigation.navigate("Story", { id, title });
+  };
+
   useEffect(() => {
     if (initialGenre) {
       applyFilters({ genre: initialGenre });
@@ -101,7 +105,7 @@ function Search(props: SearchParams) {
       />
       <ListContainer>
         {stories.map((item: StoryWithoutContent) => (
-          <StoryCard key={item.id} item={item} onPress={() => null} />
+          <StoryCard key={item.id} item={item} onPress={handleCardPress} />
         ))}
       </ListContainer>
     </Screen>

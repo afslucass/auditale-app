@@ -140,6 +140,7 @@ const useCaptionSync = ({ id, title, captions }: useCaptionSyncParams) => {
   useEffect(() => {
     if (preventGoToReview) {
       navigation.popTo("Story", route.params);
+      setPreventGoToReview(false);
     }
   }, [preventGoToReview]);
 

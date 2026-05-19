@@ -1,161 +1,218 @@
-import { useRef, useCallback, useState } from "react";
-import { createAudioPlayer, useAudioPlayer } from "expo-audio";
-import TrackPlayer from "react-native-track-player";
+import { useRef, useCallback, useState, useEffect } from "react";
+import { createAudioPlayer, useAudioPlayer, AudioPlayer } from "expo-audio";
+import TrackPlayer, {
+  Event,
+  State,
+  useTrackPlayerEvents,
+} from "react-native-track-player";
 
 interface UseLearnedWordsPlayerProps {
   learnedWords?: any[];
 }
+
 type PlayLearnedWordsSectionParams = {
   preventPlayStory: boolean;
 };
 
 const audioSource = require("../../../assets/audio/new_words/new_words_section_title_ptbr_1.mp3");
 
-const AUDIO_BASE_URL =
-  `${process.env.EXPO_PUBLIC_SUPABASE_URL}/storage/v1/object/public/learned%20words%20audios/`
+const AUDIO_BASE_URL = `${process.env.EXPO_PUBLIC_SUPABASE_URL}/storage/v1/object/public/learned%20words%20audios/`;
 
 const useSimpleLearnedWordsPlayer = ({
   learnedWords,
 }: UseLearnedWordsPlayerProps) => {
-  const playersRef = useRef<ReturnType<typeof createAudioPlayer>[]>([]);
+  const playersRef = useRef<AudioPlayer[]>([]);
+  const queueRef = useRef<AudioPlayer[]>([]);
+  const currentIndexRef = useRef<number>(0);
+  const intervalsRef = useRef<NodeJS.Timeout[]>([]);
+  const isMountedRef = useRef(true);
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const player = useAudioPlayer(audioSource);
+  const introPlayer = useAudioPlayer(audioSource);
 
-  // Carrega os áudios das palavras
+  useTrackPlayerEvents([Event.PlaybackState], (event) => {
+    if (event.state === State.Paused || event.state === State.Playing) {
+      pauseAllPlayers();
+    }
+
+    if (event.state === State.Stopped || event.state === State.Ended) {
+      stopAllPlayers();
+    }
+  });
+
   const loadLearnedWordsSection = useCallback(
     async (id: string) => {
       try {
         if (isLoading) return;
+
         setIsLoading(true);
 
-        if (!learnedWords || learnedWords.length === 0) {
-          throw new Error("Nenhuma palavra aprendida disponível");
-        }
-
-        // Filtra palavras da revisão
-        const currentReviewWords = learnedWords.filter(
+        const currentReviewWords = learnedWords?.filter(
           (item) => item.review_id === id,
         );
 
-        if (currentReviewWords.length === 0) {
-          throw new Error("Nenhuma palavra encontrada para esta revisão");
+        if (!currentReviewWords?.length) {
+          throw new Error("Nenhuma palavra encontrada");
         }
 
-        // Limpa players anteriores
-        playersRef.current.forEach((p) => {
-          try {
-            p.remove();
-          } catch {}
-        });
-        playersRef.current = [];
+        clearPlayers();
 
-        // Cria novos players
-        const newPlayers = await Promise.all(
+        const loadedPlayers = await Promise.all(
           currentReviewWords.map(async (wordItem) => {
             try {
               const player = createAudioPlayer({
                 uri: `${AUDIO_BASE_URL}${wordItem.id}.mp3`,
               });
 
-              // Aguarda carregamento
-              await new Promise<void>((resolve) => {
-                const checkLoaded = () => {
-                  if (player.isLoaded) {
-                    resolve();
-                  } else {
-                    setTimeout(checkLoaded, 50);
-                  }
-                };
-                checkLoaded();
-              });
-
               return player;
             } catch (err) {
-              console.warn(`Erro ao criar player para ${wordItem.word}:`, err);
+              console.warn(err);
               return null;
             }
           }),
         );
 
-        // Filtra players nulos
-        const validPlayers = newPlayers.filter((p) => p !== null);
+        playersRef.current = loadedPlayers.filter(Boolean) as AudioPlayer[];
 
-        if (validPlayers.length === 0) {
-          throw new Error("Nenhum áudio carregado com sucesso");
-        }
-
-        playersRef.current = validPlayers;
         setIsLoading(false);
-
-        return {
-          success: true,
-          count: validPlayers.length,
-          total: currentReviewWords.length,
-        };
-      } catch (error) {
+      } catch (err) {
         setIsLoading(false);
-        throw error;
+        throw err;
       }
     },
-    [learnedWords],
+    [learnedWords, isLoading],
   );
 
-  // Inicia a reprodução
-  const playLearnedWordsSection = useCallback(
-    async (params?: PlayLearnedWordsSectionParams) => {
-      if (isPlaying || playersRef.current.length === 0) return;
+  const playNextAudio = useCallback(async () => {
+    if (!isMountedRef.current) return;
+
+    const currentIndex = currentIndexRef.current;
+
+    if (currentIndex >= queueRef.current.length) {
+      setIsPlaying(false);
 
       try {
-        setIsPlaying(true);
+        await TrackPlayer.play();
+      } catch {}
 
-        // Pausa música de fundo
+      return;
+    }
+
+    const currentPlayer = queueRef.current[currentIndex];
+
+    if (!currentPlayer) {
+      return;
+    }
+
+    currentPlayer.seekTo(0);
+    currentPlayer.play();
+
+    const interval = setInterval(() => {
+      if (!isMountedRef.current) {
+        clearInterval(interval);
+        return;
+      }
+
+      try {
+        const ended =
+          currentPlayer.currentTime >= (currentPlayer.duration || 0);
+
+        if (ended) {
+          clearInterval(interval);
+
+          currentPlayer.pause();
+          currentPlayer.seekTo(0);
+
+          currentIndexRef.current += 1;
+
+          playNextAudio();
+        }
+      } catch (err) {
+        clearInterval(interval);
+      }
+    }, 150);
+
+    intervalsRef.current.push(interval);
+  }, []);
+
+  const playLearnedWordsSection = useCallback(
+    async (params?: PlayLearnedWordsSectionParams) => {
+      if (isPlaying) return;
+
+      if (!playersRef.current.length) return;
+
+      setIsPlaying(true);
+
+      currentIndexRef.current = 0;
+
+      queueRef.current = [...playersRef.current];
+
+      try {
         await TrackPlayer.pause();
 
-        // Toca áudio de introdução
-        player.seekTo(0);
-        player.play();
+        introPlayer.seekTo(0);
+        introPlayer.play();
 
-        // Aguarda introdução
-        await new Promise((resolve) =>
-          setTimeout(resolve, player.duration * 1000),
-        );
+        const introInterval = setInterval(() => {
+          if (!isMountedRef.current) {
+            clearInterval(introInterval);
+            return;
+          }
 
-        // Toca cada palavra em sequência
-        for (const audioPlayer of playersRef.current) {
-          audioPlayer.seekTo(0);
-          audioPlayer.play();
+          try {
+            const currentTime = introPlayer.currentTime ?? 0;
+            const duration = introPlayer.duration ?? 0;
 
-          await new Promise((resolve) =>
-            setTimeout(resolve, (audioPlayer.duration || 2) * 1000),
-          );
+            const ended = duration > 0 && currentTime >= duration;
 
-          audioPlayer.pause();
-          audioPlayer.seekTo(0);
-        }
+            if (ended) {
+              clearInterval(introInterval);
 
-        // Retoma música de fundo
+              try {
+                introPlayer.pause();
+                introPlayer.seekTo(0);
+              } catch {}
+
+              playNextAudio();
+            }
+          } catch (err) {
+            clearInterval(introInterval);
+          }
+        }, 150);
+        intervalsRef.current.push(introInterval);
+      } catch (err) {
+        console.error(err);
+
+        setIsPlaying(false);
+
         if (!params?.preventPlayStory) {
-          await TrackPlayer.play();
+          try {
+            await TrackPlayer.play();
+          } catch {}
         }
-        setIsPlaying(false);
-      } catch (error) {
-        console.error("Erro na reprodução:", error);
-        setIsPlaying(false);
-        try {
-          await TrackPlayer.play();
-        } catch {}
       }
     },
-    [isPlaying, player],
+    [introPlayer, isPlaying, playNextAudio],
   );
 
-  // Para a reprodução
-  const stopPlayback = useCallback(async () => {
-    setIsPlaying(false);
+  const pauseAllPlayers = () => {
+    introPlayer.pause();
 
-    // Pausa todos os players
+    playersRef.current.forEach((p) => {
+      try {
+        p.pause();
+      } catch {}
+    });
+
+    setIsPlaying(false);
+  };
+
+  const stopAllPlayers = () => {
+    introPlayer.pause();
+    introPlayer.seekTo(0);
+
     playersRef.current.forEach((p) => {
       try {
         p.pause();
@@ -163,36 +220,50 @@ const useSimpleLearnedWordsPlayer = ({
       } catch {}
     });
 
-    // Retoma música de fundo
-    try {
-      await TrackPlayer.play();
-    } catch {}
-  }, []);
+    currentIndexRef.current = 0;
 
-  // Limpa recursos
-  const clearPlayers = useCallback(() => {
+    setIsPlaying(false);
+  };
+
+  const clearPlayers = () => {
     playersRef.current.forEach((p) => {
       try {
         p.remove();
       } catch {}
     });
+
     playersRef.current = [];
+  };
+
+  const clearAllIntervals = () => {
+    intervalsRef.current.forEach(clearInterval);
+    intervalsRef.current = [];
+  };
+
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+      clearAllIntervals();
+
+      try {
+        introPlayer.pause();
+      } catch {}
+
+      clearPlayers();
+    };
   }, []);
 
   return {
-    // Carregamento
     loadLearnedWordsSection,
-
-    // Reprodução
     playLearnedWordsSection,
-    stopPlayback,
 
-    // Estado
+    stopPlayback: stopAllPlayers,
+
     isPlaying,
     isLoading,
+
     hasPlayers: playersRef.current.length > 0,
 
-    // Limpeza
     clearPlayers,
   };
 };

@@ -6,6 +6,8 @@ import TrackPlayer, {
   useTrackPlayerEvents,
 } from "react-native-track-player";
 
+import { usePlayingStoryMetadataContext } from "../../../contexts/playing-story-metadata";
+
 interface UseLearnedWordsPlayerProps {
   learnedWords?: any[];
 }
@@ -31,6 +33,17 @@ const useSimpleLearnedWordsPlayer = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const introPlayer = useAudioPlayer(audioSource);
+
+  const { speed } = usePlayingStoryMetadataContext();
+  const playbackRateRef = useRef(speed);
+
+  const applyPlaybackRate = (player: AudioPlayer) => {
+    try {
+      player.setPlaybackRate(playbackRateRef.current);
+    } catch (err) {
+      console.warn("Erro ao aplicar playback rate", err);
+    }
+  };
 
   useTrackPlayerEvents([Event.PlaybackState], (event) => {
     if (event.state === State.Paused || event.state === State.Playing) {
@@ -65,6 +78,7 @@ const useSimpleLearnedWordsPlayer = ({
               const player = createAudioPlayer({
                 uri: `${AUDIO_BASE_URL}${wordItem.id}.mp3`,
               });
+              applyPlaybackRate(player);
 
               return player;
             } catch (err) {
@@ -107,6 +121,7 @@ const useSimpleLearnedWordsPlayer = ({
     }
 
     currentPlayer.seekTo(0);
+    applyPlaybackRate(currentPlayer);
     currentPlayer.play();
 
     const interval = setInterval(() => {
@@ -153,6 +168,7 @@ const useSimpleLearnedWordsPlayer = ({
         await TrackPlayer.pause();
 
         introPlayer.seekTo(0);
+        applyPlaybackRate(introPlayer);
         introPlayer.play();
 
         const introInterval = setInterval(() => {
@@ -239,6 +255,20 @@ const useSimpleLearnedWordsPlayer = ({
     intervalsRef.current.forEach(clearInterval);
     intervalsRef.current = [];
   };
+
+  useEffect(() => {
+    playbackRateRef.current = speed;
+
+    try {
+      introPlayer.setPlaybackRate(speed);
+    } catch {}
+
+    playersRef.current.forEach((player) => {
+      try {
+        player.setPlaybackRate(speed);
+      } catch {}
+    });
+  }, [speed, introPlayer, playersRef]);
 
   useEffect(() => {
     return () => {

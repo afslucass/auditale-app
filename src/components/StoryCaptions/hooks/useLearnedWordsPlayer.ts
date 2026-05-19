@@ -59,8 +59,10 @@ const useSimpleLearnedWordsPlayer = ({
     async (id: string) => {
       try {
         if (isLoading) return;
-
         setIsLoading(true);
+
+        clearAllIntervals();
+        clearPlayers();
 
         const currentReviewWords = learnedWords?.filter(
           (item) => item.review_id === id,
@@ -69,8 +71,6 @@ const useSimpleLearnedWordsPlayer = ({
         if (!currentReviewWords?.length) {
           throw new Error("Nenhuma palavra encontrada");
         }
-
-        clearPlayers();
 
         const loadedPlayers = await Promise.all(
           currentReviewWords.map(async (wordItem) => {
@@ -247,8 +247,12 @@ const useSimpleLearnedWordsPlayer = ({
         p.remove();
       } catch {}
     });
-
     playersRef.current = [];
+
+    try {
+      introPlayer.pause();
+      introPlayer.remove();
+    } catch {}
   };
 
   const clearAllIntervals = () => {
@@ -274,11 +278,6 @@ const useSimpleLearnedWordsPlayer = ({
     return () => {
       isMountedRef.current = false;
       clearAllIntervals();
-
-      try {
-        introPlayer.pause();
-      } catch {}
-
       clearPlayers();
     };
   }, []);
